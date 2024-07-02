@@ -3,7 +3,7 @@ import { BsBookFill } from "react-icons/bs";
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios'
 import  secureLocalStorage  from  "react-secure-storage";
-import BackImg from '../../assets/imgifs.jpg'
+import bgImg from '../../assets/nifsBG.jpg'
 
 const SignIn = () => {
     const navigate = useNavigate()
@@ -42,7 +42,7 @@ const SignIn = () => {
 
     
   return (
-    <div className='bg-cover bg-center min-h-screen py-16 px-8' style={{ backgroundImage: `url(${BackImg})`}}>
+    <div className='bg-cover bg-center min-h-screen py-16 px-8' style={{ backgroundImage: `url(${bgImg})`}}>
         <div className=""></div>
         <div className="md:grid grid-cols-2 gap-2">
             <div className="my-[15%]">
