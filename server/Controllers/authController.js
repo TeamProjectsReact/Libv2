@@ -9,7 +9,7 @@ const authController = {
                 username,
                 email,
                 password            
-            } = req.body
+            } = req.body.SignUpData
 
             const Role = req.body.foundUser.designation
 
