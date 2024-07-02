@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { BsBookFill, BsMortarboardFill } from "react-icons/bs";
+import { BsBookFill } from "react-icons/bs";
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios'
 import  secureLocalStorage  from  "react-secure-storage";
