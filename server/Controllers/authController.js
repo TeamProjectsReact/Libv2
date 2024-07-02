@@ -19,7 +19,7 @@ const authController = {
                 return res.json({ Error: "User Already in Database"})
             }
             else{
-                const hashPass = await bcrypt.hash(password, 10)
+                const hashPass = await bcrypt.hash(password, 10);
 
                 if(hashPass){
                     const NewUser = new User({
