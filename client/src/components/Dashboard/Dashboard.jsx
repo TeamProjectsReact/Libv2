@@ -5,7 +5,7 @@ import  secureLocalStorage  from  "react-secure-storage"
 const Dashboard = () => {
     const navigate = useNavigate()
     const RoleUser = secureLocalStorage.getItem("Login1");
-    const EmailUser = secureLocalStorage.getItem("login2");
+    const EmailUser = secureLocalStorage.getItem("Login2");
 
     const logout = () => {
         localStorage.clear()
