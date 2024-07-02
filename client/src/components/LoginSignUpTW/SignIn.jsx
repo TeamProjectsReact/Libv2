@@ -40,22 +40,24 @@ const SignIn = () => {
     }
   return (
     <div className='bg-[url(https://wallpapercave.com/wp/wp10890326.jpg)] bg-cover bg-center min-h-screen py-16 px-8'>
-        <div className="text-white text-center">
-            <h1 className="text-xl font-semibold ">
-                The National Institute of Fundamental Studies
-            </h1>
-            <p className="">
-                E-Library
-            </p>
-        </div>
         <div className="md:grid grid-cols-2 gap-2">
-            <div className=""></div>
+            <div className="my-8">
+                <div className="text-white text-center">
+                <h1 className="text-xl font-semibold ">
+                    The National Institute of Fundamental Studies
+                </h1>
+                <p className="">
+                    E-Library
+                </p>
+            </div>
+                <div className="md:mx-16 rounded bg-white py-4 px-8 mt-8">
+                    <h1 className="text-gray-500 py-4">If you're Guest ? </h1>
+                    <button className="bg-purple-500 text-white font-semibold w-full py-2 px-4 rounded duration-500 hover:bg-purple-600">Browse Books</button>
+                </div>
+            </div>
             <div className="">
                 <div className="bg-white py-4 px-8 rounded shadow-md w-auto md:mx-16">
-                    <center className='text-gray-500'>
-                        <BsBookFill className='bg-blue-400 border-2 border-blue-500 text-blue-800/90 h-14 rounded-md shadow-md w-auto py-2 px-2'/>
-                        <p className="">E-Library</p>
-                    </center>
+                    <h1 className="text-xl text-gray-500 font-semibold text-center">Members Login</h1>
                     <hr className='my-2'/>
                     <div className="my-4">
                         <form onSubmit={headleSubmit}>
