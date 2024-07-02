@@ -40,7 +40,15 @@ const SignIn = () => {
     }
   return (
     <div className='bg-[url(https://wallpapercave.com/wp/wp10890326.jpg)] bg-cover bg-center min-h-screen py-16 px-8'>
-        <div className="md:grid grid-cols-3 gap-2">
+        <div className="text-white text-center">
+            <h1 className="text-xl font-semibold ">
+                The National Institute of Fundamental Studies
+            </h1>
+            <p className="">
+                E-Library
+            </p>
+        </div>
+        <div className="md:grid grid-cols-2 gap-2">
             <div className=""></div>
             <div className="">
                 <div className="bg-white py-4 px-8 rounded shadow-md w-full ">
@@ -71,7 +79,6 @@ const SignIn = () => {
                     <p className="my-4">Don't have an Account ? <Link to={'/SignUp'}><span className="text-blue-500">SignUp</span></Link></p>
                 </div>  
             </div>
-            <div className=""></div>
         </div>
     </div>
   )
