@@ -39,7 +39,7 @@ const SignIn = () => {
         }
     }
   return (
-    <div className='bg-gray-200 min-h-screen py-24 px-8'>
+    <div className='bg-[url(https://wallpapercave.com/wp/wp10890326.jpg)] bg-cover bg-center min-h-screen py-24 px-8'>
         <div className="md:grid grid-cols-3 gap-2">
             <div className=""></div>
             <div className="">
