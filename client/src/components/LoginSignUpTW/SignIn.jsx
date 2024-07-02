@@ -82,7 +82,7 @@ const SignIn = () => {
                         <Link><p className="my-2 md:mx-8 text-blue-500 font-semibold">Forget Password ? </p></Link>
                     </div>
                     <hr className='my-2'/>
-                    <Link>
+                    <Link to={'/SignUp'}>
                         <div className="mx-8">
                             <button className="bg-purple-500 text-white font-semibold w-full py-2 px-4 rounded duration-500 hover:bg-purple-600">Create Account</button>
                         </div>
