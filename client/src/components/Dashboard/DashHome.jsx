@@ -9,9 +9,17 @@ const DashHome = () => {
     const EmailUser = secureLocalStorage.getItem("Login1");
     const RoleUser = secureLocalStorage.getItem("Login2");
 
-  return (
-    <div>DashHome</div>
-  )
+    if(RoleUser !== null && EmailUser !== null){
+        return (
+            <div>DashHome</div>
+        )
+    }
+    else{
+        useEffect(() => {
+            localStorage.clear()
+            navigate('/')
+        }, [])
+    }
 }
 
 export default DashHome
