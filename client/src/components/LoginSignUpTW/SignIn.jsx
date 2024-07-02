@@ -39,12 +39,15 @@ const SignIn = () => {
             console.log(err)
         }
     }
+
+    
   return (
     <div className='bg-cover bg-center min-h-screen py-16 px-8' style={{ backgroundImage: `url(${BackImg})`}}>
+        <div className=""></div>
         <div className="md:grid grid-cols-2 gap-2">
-            <div className="my-8">
-                <div className="text-white text-center">
-                <h1 className="text-xl font-semibold ">
+            <div className="my-[15%]">
+                <div className="text-white text-center text-black">
+                <h1 className="text-2xl font-semibold">
                     The National Institute of Fundamental Studies
                 </h1>
                 <p className="">
