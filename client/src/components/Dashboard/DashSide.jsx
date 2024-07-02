@@ -58,7 +58,7 @@ const DashSide = () => {
                             <p className="text-blue-600 pl-4 pt-2"><BsMortarboard className='h-10 w-auto'/></p>
                             <div className="pl-4">
                                 <h1 className="mt-1 uppercase text-xl font-semibold tracking-[0.3em]">NIFS</h1>
-                                <p className="py-2 md:block hidden">ERP System</p>
+                                <p className="py-2 md:block hidden">E-Library</p>
                                 <div className="cursor-pointer mt-2 md:hidden block" >
                                     <div className="flex" onClick={toggleUserDropDown}>
                                         <BsPersonCircle className='text-xl'/>
