@@ -13,24 +13,36 @@ const SignUp = () => {
     })
 
     // send data to backend using axios
+    // send data to backend using axios
     const headleSubmit = async (e) => {
         e.preventDefault();
 
-        // signup to system
-
         try{
-            const res = await axios.post('http://localhost:5000/auth/SignUp', SignUpData)
-            .then(res => {
-                if(res.data.Status === "Success"){
-                    alert("Registation Successfull")
-                    navigate('/')
-                }
-                else{
-                    alert(res.data.Error)
-                }
-            })
-        }
-        catch(err) {
+            // custom created REST API
+            const res = await axios.get('https://teamprojectsreact.github.io/EMPAPI/EmpRestAPI.employees.json')
+            const data = res.data;
+
+            const emailExists = data.some((item) => item.email === SignUpData.email);
+            const foundUser = data.find((item) => item.email === SignUpData.email);
+
+            
+            if(emailExists){                  
+                const res = await axios.post('http://localhost:5000/auth/SignUp', {SignUpData, foundUser})
+                .then(res => {
+                    if(res.data.Status === "Success"){
+                        alert("Registation Successfull")
+                        navigate('/')
+                    }
+                    else{
+                        alert(res.data.Error)
+                    }
+                })
+            }
+            else{
+                alert("You are not a NIFS Member")
+            }
+        }   
+        catch (err) {
             console.log(err)
         }
 
