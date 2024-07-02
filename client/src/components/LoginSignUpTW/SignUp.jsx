@@ -54,10 +54,7 @@ const SignUp = () => {
             <div className=""></div>
             <div className="">
                 <div className="bg-white py-4 px-8 rounded shadow-md w-full ">
-                    <center className='text-gray-500'>
-                        <BsBookFill className='bg-blue-400 border-2 border-blue-500 text-blue-800/90 h-14 rounded-md shadow-md w-auto py-2 px-2'/>
-                        <p className="">E-Library</p>
-                    </center>
+                    <h1 className="text-xl text-gray-500 font-semibold text-center my-8">Members Registation</h1>
                     <hr className='my-2'/>
                     <div className="my-4">
                         <form onSubmit={headleSubmit}>
