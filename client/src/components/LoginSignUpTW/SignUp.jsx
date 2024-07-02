@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { BsBookFill } from "react-icons/bs";
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios'
+import bgImg from '../../assets/nifsBG.jpg'
 
 const SignUp = () => {
     const navigate = useNavigate()
@@ -48,7 +49,7 @@ const SignUp = () => {
 
     }
   return (
-    <div className='bg-[url(https://wallpapercave.com/wp/wp10890326.jpg)] bg-cover bg-center min-h-screen py-16 px-8'>
+    <div className='bg-cover bg-center min-h-screen py-16 px-8' style={{ backgroundImage: `url(${bgImg})`}}>
         <div className="md:grid grid-cols-3 gap-2">
             <div className=""></div>
             <div className="">
