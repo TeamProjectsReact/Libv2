@@ -5,7 +5,6 @@ const User = require('../Models/User')
 const authController = {
     SignUp: async (req, res) => {
         try{
-            // console.log(req.body)
             const {
                 username,
                 email,
@@ -49,7 +48,7 @@ const authController = {
         }
     },
 
-    SignUp: async(req, res) => {
+    SignIn: async(req, res) => {
         console.log(req.body)
     }
 }
