@@ -15,6 +15,15 @@ const BookController = {
         catch (err) {
             console.log(err)
         }
+    },
+
+    CountAllBooks: async(req, res) => {
+        try{
+
+        }
+        catch (err) {
+            console.log(err)
+        }
     }
 }
 
