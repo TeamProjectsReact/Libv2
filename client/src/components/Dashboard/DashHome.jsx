@@ -13,30 +13,35 @@ const DashHome = () => {
 
     const DashData = [
         {id: 1, name: "Employees", bgstyle: 'bg-green-400/20', borderStyle: 'border-green-500', icon: <BsPeopleFill />, value: <CountUp end={20} />, style: "text-green-500"},
+        {id: 1, name: "Employees", bgstyle: 'bg-green-400/20', borderStyle: 'border-green-500', icon: <BsPeopleFill />, value: <CountUp end={20} />, style: "text-green-500"},
     ]
 
     if(RoleUser !== null && EmailUser !== null){
         return (
             <div>
-                {
-                    DashData.map((data) => {
-                        if(RoleUser === "SuperAdmin" || RoleUser === "Director" || RoleUser === "Secretary"){
-                            return(
-                                <div className={`md:my-0 my-2 ${data.bgstyle} text-white px-4 py-8 rounded border-l-4 shadow-lg shadow-red ${data.borderStyle}`}>
-                                  <div className="flex justify-between">
-                                      <div className="">
-                                          <h1 className={`text-3xl font-semibold ${data.style}`}>{data.value}</h1>
-                                          <p className={`${data.style}`}>{data.name}</p> 
-                                      </div>
-                                      <div className="">
-                                          <p className={`text-4xl ${data.style} pt-2`}>{data.icon}</p>
-                                      </div>
-                                  </div>
-                                </div>
-                            )
-                        }
-                    })
-                }   
+                <div className="">
+                    <div className="md:grid grid-cols-4 gap-4 mr-4">
+                    {
+                        DashData.map((data) => {
+                            if(RoleUser === "SuperAdmin" || RoleUser === "Director" || RoleUser === "Secretary"){
+                                return(
+                                    <div className={`md:my-0 my-2 ${data.bgstyle} text-white px-4 py-8 rounded border-l-4 shadow-lg shadow-red ${data.borderStyle}`}>
+                                    <div className="flex justify-between">
+                                        <div className="">
+                                            <h1 className={`text-3xl font-semibold ${data.style}`}>{data.value}</h1>
+                                            <p className={`${data.style}`}>{data.name}</p> 
+                                        </div>
+                                        <div className="">
+                                            <p className={`text-4xl ${data.style} pt-2`}>{data.icon}</p>
+                                        </div>
+                                    </div>
+                                    </div>
+                                )
+                            }
+                        })
+                    }   
+                    </div>
+                </div>
             </div>
         )
     }
