@@ -16,7 +16,27 @@ const DashHome = () => {
 
     if(RoleUser !== null && EmailUser !== null){
         return (
-            <div>Dashboard</div>
+            <div>
+                {
+                          DashData.map((data) => {
+                            if(RoleUser === "SuperAdmin" || RoleUser === "Director" || RoleUser === "Secretary"){
+                              return(
+                                <div className={`md:my-0 my-2 ${data.bgstyle} text-white px-4 py-8 rounded border-l-4 shadow-lg shadow-red ${data.borderStyle}`}>
+                                  <div className="flex justify-between">
+                                      <div className="">
+                                          <h1 className={`text-3xl font-semibold ${data.style}`}>{data.value}</h1>
+                                          <p className={`${data.style}`}>{data.name}</p> 
+                                      </div>
+                                      <div className="">
+                                          <p className={`text-4xl ${data.style} pt-2`}>{data.icon}</p>
+                                      </div>
+                                  </div>
+                                </div>
+                              )
+                            }
+                          })
+                        }   
+            </div>
         )
     }
     else{
