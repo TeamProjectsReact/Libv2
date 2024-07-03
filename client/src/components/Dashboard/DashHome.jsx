@@ -22,6 +22,15 @@ const DashHome = () => {
         {id: 7, name: "My Borrowed Books", bgstyle: 'bg-yellow-400/20', borderStyle: 'border-yellow-500', icon: <BsJournalCheck />, value: <CountUp end={20} />, style: "text-yellow-500"},
     ]
 
+    // count books
+    const [CountBooks, SetCountBooks] = useState([])
+
+    useEffect(() => {
+        axios.get('http://localhost:5000/books/CountBooks')
+        .then(res => SetCountBooks(res.data.Result))
+        .catch(err => console.log(err))
+    }, [])
+
     if(RoleUser !== null && EmailUser !== null){
         return (
             <div>
