@@ -31,7 +31,7 @@ const DashHome = () => {
     }, [])
 
     const DashData = [
-        {id: 1, name: "Users", bgstyle: 'bg-green-400/20', borderStyle: 'border-green-500', icon: <BsPeopleFill />, value: <CountUp end={20} />, style: "text-green-500"},
+        {id: 1, name: "Users", bgstyle: 'bg-green-400/20', borderStyle: 'border-green-500', icon: <BsPeopleFill />, value: <CountUp end={CountUser} />, style: "text-green-500"},
         {id: 2, name: "Books", bgstyle: 'bg-blue-400/20', borderStyle: 'border-blue-500', icon: <BsBookFill />, value: <CountUp end={CountBooks} />, style: "text-blue-500"},
         {id: 3, name: "Thesis", bgstyle: 'bg-yellow-400/20', borderStyle: 'border-yellow-500', icon: <BsTextParagraph />, value: <CountUp end={20} />, style: "text-yellow-500"},
         {id: 4, name: "Borrowed Books", bgstyle: 'bg-purple-400/20', borderStyle: 'border-purple-500', icon: <BsJournalCheck />, value: <CountUp end={20} />, style: "text-purple-500"},
