@@ -98,24 +98,8 @@ const DashSide = () => {
                                             </a>
                                         )
                                     }
-                                    if(RoleUser === "HOD"){
-                                        if(side.id !== 10){
-                                            return (
-                                                <a href={side.link}>
-                                                    <div className="">
-                                                        <div className={`w-full my-2 py-3 px-2 rounded cursor-pointer duration-500 hover:backdrop-blur-sm hover:bg-white/10`}>
-                                                            <div className="flex">
-                                                                <p className={`text-2xl ${side.style}`}>{side.icons}</p>
-                                                                <p className="pl-2">{side.name}</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            )
-                                        }
-                                    }
                                     else{
-                                        if(side.id !== 10 && side.id !== 11){
+                                        if(side.id !== 4){
                                             return (
                                                 <a href={side.link}>
                                                     <div className="">
