@@ -7,6 +7,7 @@ import DashHome from "./components/Dashboard/DashHome";
 import BrowseBooks from "./components/BrowseBooks/BrowseBooks";
 import Books from "./components/Books/Books";
 import Thesis from "./components/Thesis/Thesis";
+import Users from "./components/Users/Users";
 
 
 export default function App() {
@@ -20,6 +21,7 @@ export default function App() {
           <Route path="Home" element={<PrivateRoute ProtectRoute={<DashHome /> } /> } />
           <Route path="Books" element={<PrivateRoute ProtectRoute={<Books /> } /> } />
           <Route path="Thesis" element={<PrivateRoute ProtectRoute={<Thesis /> } /> } />
+          <Route path="Users" element={<PrivateRoute ProtectRoute={<Users /> } /> } />
         </Route>
       </Routes> 
     </BrowserRouter>
