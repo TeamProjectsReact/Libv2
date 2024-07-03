@@ -9,9 +9,11 @@ const DashHome = () => {
     const EmailUser = secureLocalStorage.getItem("Login1");
     const RoleUser = secureLocalStorage.getItem("Login2");
 
+    
+
     if(RoleUser !== null && EmailUser !== null){
         return (
-            <div>DashHome</div>
+            <div>Dashboard</div>
         )
     }
     else{
