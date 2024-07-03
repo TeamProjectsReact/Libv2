@@ -20,8 +20,8 @@ const BrowseBooks = () => {
                         <th>Acc Number</th>
                         <th>Book Name</th>
                         <th>ISBN Number</th>
-                        <th>Publisher</th>
-                        <th>Year of Publication</th>
+                        <th className='hidden md:table-cell'>Publisher</th>
+                        <th className='hidden md:table-cell'>Year of Publication</th>
                         <th>Status</th>
                     </tr>
                 </thead>
@@ -30,16 +30,16 @@ const BrowseBooks = () => {
                         <td className='text-center border-r border-gray-300'>1</td>
                         <td className='border-r border-gray-300 pl-3'>MOLECUALR AND CELLULAR ASPECTS OF MICROBIAL EVOLUTION</td>
                         <td className='text-center border-r border-gray-300'>BK123456</td>
-                        <td className='border-r border-gray-300 pl-3'>Prof Kamal Perera</td>
-                        <td className='text-center border-r border-gray-300'>1998</td>
+                        <td className='border-r border-gray-300 pl-3 hidden md:table-cell'>Prof Kamal Perera</td>
+                        <td className='text-center border-r border-gray-300 hidden md:table-cell'>1998</td>
                         <td className='text-center'>Available</td>
                     </tr>
                     <tr className='border-b border-gray-400 h-10'>
                         <td className='text-center border-r border-gray-300'>1</td>
                         <td className='border-r border-gray-300 pl-3'>MOLECUALR AND CELLULAR ASPECTS OF MICROBIAL EVOLUTION</td>
                         <td className='text-center border-r border-gray-300'>BK123456</td>
-                        <td className='border-r border-gray-300 pl-3'>Prof Kamal Perera</td>
-                        <td className='text-center border-r border-gray-300'>1998</td>
+                        <td className='border-r border-gray-300 pl-3 hidden md:table-cell'>Prof Kamal Perera</td>
+                        <td className='text-center border-r border-gray-300 hidden md:table-cell'>1998</td>
                         <td className='text-center'>Available</td>
                     </tr>
                 </tbody>
