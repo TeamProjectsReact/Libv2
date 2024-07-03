@@ -19,7 +19,14 @@ const BookController = {
 
     CountAllBooks: async(req, res) => {
         try{
+            const countBooks = await Books.countDocuments()
 
+            if(countBooks) {
+                return res.json({ Result: countBooks })
+            }
+            else{
+                return res.json({ Error: "Internal Server Error"})
+            }
         }
         catch (err) {
             console.log(err)
