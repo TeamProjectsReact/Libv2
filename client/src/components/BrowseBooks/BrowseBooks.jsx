@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { BsPersonCircle } from 'react-icons/bs'
 import axios from 'axios'
+import { Link, useNavigate } from 'react-router-dom';
+
 
 const BrowseBooks = () => {
     const [AllBooks, setAllBooks] = useState([])
@@ -20,6 +22,11 @@ const BrowseBooks = () => {
                 <BsPersonCircle className='text-3xl '/>
                 <p className="pl-2 pt-1">Gest</p>
             </div>
+        </div>
+        <div className="">
+            <Link to={'/'}>
+                <button className='bg-purple-500 text-white py-2 px-4 rounded'>Back</button>
+            </Link>
         </div>
         <div className="my-8">
             <table className='w-full '>
@@ -43,7 +50,17 @@ const BrowseBooks = () => {
                                     <td className='text-center border-r border-gray-300 hidden md:table-cell md:max-w-36 max-w-20'>{bookgest.ISBNNumber}</td>
                                     <td className='border-r border-gray-300 pl-3 hidden md:table-cell md:max-w-36 max-w-20'>{bookgest.Publisher}</td>
                                     <td className='text-center border-r border-gray-300 hidden md:table-cell'>{bookgest.YearofPublication}</td>
-                                    <td className='text-center'>Available</td>
+                                    <td className='text-center'>
+                                        {
+                                            (() => {
+                                                if(bookgest.Status === "Available"){
+                                                    return (
+                                                        <p className="text-green-500 font-semibold">Available</p>
+                                                    )
+                                                }
+                                            })()
+                                        }
+                                    </td>
                                 </tr>
                             )
                         })
