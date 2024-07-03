@@ -40,9 +40,9 @@ const BrowseBooks = () => {
                                 <tr key={index} className='border-b border-gray-400 h-10'>
                                     <td className='text-center border-r border-gray-300 md:max-w-8'>{bookgest.AccNumber}</td>
                                     <td className='border-r border-gray-300 pl-3 md:max-w-36 max-w-20'>{bookgest.Title}</td>
-                                    <td className='text-center border-r border-gray-300 hidden md:table-cell'>BK123456</td>
-                                    <td className='border-r border-gray-300 pl-3 hidden md:table-cell'>Prof Kamal Perera</td>
-                                    <td className='text-center border-r border-gray-300 hidden md:table-cell'>1998</td>
+                                    <td className='text-center border-r border-gray-300 hidden md:table-cell md:max-w-36 max-w-20'>{bookgest.ISBNNumber}</td>
+                                    <td className='border-r border-gray-300 pl-3 hidden md:table-cell md:max-w-36 max-w-20'>{bookgest.Publisher}</td>
+                                    <td className='text-center border-r border-gray-300 hidden md:table-cell'>{bookgest.YearofPublication}</td>
                                     <td className='text-center'>Available</td>
                                 </tr>
                             )
