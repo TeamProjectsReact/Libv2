@@ -56,7 +56,9 @@ const SignIn = () => {
             </div>
                 <div className="md:mx-16 rounded bg-white py-4 px-8 mt-8">
                     <h1 className="text-gray-500 py-4">If you're Guest ? </h1>
-                    <button className="bg-purple-500 text-white font-semibold w-full py-2 px-4 rounded duration-500 hover:bg-purple-600">Browse Books</button>
+                    <Link to={'/BrowseBooks'}>
+                        <button className="bg-purple-500 text-white font-semibold w-full py-2 px-4 rounded duration-500 hover:bg-purple-600">Browse Books</button>
+                    </Link>                    
                 </div>
             </div>
             <div className="md:mx-[10%] py-[10%]">
