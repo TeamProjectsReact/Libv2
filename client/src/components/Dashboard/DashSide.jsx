@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import  secureLocalStorage  from  "react-secure-storage"
-import { BsBackpack2Fill, BsSpeedometer2, BsPersonVideo3, BsFileEarmarkText, BsPeople, BsPersonGear, BsPower, BsBook, BsPatchCheck, BsBuilding, BsFile, BsMortarboard, BsList, BsX, BsCalendarEvent, BsBell, BsFilesAlt, BsFileText, BsCashCoin, BsMortarboardFill, BsCaretDownFill, BsBoxArrowDownRight, BsTicketDetailedFill, BsFileTextFill, BsHouseGearFill, BsPassFill, BsCashStack, BsCarFrontFill, BsPersonArmsUp, BsPersonFillLock, BsBuildingFill, BsPeopleFill, BsPerson, BsPersonFill, BsPersonCircle, BsCaretUpFill, BsPersonWorkspace, BsTextParagraph } from "react-icons/bs";
+import { BsBackpack2Fill, BsSpeedometer2, BsPersonVideo3, BsFileEarmarkText, BsPeople, BsPersonGear, BsPower, BsBook, BsPatchCheck, BsBuilding, BsFile, BsMortarboard, BsList, BsX, BsCalendarEvent, BsBell, BsFilesAlt, BsFileText, BsCashCoin, BsMortarboardFill, BsCaretDownFill, BsBoxArrowDownRight, BsTicketDetailedFill, BsFileTextFill, BsHouseGearFill, BsPassFill, BsCashStack, BsCarFrontFill, BsPersonArmsUp, BsPersonFillLock, BsBuildingFill, BsPeopleFill, BsPerson, BsPersonFill, BsPersonCircle, BsCaretUpFill, BsPersonWorkspace, BsTextParagraph, BsBookFill } from "react-icons/bs";
 
 
 
@@ -21,7 +21,7 @@ const DashSide = () => {
 
     const SideLink = [
         {style: 'text-orange-500', id: 1, name: "Dashboard", link: "Home", icons: <BsSpeedometer2 />},    
-        {style: 'text-yellow-500', id: 2, name: "Books", link: "Leaves", icons: <BsBoxArrowDownRight />},  
+        {style: 'text-yellow-500', id: 2, name: "Books", link: "Books", icons: <BsBookFill />},  
         {style: 'text-green-500', id: 3, name: "Thesis", link: "Reservation", icons: <BsTextParagraph />},  
         {style: 'text-red-500', id: 4, name: "Users", link: "Users", icons: <BsPersonFill />},  
     ]
