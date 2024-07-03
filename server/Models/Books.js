@@ -14,7 +14,16 @@ const BookSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    authorEditor: {
+        type: String,
+    },
     description: {
+        type: String,
+    },
+    isbnNumber: {
+        type: String,
+    },
+    keywords: {
         type: String,
     },
     publisher: {
