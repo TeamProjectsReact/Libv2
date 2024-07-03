@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import  secureLocalStorage  from  "react-secure-storage"
 import axios from 'axios';
+import { BsPeopleFill } from 'react-icons/bs';
 
 const DashHome = () => {
     const navigate = useNavigate()
@@ -10,7 +11,7 @@ const DashHome = () => {
     const RoleUser = secureLocalStorage.getItem("Login2");
 
     const DashData = [
-        
+        {id: 1, name: "Employees", bgstyle: 'bg-green-400/20', borderStyle: 'border-green-500', icon: <BsPeopleFill />, value: <CountUp end={20} />, style: "text-green-500"},
     ]
 
     if(RoleUser !== null && EmailUser !== null){
