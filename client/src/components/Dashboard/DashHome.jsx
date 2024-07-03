@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import  secureLocalStorage  from  "react-secure-storage"
 import axios from 'axios';
-import { BsPeopleFill } from 'react-icons/bs';
+import { BsBook, BsBookFill, BsJournalCheck, BsJournalX, BsPeopleFill, BsTextParagraph } from 'react-icons/bs';
 import CountUp from 'react-countup'
 
 const DashHome = () => {
@@ -12,29 +12,51 @@ const DashHome = () => {
     const RoleUser = secureLocalStorage.getItem("Login2");
 
     const DashData = [
-        {id: 1, name: "Employees", bgstyle: 'bg-green-400/20', borderStyle: 'border-green-500', icon: <BsPeopleFill />, value: <CountUp end={20} />, style: "text-green-500"},
-        {id: 1, name: "Employees", bgstyle: 'bg-green-400/20', borderStyle: 'border-green-500', icon: <BsPeopleFill />, value: <CountUp end={20} />, style: "text-green-500"},
+        {id: 1, name: "Users", bgstyle: 'bg-green-400/20', borderStyle: 'border-green-500', icon: <BsPeopleFill />, value: <CountUp end={20} />, style: "text-green-500"},
+        {id: 2, name: "Books", bgstyle: 'bg-blue-400/20', borderStyle: 'border-blue-500', icon: <BsBookFill />, value: <CountUp end={20} />, style: "text-blue-500"},
+        {id: 3, name: "Thesis", bgstyle: 'bg-yellow-400/20', borderStyle: 'border-yellow-500', icon: <BsTextParagraph />, value: <CountUp end={20} />, style: "text-yellow-500"},
+        {id: 4, name: "Borrowed Books", bgstyle: 'bg-purple-400/20', borderStyle: 'border-purple-500', icon: <BsJournalCheck />, value: <CountUp end={20} />, style: "text-purple-500"},
+        {id: 5, name: "Selected Books", bgstyle: 'bg-red-400/20', borderStyle: 'border-red-500', icon: <BsJournalX />, value: <CountUp end={20} />, style: "text-red-500"},
+        {id: 6, name: "My Books", bgstyle: 'bg-red-400/20', borderStyle: 'border-red-500', icon: <BsJournalX />, value: <CountUp end={20} />, style: "text-red-500"},
     ]
 
     if(RoleUser !== null && EmailUser !== null){
         return (
             <div>
                 <div className="">
+                    <h1 className="text-xl text-gray-500 mb-4">Dashboard</h1>
                     <div className="md:grid grid-cols-4 gap-4 mr-4">
                     {
                         DashData.map((data) => {
                             if(RoleUser === "SuperAdmin" || RoleUser === "Director" || RoleUser === "Secretary"){
+                                if(data.id !== 6){
+                                    return(
+                                        <div className={`md:my-0 my-2 ${data.bgstyle} text-white px-4 py-8 rounded border-l-4 shadow-lg shadow-red ${data.borderStyle}`}>
+                                            <div className="flex justify-between">
+                                                <div className="">
+                                                    <h1 className={`text-3xl font-semibold ${data.style}`}>{data.value}</h1>
+                                                    <p className={`${data.style}`}>{data.name}</p> 
+                                                </div>
+                                                <div className="">
+                                                    <p className={`text-4xl ${data.style} pt-2`}>{data.icon}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    )
+                                }
+                            }
+                            else{
                                 return(
                                     <div className={`md:my-0 my-2 ${data.bgstyle} text-white px-4 py-8 rounded border-l-4 shadow-lg shadow-red ${data.borderStyle}`}>
-                                    <div className="flex justify-between">
-                                        <div className="">
-                                            <h1 className={`text-3xl font-semibold ${data.style}`}>{data.value}</h1>
-                                            <p className={`${data.style}`}>{data.name}</p> 
+                                        <div className="flex justify-between">
+                                            <div className="">
+                                                <h1 className={`text-3xl font-semibold ${data.style}`}>{data.value}</h1>
+                                                <p className={`${data.style}`}>{data.name}</p> 
+                                            </div>
+                                            <div className="">
+                                                <p className={`text-4xl ${data.style} pt-2`}>{data.icon}</p>
+                                            </div>
                                         </div>
-                                        <div className="">
-                                            <p className={`text-4xl ${data.style} pt-2`}>{data.icon}</p>
-                                        </div>
-                                    </div>
                                     </div>
                                 )
                             }
