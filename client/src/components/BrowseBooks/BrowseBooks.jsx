@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { BsPersonCircle } from 'react-icons/bs'
-
+import axios from 'axios'
 
 const [AllBooks, setAllBooks] = useState([])
 
-useEffect(() => {
-    try
+useEffect(() => {   
+    axios.get('http://localhost:5000/books/ViewGestBooks')
+    .then(res => setAllBooks(res.data.Result))
+    .catch(err => console.log(err))
 }, [])
 
 const BrowseBooks = () => {
