@@ -3,6 +3,6 @@ const BookController = require('../Controllers/BookController')
 
 const router = express.Router()
 
-router.get('/ViewGestBooks', BookController)
+router.get('/ViewGestBooks', BookController.GestViewBook)
 
 module.exports = router
