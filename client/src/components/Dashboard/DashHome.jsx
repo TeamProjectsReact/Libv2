@@ -9,7 +9,9 @@ const DashHome = () => {
     const EmailUser = secureLocalStorage.getItem("Login1");
     const RoleUser = secureLocalStorage.getItem("Login2");
 
-    
+    const DashData = [
+        
+    ]
 
     if(RoleUser !== null && EmailUser !== null){
         return (
