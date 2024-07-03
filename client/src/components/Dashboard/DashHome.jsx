@@ -20,6 +20,16 @@ const DashHome = () => {
         .catch(err => console.log(err))
     }, [])
 
+
+    // count users
+    const [CountUser, SetCountUser] = useState([])
+
+    useEffect(() => {
+        axios.get('http://localhost:5000/auth/CountUsers')
+        .then(res => SetCountUser(res.data.Result))
+        .catch(err => console.log(err))
+    }, [])
+
     const DashData = [
         {id: 1, name: "Users", bgstyle: 'bg-green-400/20', borderStyle: 'border-green-500', icon: <BsPeopleFill />, value: <CountUp end={20} />, style: "text-green-500"},
         {id: 2, name: "Books", bgstyle: 'bg-blue-400/20', borderStyle: 'border-blue-500', icon: <BsBookFill />, value: <CountUp end={CountBooks} />, style: "text-blue-500"},
