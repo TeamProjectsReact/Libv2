@@ -2,15 +2,14 @@ import React, { useEffect, useState } from 'react'
 import { BsPersonCircle } from 'react-icons/bs'
 import axios from 'axios'
 
-const [AllBooks, setAllBooks] = useState([])
-
-useEffect(() => {   
-    axios.get('http://localhost:5000/books/ViewGestBooks')
-    .then(res => setAllBooks(res.data.Result))
-    .catch(err => console.log(err))
-}, [])
-
 const BrowseBooks = () => {
+    const [AllBooks, setAllBooks] = useState([])
+
+    useEffect(() => {   
+        axios.get('http://localhost:5000/books/ViewGestBooks')
+        .then(res => setAllBooks(res.data.Result))
+        .catch(err => console.log(err))
+    }, [])
   return (
     <div className='bg-gray-200 py-4 px-8 min-h-screen'>
         <div className="flex justify-between">
