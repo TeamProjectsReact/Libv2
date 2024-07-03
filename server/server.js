@@ -18,6 +18,7 @@ app.use(express.json())
 
 // all routes
 app.use('/auth', authRoute)
+app.use('/books', BookRoute)
 
 app.listen(PORT, () => {
     console.log(`Server Running on PORT ${PORT}`)
