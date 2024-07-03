@@ -25,7 +25,7 @@ const DashHome = () => {
     const [CountUser, SetCountUser] = useState([])
 
     useEffect(() => {
-        axios.get('http://localhost:5000/auth/CountUsers')
+        axios.get('http://localhost:5000/user/CountUsers')
         .then(res => SetCountUser(res.data.Result))
         .catch(err => console.log(err))
     }, [])
