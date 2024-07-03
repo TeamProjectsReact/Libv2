@@ -11,17 +11,6 @@ const DashHome = () => {
     const EmailUser = secureLocalStorage.getItem("Login1");
     const RoleUser = secureLocalStorage.getItem("Login2");
 
-    const DashData = [
-        {id: 1, name: "Users", bgstyle: 'bg-green-400/20', borderStyle: 'border-green-500', icon: <BsPeopleFill />, value: <CountUp end={20} />, style: "text-green-500"},
-        {id: 2, name: "Books", bgstyle: 'bg-blue-400/20', borderStyle: 'border-blue-500', icon: <BsBookFill />, value: <CountUp end={20} />, style: "text-blue-500"},
-        {id: 3, name: "Thesis", bgstyle: 'bg-yellow-400/20', borderStyle: 'border-yellow-500', icon: <BsTextParagraph />, value: <CountUp end={20} />, style: "text-yellow-500"},
-        {id: 4, name: "Borrowed Books", bgstyle: 'bg-purple-400/20', borderStyle: 'border-purple-500', icon: <BsJournalCheck />, value: <CountUp end={20} />, style: "text-purple-500"},
-        {id: 5, name: "Selected Books", bgstyle: 'bg-red-400/20', borderStyle: 'border-red-500', icon: <BsJournalX />, value: <CountUp end={20} />, style: "text-red-500"},
-        {id: 6, name: "My Books", bgstyle: 'bg-green-400/20', borderStyle: 'border-green-500', icon: <BsJournals />, value: <CountUp end={20} />, style: "text-green-500"},
-        {id: 7, name: "My Selected Books", bgstyle: 'bg-blue-400/20', borderStyle: 'border-blue-500', icon: <BsJournalX />, value: <CountUp end={20} />, style: "text-blue-500"},
-        {id: 7, name: "My Borrowed Books", bgstyle: 'bg-yellow-400/20', borderStyle: 'border-yellow-500', icon: <BsJournalCheck />, value: <CountUp end={20} />, style: "text-yellow-500"},
-    ]
-
     // count books
     const [CountBooks, SetCountBooks] = useState([])
 
@@ -30,6 +19,17 @@ const DashHome = () => {
         .then(res => SetCountBooks(res.data.Result))
         .catch(err => console.log(err))
     }, [])
+
+    const DashData = [
+        {id: 1, name: "Users", bgstyle: 'bg-green-400/20', borderStyle: 'border-green-500', icon: <BsPeopleFill />, value: <CountUp end={20} />, style: "text-green-500"},
+        {id: 2, name: "Books", bgstyle: 'bg-blue-400/20', borderStyle: 'border-blue-500', icon: <BsBookFill />, value: <CountUp end={CountBooks} />, style: "text-blue-500"},
+        {id: 3, name: "Thesis", bgstyle: 'bg-yellow-400/20', borderStyle: 'border-yellow-500', icon: <BsTextParagraph />, value: <CountUp end={20} />, style: "text-yellow-500"},
+        {id: 4, name: "Borrowed Books", bgstyle: 'bg-purple-400/20', borderStyle: 'border-purple-500', icon: <BsJournalCheck />, value: <CountUp end={20} />, style: "text-purple-500"},
+        {id: 5, name: "Selected Books", bgstyle: 'bg-red-400/20', borderStyle: 'border-red-500', icon: <BsJournalX />, value: <CountUp end={20} />, style: "text-red-500"},
+        {id: 6, name: "My Books", bgstyle: 'bg-green-400/20', borderStyle: 'border-green-500', icon: <BsJournals />, value: <CountUp end={20} />, style: "text-green-500"},
+        {id: 7, name: "My Selected Books", bgstyle: 'bg-blue-400/20', borderStyle: 'border-blue-500', icon: <BsJournalX />, value: <CountUp end={20} />, style: "text-blue-500"},
+        {id: 7, name: "My Borrowed Books", bgstyle: 'bg-yellow-400/20', borderStyle: 'border-yellow-500', icon: <BsJournalCheck />, value: <CountUp end={20} />, style: "text-yellow-500"},
+    ]
 
     if(RoleUser !== null && EmailUser !== null){
         return (
