@@ -25,9 +25,9 @@ const BrowseBooks = () => {
             <table className='w-full '>
                 <thead className=''>
                     <tr className='bg-white h-16 text-gray-600 font-sembold border-b border-gray-400'>
-                        <th>Acc Number</th>
-                        <th>Book Name</th>
-                        <th>ISBN Number</th>
+                        <th className='max-w-8'>Acc Number</th>
+                        <th >Book Name</th>
+                        <th className='hidden md:table-cell'>ISBN Number</th>
                         <th className='hidden md:table-cell'>Publisher</th>
                         <th className='hidden md:table-cell'>Year of Publication</th>
                         <th>Status</th>
@@ -38,9 +38,9 @@ const BrowseBooks = () => {
                         AllBooks.map((bookgest, index) => {
                             return (
                                 <tr key={index} className='border-b border-gray-400 h-10'>
-                                    <td className='text-center border-r border-gray-300'>1</td>
-                                    <td className='border-r border-gray-300 pl-3'>{bookgest.Title}</td>
-                                    <td className='text-center border-r border-gray-300'>BK123456</td>
+                                    <td className='text-center border-r border-gray-300 md:max-w-8'>{bookgest.Acc.Number}</td>
+                                    <td className='border-r border-gray-300 pl-3 md:max-w-36 max-w-20'>{bookgest.Title}</td>
+                                    <td className='text-center border-r border-gray-300 hidden md:table-cell'>BK123456</td>
                                     <td className='border-r border-gray-300 pl-3 hidden md:table-cell'>Prof Kamal Perera</td>
                                     <td className='text-center border-r border-gray-300 hidden md:table-cell'>1998</td>
                                     <td className='text-center'>Available</td>
