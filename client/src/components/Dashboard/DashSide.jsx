@@ -22,7 +22,7 @@ const DashSide = () => {
     const SideLink = [
         {style: 'text-orange-500', id: 1, name: "Dashboard", link: "Home", icons: <BsSpeedometer2 />},    
         {style: 'text-yellow-500', id: 2, name: "Books", link: "Books", icons: <BsBookFill />},  
-        {style: 'text-green-500', id: 3, name: "Thesis", link: "Reservation", icons: <BsTextParagraph />},  
+        {style: 'text-green-500', id: 3, name: "Thesis", link: "Thesis", icons: <BsTextParagraph />},  
         {style: 'text-red-500', id: 4, name: "Users", link: "Users", icons: <BsPersonFill />},  
     ]
 
