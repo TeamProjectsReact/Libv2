@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import  secureLocalStorage  from  "react-secure-storage"
 import axios from 'axios';
 import { BsPeopleFill } from 'react-icons/bs';
+import CountUp from 'react-countup'
 
 const DashHome = () => {
     const navigate = useNavigate()
@@ -18,9 +19,9 @@ const DashHome = () => {
         return (
             <div>
                 {
-                          DashData.map((data) => {
-                            if(RoleUser === "SuperAdmin" || RoleUser === "Director" || RoleUser === "Secretary"){
-                              return(
+                    DashData.map((data) => {
+                        if(RoleUser === "SuperAdmin" || RoleUser === "Director" || RoleUser === "Secretary"){
+                            return(
                                 <div className={`md:my-0 my-2 ${data.bgstyle} text-white px-4 py-8 rounded border-l-4 shadow-lg shadow-red ${data.borderStyle}`}>
                                   <div className="flex justify-between">
                                       <div className="">
@@ -32,10 +33,10 @@ const DashHome = () => {
                                       </div>
                                   </div>
                                 </div>
-                              )
-                            }
-                          })
-                        }   
+                            )
+                        }
+                    })
+                }   
             </div>
         )
     }
