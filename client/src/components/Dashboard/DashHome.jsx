@@ -28,7 +28,7 @@ const DashHome = () => {
         {id: 5, name: "Selected Books", bgstyle: 'bg-red-400/20', borderStyle: 'border-red-500', icon: <BsJournalX />, value: <CountUp end={20} />, style: "text-red-500"},
         {id: 6, name: "My Books", bgstyle: 'bg-green-400/20', borderStyle: 'border-green-500', icon: <BsJournals />, value: <CountUp end={20} />, style: "text-green-500"},
         {id: 7, name: "My Selected Books", bgstyle: 'bg-blue-400/20', borderStyle: 'border-blue-500', icon: <BsJournalX />, value: <CountUp end={20} />, style: "text-blue-500"},
-        {id: 7, name: "My Borrowed Books", bgstyle: 'bg-yellow-400/20', borderStyle: 'border-yellow-500', icon: <BsJournalCheck />, value: <CountUp end={20} />, style: "text-yellow-500"},
+        {id: 8, name: "My Borrowed Books", bgstyle: 'bg-yellow-400/20', borderStyle: 'border-yellow-500', icon: <BsJournalCheck />, value: <CountUp end={20} />, style: "text-yellow-500"},
     ]
 
     if(RoleUser !== null && EmailUser !== null){
@@ -40,7 +40,7 @@ const DashHome = () => {
                     {
                         DashData.map((data) => {
                             if(RoleUser === "SuperAdmin" || RoleUser === "Director" || RoleUser === "Secretary"){
-                                if(data.id !== 6){
+                                if(data.id !== 6 && data.id !== 7 && data.id !== 8){
                                     return(
                                         <div className={`md:my-0 my-2 ${data.bgstyle} text-white px-4 py-8 rounded border-l-4 shadow-lg shadow-red ${data.borderStyle}`}>
                                             <div className="flex justify-between">
