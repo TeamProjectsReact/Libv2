@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import  secureLocalStorage  from  "react-secure-storage"
 import axios from 'axios';
 import CountUp from 'react-countup'
-import { BsBook } from 'react-icons/bs';
+import { BsBook, BsJournalBookmark, BsJournalCheck } from 'react-icons/bs';
 
 
 const Books = () => {
@@ -23,13 +23,18 @@ const Books = () => {
     }, [])
 
     const bookData = [
-      {id: 1, name: "Books", icon: <BsBook />, value: <CountUp end={CountBooks} />, bgColor: "bg-blue-500/30", borderColor: "border-blue-500", style: "text-blue-500"}
+      {id: 1, name: "Books", icon: <BsBook />, value: <CountUp end={CountBooks} />, bgColor: "bg-blue-500/30", borderColor: "border-blue-500", style: "text-blue-500"},
+      {id: 2, name: "Book Requests", icon: <BsJournalCheck />, value: <CountUp end={20} />, bgColor: "bg-green-500/30", borderColor: "border-green-500", style: "text-green-500"},
+      {id: 3, name: "Borrow Books", icon: <BsJournalBookmark />, value: <CountUp end={20} />, bgColor: "bg-red-500/30", borderColor: "border-red-500", style: "text-red-500"}
     ]
 
   if(RoleUser === "SuperAdmin" || RoleUser === "Director" || RoleUser === "Secretary"){
     return (
       <div>
-        <div className="md:grid grid-cols-4 gao-4">
+        <div className="">
+          <h1 className="text-xl text-gray-500 mb-4">Books</h1>
+        </div>
+        <div className="md:grid grid-cols-4 gap-4">
           {
             bookData.map((book) => {
               return (
