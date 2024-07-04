@@ -7,15 +7,24 @@ import { BsBook } from 'react-icons/bs';
 
 
 const Books = () => {
-
-  const bookData = [
-     {id: 1, name: "Books", icon: <BsBook />, value: <CountUp end={20} />, bgColor: "bg-blue-500/30", borderColor: "border-blue-500", style: "text-blue-500"}
-  ]
-
   const navigate = useNavigate()
   //curent login user
   const EmailUser = secureLocalStorage.getItem("Login1");
   const RoleUser = secureLocalStorage.getItem("Login2");
+
+
+    // count books
+    const [CountBooks, SetCountBooks] = useState([])
+
+    useEffect(() => {
+        axios.get('http://localhost:5000/books/CountBooks')
+        .then(res => SetCountBooks(res.data.Result))
+        .catch(err => console.log(err))
+    }, [])
+
+    const bookData = [
+      {id: 1, name: "Books", icon: <BsBook />, value: <CountUp end={CountBooks} />, bgColor: "bg-blue-500/30", borderColor: "border-blue-500", style: "text-blue-500"}
+    ]
 
   if(RoleUser === "SuperAdmin" || RoleUser === "Director" || RoleUser === "Secretary"){
     return (
