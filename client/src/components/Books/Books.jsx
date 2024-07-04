@@ -19,7 +19,27 @@ const Books = () => {
 
   if(RoleUser === "SuperAdmin" || RoleUser === "Director" || RoleUser === "Secretary"){
     return (
-      <div>Books</div>
+      <div>
+        <div className="">
+          {
+            bookData.map((book) => {
+              return (
+                <div className={`md:my-0 my-2 ${book.bgColor} text-white px-4 py-8 rounded border-l-4 shadow-lg shadow-red ${book.borderColor}`}>
+                    <div className="flex justify-between">
+                        <div className="">
+                            <h1 className={`text-3xl font-semibold ${book.style}`}>{book.value}</h1>
+                            <p className={`${book.style}`}>{book.name}</p> 
+                        </div>
+                        <div className="">
+                            <p className={`text-4xl ${book.style} pt-2`}>{book.icon}</p>
+                        </div>
+                    </div>
+                </div>
+              )
+            })
+          }
+        </div>
+      </div>
     )
   }
   else{
