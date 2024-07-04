@@ -29,7 +29,7 @@ const Books = () => {
   if(RoleUser === "SuperAdmin" || RoleUser === "Director" || RoleUser === "Secretary"){
     return (
       <div>
-        <div className="">
+        <div className="md:grid grid-cols-4 gao-4">
           {
             bookData.map((book) => {
               return (
