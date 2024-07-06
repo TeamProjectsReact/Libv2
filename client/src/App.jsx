@@ -9,7 +9,6 @@ import Books from "./components/Books/Books";
 import Thesis from "./components/Thesis/Thesis";
 import Users from "./components/Users/Users";
 import AllBooks from "./components/Books/AllBooks";
-import BookLists from "./components/Books/BookLists";
 
 
 export default function App() {
@@ -21,7 +20,7 @@ export default function App() {
         <Route path="/BrowseBooks" element={<BrowseBooks /> } />
         <Route path="/Dashboard/" element={<PrivateRoute ProtectRoute={<Dashboard /> }/> } >
           <Route path="Home" element={<PrivateRoute ProtectRoute={<DashHome /> } /> } />
-          <Route path="Books" element={<PrivateRoute ProtectRoute={<Books />} /> } />
+          <Route path="AllBooks" element={<PrivateRoute ProtectRoute={<AllBooks />} /> } />
           <Route path="Thesis" element={<PrivateRoute ProtectRoute={<Thesis /> } /> } />
           <Route path="Users" element={<PrivateRoute ProtectRoute={<Users /> } /> } />
         </Route>

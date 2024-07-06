@@ -1,8 +1,12 @@
 import React from 'react'
+import Books from './Books'
 
 const AllBooks = () => {
   return (
-    <div>AllBooks</div>
+    <div>
+        <Books />
+        <h1>Books</h1>
+    </div>
   )
 }
 
