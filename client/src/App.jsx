@@ -10,6 +10,7 @@ import Thesis from "./components/Thesis/Thesis";
 import Users from "./components/Users/Users";
 import AllBooks from "./components/Books/AllBooks";
 import BorrowReq from "./components/Books/BorrowReq";
+import BorrowedBooks from "./components/Books/BorrowedBooks";
 
 
 export default function App() {
@@ -23,6 +24,7 @@ export default function App() {
           <Route path="Home" element={<PrivateRoute ProtectRoute={<DashHome /> } /> } />
           <Route path="AllBooks" element={<PrivateRoute ProtectRoute={<AllBooks />} /> } />
           <Route path="BorrowReq" element={<PrivateRoute ProtectRoute={<BorrowReq /> } /> } />
+          <Route path="BorrowedBooks" element={<PrivateRoute ProtectRoute={<BorrowedBooks />} /> } />
           <Route path="Thesis" element={<PrivateRoute ProtectRoute={<Thesis /> } /> } />
           <Route path="Users" element={<PrivateRoute ProtectRoute={<Users /> } /> } />
         </Route>
