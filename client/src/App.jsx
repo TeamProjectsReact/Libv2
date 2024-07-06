@@ -19,7 +19,9 @@ export default function App() {
         <Route path="/BrowseBooks" element={<BrowseBooks /> } />
         <Route path="/Dashboard/" element={<PrivateRoute ProtectRoute={<Dashboard /> }/> } >
           <Route path="Home" element={<PrivateRoute ProtectRoute={<DashHome /> } /> } />
-          <Route path="Books" element={<PrivateRoute ProtectRoute={<Books /> } /> } />
+          <Route path="Books/" element={<PrivateRoute ProtectRoute={<Books /> } /> } >
+            
+          </Route>
           <Route path="Thesis" element={<PrivateRoute ProtectRoute={<Thesis /> } /> } />
           <Route path="Users" element={<PrivateRoute ProtectRoute={<Users /> } /> } />
         </Route>
