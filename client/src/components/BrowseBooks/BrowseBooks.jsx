@@ -12,7 +12,22 @@ const BrowseBooks = () => {
         .then(res => setAllBooks(res.data.Result))
         .catch(err => console.log(err))
     }, [])
+
+    const [searchTerm, setSearchTerm] = useState('');
+
+    const filteredBooks = AllBooks.filter(book =>
+        book.Title.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
   return (
+    // <div>
+
+    //     {books.filter(book => book.toLowerCase().includes(searchTerm.toLowerCase())).map((book, index) => (
+    //         <li key={index}>{book}</li>
+    //     ))}
+    //     </ul>
+    // </div>
+
     <div className='bg-gray-200 py-4 px-8 min-h-screen'>
         <div className="flex justify-between">
             <div className="text-gray-500">
@@ -28,6 +43,16 @@ const BrowseBooks = () => {
                 <button className='bg-purple-500 text-white py-2 px-4 rounded'>Back</button>
             </Link>
         </div>
+        <div className="my-4">
+            <input
+                type="text"
+                placeholder="Search books..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className='h-12 pl-2 w-full'
+            />
+        </div>
+        
         <div className="my-8">
             <table className='w-full '>
                 <thead className=''>
@@ -42,7 +67,7 @@ const BrowseBooks = () => {
                 </thead>
                 <tbody className='bg-white'>
                     {
-                        AllBooks.map((bookgest, index) => {
+                        filteredBooks.map((bookgest, index) => {
                             return (
                                 <tr key={index} className='border-b border-gray-400 h-10'>
                                     <td className='text-center border-r border-gray-300 md:max-w-8'>{bookgest.AccNumber}</td>
