@@ -17,6 +17,12 @@ const AllBooks = () => {
           <div className="my-8">
             <h1 className="text-xl font-semibold text-gray-500">Search Books</h1>
             <hr />
+
+            <form>
+              <div className="md:grid grid-cols-4">
+                
+              </div>
+            </form>
           </div>
       </div>
     )
