@@ -16,7 +16,7 @@ const BrowseBooks = () => {
     const [searchTerm, setSearchTerm] = useState('');
 
     const filteredBooks = AllBooks.filter(book =>
-        book.Title.toLowerCase().includes(searchTerm.toLowerCase())
+        book.Title.toLowerCase().includes(searchTerm.toLowerCase())  
     );
 
   return (
