@@ -29,7 +29,7 @@ const Books = () => {
       {id: 4, link: 'AddNewBook', name: "Add New Book", icon: <BsJournalPlus />, value: "#", bgColor: "bg-green-500", borderColor: "", style: "text-white"}
     ]
 
-  if(RoleUser === "SuperAdmin" || RoleUser === "Director" || RoleUser === "Secretary"){
+  if(RoleUser !== null && EmailUser !== null){
     return (
       <div>
         <div className="">
@@ -38,21 +38,42 @@ const Books = () => {
         <div className="md:grid grid-cols-4 gap-4">
           {
             bookData.map((book) => {
-              return (
-                <a href={book.link}>
-                  <div className={`md:my-0 my-2 ${book.bgColor} text-white px-4 py-8 rounded border-l-4 shadow-lg shadow-red ${book.borderColor}`}>
-                      <div className="flex justify-between">
-                          <div className="">
-                              <h1 className={`text-3xl font-semibold ${book.style}`}>{book.value}</h1>
-                              <p className={`${book.style}`}>{book.name}</p> 
-                          </div>
-                          <div className="">
-                              <p className={`text-4xl ${book.style} pt-2`}>{book.icon}</p>
+              if(RoleUser === "SuperAdmin" || RoleUser === "Director" || RoleUser === "Secretary"){
+                return (
+                  <a href={book.link}>
+                    <div className={`md:my-0 my-2 ${book.bgColor} text-white px-4 py-8 rounded border-l-4 shadow-lg shadow-red ${book.borderColor}`}>
+                        <div className="flex justify-between">
+                            <div className="">
+                                <h1 className={`text-3xl font-semibold ${book.style}`}>{book.value}</h1>
+                                <p className={`${book.style}`}>{book.name}</p> 
+                            </div>
+                            <div className="">
+                                <p className={`text-4xl ${book.style} pt-2`}>{book.icon}</p>
+                            </div>
+                        </div>
+                    </div>
+                  </a>
+                )
+              }
+              else{
+                if(book.id !== 2 && book.id !== 3 && book.id !== 4){
+                  return (
+                    <a href={book.link}>
+                      <div className={`md:my-0 my-2 ${book.bgColor} text-white px-4 py-8 rounded border-l-4 shadow-lg shadow-red ${book.borderColor}`}>
+                          <div className="flex justify-between">
+                              <div className="">
+                                  <h1 className={`text-3xl font-semibold ${book.style}`}>{book.value}</h1>
+                                  <p className={`${book.style}`}>{book.name}</p> 
+                              </div>
+                              <div className="">
+                                  <p className={`text-4xl ${book.style} pt-2`}>{book.icon}</p>
+                              </div>
                           </div>
                       </div>
-                  </div>
-                </a>
-              )
+                    </a>
+                  )
+                }
+              }
             })
           }
         </div>
