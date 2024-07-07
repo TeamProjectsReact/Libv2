@@ -14,7 +14,10 @@ const AllBooks = () => {
     return (
       <div>
           <Books />
-          <h1>Books</h1>
+          <div className="my-8">
+            <h1 className="text-xl font-semibold text-gray-500">Search Books</h1>
+            <hr />
+          </div>
       </div>
     )
   }
