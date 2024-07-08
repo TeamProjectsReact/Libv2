@@ -6,5 +6,6 @@ const router = express.Router()
 router.get('/ViewGestBooks', BookController.GestViewBook)
 router.get('/CountBooks', BookController.CountAllBooks)
 router.get('/SearchBook', BookController.SearchBooks)
+router.get('/BkLastID', BookController.LastBookID)
 
 module.exports = router
