@@ -18,7 +18,7 @@ const AllBooks = () => {
             <h1 className="text-xl font-semibold text-gray-500">Search Books</h1>
             <hr />
 
-            <form>
+            <form onSubmit={headleBookSearch}>
               <div className="md:grid grid-cols-4 gap-4">
                 <div className="my-2">
                   <label htmlFor="" className='text-gray-500'>Book Title : </label>
@@ -54,6 +54,10 @@ const AllBooks = () => {
                   <label htmlFor="" className='text-gray-500'>Place of Publication : </label>
                   <input type="text" name="" id="" className="w-full pl-2 h-12 bg-gray-200 rounded mt-2" placeholder='Books Place of Publication'/>
                 </div>
+              </div>
+
+              <div className="my-4">
+                <input type="submit" value="Search Book" className="py-4 px-8 rounded bg-purple-500 text-white duration-500 hover:bg-purple-600 cursor-pointer" />
               </div>
             </form>
           </div>
