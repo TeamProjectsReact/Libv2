@@ -11,11 +11,12 @@ const AddNewBook = () => {
   const RoleUser = secureLocalStorage.getItem("Login2");
 
   // get last book ID
-  const [BookLastID, SetBookLastID] = useState([])
+  // count books
+  const [CountBooks, SetCountBooks] = useState([])
 
   useEffect(() => {
-      axios.get('http://localhost:5000/books/BkLastID')
-      .then(res => SetBookLastID(res.data.Result))
+      axios.get('http://localhost:5000/books/CountBooks')
+      .then(res => SetCountBooks(res.data.Result))
       .catch(err => console.log(err))
   }, [])
 
