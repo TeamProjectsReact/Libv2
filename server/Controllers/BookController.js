@@ -78,7 +78,11 @@ const BookController = {
         catch(err){
             console.log(err)
         }
-    }
+    },
+
+    LastBookID: async(req, res) => {
+        
+    },
 }
 
 module.exports = BookController
