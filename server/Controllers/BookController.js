@@ -83,14 +83,14 @@ const BookController = {
     LastBookID: async(req, res) => {
        try{
             const lastBook = await Books.findOne().sort({ AccNumber: -1 }).limit(1);
-            console.log(lastBook.AccNumber)
+            // console.log(lastBook.AccNumber)
 
-            // if(lastBook){
-            //     return res.json({ Result: lastBook.accNumber })
-            // }
-            // else{
-            //     return res.json({ Error: "Internal Server Error"})
-            // }
+            if(lastBook){
+                return res.json({ Result: lastBook.AccNumber })
+            }
+            else{
+                return res.json({ Error: "Internal Server Error"})
+            }
        }    
        catch(err) {
             console.log(err)
