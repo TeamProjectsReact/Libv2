@@ -142,6 +142,20 @@ const AllBooks = () => {
                                   })()
                               }
                           </td>
+                          <td className='text-center'>
+                              {
+                                  (() => {
+                                      if(RoleUser === "SuperAdmin" || RoleUser === "Director" || RoleUser === "Secretary"){
+                                          return (
+                                              <div className="flex">
+                                                <button>Update</button>
+                                                <button>Update</button>
+                                              </div>
+                                          )
+                                      }
+                                  })()
+                              }
+                          </td>
                       </tr>
                       )
                     })
