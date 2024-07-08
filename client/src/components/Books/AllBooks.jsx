@@ -10,6 +10,11 @@ const AllBooks = () => {
   const EmailUser = secureLocalStorage.getItem("Login1");
   const RoleUser = secureLocalStorage.getItem("Login2");
 
+  // book search
+  const headleBookSearch = () => {
+    
+  }
+
   if(RoleUser !== null && EmailUser !== null){
     return (
       <div>
