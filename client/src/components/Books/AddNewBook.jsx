@@ -14,12 +14,12 @@ const AddNewBook = () => {
 
               <div className="my-2">
                 <label htmlFor="" className="text-gray-500">Book Title</label>
-                <input type="text" name="" id="" className="h-12 pl-2 w-full my-2 bg-gray-200" placeholder='Book Title'/>
+                <input type="text" name="" id="" className="h-12 pl-2 w-full my-2 bg-gray-200 rounded" placeholder='Book Title'/>
               </div>
 
               <div className="my-2">
                 <label htmlFor="" className="text-gray-500">Book Title</label>
-                <input type="text" name="" id="" className="h-12 pl-2 w-full my-2 bg-gray-200" placeholder='Book Title'/>
+                <input type="text" name="" id="" className="h-12 pl-2 w-full my-2 bg-gray-200 rounded" placeholder='Book Title'/>
               </div>
 
             </div>
