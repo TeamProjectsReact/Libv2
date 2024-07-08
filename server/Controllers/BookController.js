@@ -31,6 +31,23 @@ const BookController = {
         catch (err) {
             console.log(err)
         }
+    },
+
+    SearchBooks: async(req, res) => {
+        try{
+            const {
+                Title,
+                Author,
+                ISBNNumber,
+                Keywords,
+                Publisher,
+                YearofPublication,
+                PlaceofPublisher
+            } = req.query;
+        }
+        catch(err){
+            console.log(err)
+        }
     }
 }
 
