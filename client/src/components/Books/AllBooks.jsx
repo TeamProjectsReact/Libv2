@@ -29,7 +29,7 @@ const AllBooks = () => {
     e.preventDefault();
 
     try{
-      axios.get('http://localhost:5000/books/SearchBook', {params: searchBooks })
+      const res = await axios.get('http://localhost:5000/books/SearchBook', {params: searchBooks })
       .then(SetBooksSearchData(res.data.Result))
       .catch(err => console.log(err))
     }
@@ -120,9 +120,24 @@ const AllBooks = () => {
                   {
                     BooksSearchData.map((bookSearch, index) => {
                       return (
-                        <tr>
-                          
-                        </tr>
+                        <tr key={index} className='border-b border-gray-400 h-10'>
+                          <td className='text-center border-r border-gray-300 md:max-w-8'>{bookSearch.AccNumber}</td>
+                          <td className='border-r border-gray-300 pl-3 md:max-w-36 max-w-20'>{bookSearch.Title}</td>
+                          <td className='text-center border-r border-gray-300 hidden md:table-cell md:max-w-36 max-w-20'>{bookSearch.ISBNNumber}</td>
+                          <td className='border-r border-gray-300 pl-3 hidden md:table-cell md:max-w-36 max-w-20'>{bookSearch.Publisher}</td>
+                          <td className='text-center border-r border-gray-300 hidden md:table-cell'>{bookSearch.YearofPublication}</td>
+                          <td className='text-center'>
+                              {
+                                  (() => {
+                                      if(bookSearch.Status === "Available"){
+                                          return (
+                                              <p className="text-green-500 font-semibold">Available</p>
+                                          )
+                                      }
+                                  })()
+                              }
+                          </td>
+                      </tr>
                       )
                     })
                   }
