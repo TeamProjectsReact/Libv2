@@ -14,7 +14,9 @@ const AddNewBook = () => {
   const [BookLastID, SetBookLastID] = useState([])
 
   useEffect(() => {
-
+      axios.get('http://localhost:5000/books/BkLastID')
+      .then(SetBookLastID(res.data.Result))
+      .catch(err => console.log(err))
   }, [])
 
   if(RoleUser === "SuperAdmin" || RoleUser === "Director" || RoleUser === "Secretary"){
