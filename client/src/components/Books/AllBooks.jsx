@@ -31,7 +31,6 @@ const AllBooks = () => {
     try{
       const res = await axios.get('http://localhost:5000/books/SearchBook', {params: searchBooks })
       SetBooksSearchData(res.data.Result)
-      .catch(err => console.log(err))
     }
     catch (err) {
       console.log(err)
