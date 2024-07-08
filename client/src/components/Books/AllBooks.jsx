@@ -20,7 +20,10 @@ const AllBooks = () => {
 
             <form>
               <div className="md:grid grid-cols-4">
-                
+                <div className="my-2">
+                  <label htmlFor="">Book Title : </label>
+                  <input type="text" name="" id="" className="w-full pl-2 h-12 bg-gray-200 rounded" placeholder='Books Title'/>
+                </div>
               </div>
             </form>
           </div>
