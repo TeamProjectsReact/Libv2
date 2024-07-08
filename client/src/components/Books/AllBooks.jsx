@@ -19,20 +19,20 @@ const AllBooks = () => {
             <hr />
 
             <form>
-              <div className="md:grid grid-cols-4">
+              <div className="md:grid grid-cols-4 gap-4">
                 <div className="my-2">
-                  <label htmlFor="">Book Title : </label>
-                  <input type="text" name="" id="" className="w-full pl-2 h-12 bg-gray-200 rounded" placeholder='Books Title'/>
+                  <label htmlFor="" className='text-gray-500'>Book Title : </label>
+                  <input type="text" name="" id="" className="w-full pl-2 h-12 bg-gray-200 rounded mt-2" placeholder='Books Title'/>
                 </div>
 
                 <div className="my-2">
-                  <label htmlFor="">Author / Editor : </label>
-                  <input type="text" name="" id="" className="w-full pl-2 h-12 bg-gray-200 rounded" placeholder='Books Author or Editor'/>
+                  <label htmlFor="" className='text-gray-500'>Author / Editor : </label>
+                  <input type="text" name="" id="" className="w-full pl-2 h-12 bg-gray-200 rounded mt-2" placeholder='Books Author or Editor'/>
                 </div>
 
                 <div className="my-2">
-                  <label htmlFor="">ISBN Number : </label>
-                  <input type="text" name="" id="" className="w-full pl-2 h-12 bg-gray-200 rounded" placeholder='Books ISBN Number'/>
+                  <label htmlFor="" className='text-gray-500'>ISBN Number : </label>
+                  <input type="text" name="" id="" className="w-full pl-2 h-12 bg-gray-200 rounded mt-2" placeholder='Books ISBN Number'/>
                 </div>
               </div>
             </form>
