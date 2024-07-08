@@ -5,7 +5,7 @@ const AddNewBook = () => {
   return (
     <div>
         <Books />
-        <h1 className="">AddNewBook</h1>
+        <h1 className="text-gray-500 font-semibold text-xl">AddNewBook</h1>
     </div>
   )
 }
