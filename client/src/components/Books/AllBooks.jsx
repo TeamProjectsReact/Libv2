@@ -97,6 +97,13 @@ const AllBooks = () => {
               </div>
             </form>
           </div>
+
+          <hr />
+
+          <div className="">
+            <h1 className="text-xl text-gray-500 font-semibold mt-8">Book Result</h1>
+            <hr />
+          </div>
       </div>
     )
   }
