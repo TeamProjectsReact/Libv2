@@ -22,10 +22,16 @@ const AllBooks = () => {
   })
 
   // book search
-  const headleBookSearch = () => {
+  const headleBookSearch = async () => {
     e.preventDefault();
 
-    console.log(searchBooks)
+    try{
+
+    }
+    catch (err) {
+      console.log(err)
+    }
+
   }
 
   if(RoleUser !== null && EmailUser !== null){
