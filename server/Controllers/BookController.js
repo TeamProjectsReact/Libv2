@@ -79,23 +79,6 @@ const BookController = {
             console.log(err)
         }
     },
-
-    LastBookID: async(req, res) => {
-       try{
-            const lastBook = await Books.findOne().sort({ AccNumber: -1 }).limit(1);
-            // console.log(lastBook)
-
-            if(lastBook){
-                return res.json({ Result: lastBook.accNumber })
-            }
-            else{
-                return res.json({ Error: "Internal Server Error"})
-            }
-       }    
-       catch(err) {
-            console.log(err)
-       } 
-    },
 }
 
 module.exports = BookController
