@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 const BookSchema = new mongoose.Schema({
-    accNumber: {
+    AccNumber: {
         type: Number,
         required: true,
         unique: true,
