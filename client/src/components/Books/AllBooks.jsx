@@ -104,7 +104,22 @@ const AllBooks = () => {
             <h1 className="text-xl text-gray-500 font-semibold mt-8">Book Result</h1>
             <hr />
 
-            
+            <table className="w-full">
+              <thead className=''>
+                    <tr className='bg-white h-16 text-gray-600 font-sembold border-b border-gray-400'>
+                        <th className='max-w-8'>Acc Number</th>
+                        <th >Book Name</th>
+                        <th className='hidden md:table-cell'>ISBN Number</th>
+                        <th className='hidden md:table-cell'>Publisher</th>
+                        <th className='hidden md:table-cell'>Year of Publication</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                  
+                </tbody>
+            </table>
           </div>
       </div>
     )
