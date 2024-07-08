@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import  secureLocalStorage  from  "react-secure-storage"
 import axios from 'axios';
+import { BsEyeFill, BsPenFill } from 'react-icons/bs';
 
 const AllBooks = () => {
   const navigate = useNavigate()
@@ -112,7 +113,7 @@ const AllBooks = () => {
             <table className="w-full">
               <thead className=''>
                     <tr className='bg-white h-16 text-gray-600 font-sembold border-b border-gray-400'>
-                        <th className='max-w-8'>Acc Number</th>
+                        <th className='max-w-8 hidden md:table-cell'>Acc Number</th>
                         <th >Book Name</th>
                         <th className='hidden md:table-cell'>ISBN Number</th>
                         <th className='hidden md:table-cell'>Publisher</th>
@@ -126,7 +127,7 @@ const AllBooks = () => {
                     BooksSearchData.map((bookSearch, index) => {
                       return (
                         <tr key={index} className='border-b border-gray-400 h-10'>
-                          <td className='text-center border-r border-gray-300 md:max-w-8'>{bookSearch.AccNumber}</td>
+                          <td className='text-center border-r border-gray-300 md:max-w-8 hidden md:table-cell'>{bookSearch.AccNumber}</td>
                           <td className='border-r border-gray-300 pl-3 md:max-w-36 max-w-20'>{bookSearch.Title}</td>
                           <td className='text-center border-r border-gray-300 hidden md:table-cell md:max-w-36 max-w-20'>{bookSearch.ISBNNumber}</td>
                           <td className='border-r border-gray-300 pl-3 hidden md:table-cell md:max-w-36 max-w-20'>{bookSearch.Publisher}</td>
@@ -147,9 +148,9 @@ const AllBooks = () => {
                                   (() => {
                                       if(RoleUser === "SuperAdmin" || RoleUser === "Director" || RoleUser === "Secretary"){
                                           return (
-                                              <div className="flex">
-                                                <button>Update</button>
-                                                <button>Update</button>
+                                              <div className="md:flex">
+                                                <div className='cursor-pointer py-2 px-2 my-2 ml-2 rounded bg-blue-500 text-white duration-500 hover:bg-blue-600 flex text-sm'><BsPenFill className=''/> <span className='pl-2'>Update</span></div>
+                                                <div className='cursor-pointer py-2 px-2 my-2 ml-2 rounded bg-purple-500 text-white duration-500 hover:bg-purple-600 flex text-sm'><BsEyeFill className=''/> <span className='pl-2'>View</span></div>
                                               </div>
                                           )
                                       }
