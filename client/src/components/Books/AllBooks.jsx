@@ -117,7 +117,15 @@ const AllBooks = () => {
                     </tr>
                 </thead>
                 <tbody>
-                  
+                  {
+                    BooksSearchData.map((bookSearch, index) => {
+                      return (
+                        <tr>
+                          
+                        </tr>
+                      )
+                    })
+                  }
                 </tbody>
             </table>
           </div>
