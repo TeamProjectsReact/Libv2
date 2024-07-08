@@ -36,13 +36,23 @@ const AllBooks = () => {
                 </div>
 
                 <div className="my-2">
-                  <label htmlFor="" className='text-gray-500'>ISBN Number : </label>
-                  <input type="text" name="" id="" className="w-full pl-2 h-12 bg-gray-200 rounded mt-2" placeholder='Books ISBN Number'/>
+                  <label htmlFor="" className='text-gray-500'>Keywords : </label>
+                  <input type="text" name="" id="" className="w-full pl-2 h-12 bg-gray-200 rounded mt-2" placeholder='Books Keywords'/>
                 </div>
 
                 <div className="my-2">
-                  <label htmlFor="" className='text-gray-500'>ISBN Number : </label>
-                  <input type="text" name="" id="" className="w-full pl-2 h-12 bg-gray-200 rounded mt-2" placeholder='Books ISBN Number'/>
+                  <label htmlFor="" className='text-gray-500'>Publisher : </label>
+                  <input type="text" name="" id="" className="w-full pl-2 h-12 bg-gray-200 rounded mt-2" placeholder='Books Publisher'/>
+                </div>
+
+                <div className="my-2">
+                  <label htmlFor="" className='text-gray-500'>Year of Publication : </label>
+                  <input type="text" name="" id="" className="w-full pl-2 h-12 bg-gray-200 rounded mt-2" placeholder='Books Year of Publication'/>
+                </div>
+
+                <div className="my-2">
+                  <label htmlFor="" className='text-gray-500'>Place of Publication : </label>
+                  <input type="text" name="" id="" className="w-full pl-2 h-12 bg-gray-200 rounded mt-2" placeholder='Books Place of Publication'/>
                 </div>
               </div>
             </form>
