@@ -81,7 +81,14 @@ const BookController = {
     },
 
     LastBookID: async(req, res) => {
-        
+       try{
+            const lastBook = await Books.findOne().sort({ AccNumber: -1 }).limit(1);
+
+            console.log(lastBook)
+       }    
+       catch(err) {
+            console.log(err)
+       } 
     },
 }
 
