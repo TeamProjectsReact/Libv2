@@ -24,6 +24,16 @@ const AllBooks = () => {
                   <label htmlFor="">Book Title : </label>
                   <input type="text" name="" id="" className="w-full pl-2 h-12 bg-gray-200 rounded" placeholder='Books Title'/>
                 </div>
+
+                <div className="my-2">
+                  <label htmlFor="">Author / Editor : </label>
+                  <input type="text" name="" id="" className="w-full pl-2 h-12 bg-gray-200 rounded" placeholder='Books Author or Editor'/>
+                </div>
+
+                <div className="my-2">
+                  <label htmlFor="">ISBN Number : </label>
+                  <input type="text" name="" id="" className="w-full pl-2 h-12 bg-gray-200 rounded" placeholder='Books ISBN Number'/>
+                </div>
               </div>
             </form>
           </div>
