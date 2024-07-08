@@ -86,7 +86,7 @@ const BookController = {
             // console.log(lastBook)
 
             if(lastBook){
-                return res.json({ Result: lastBook.AccNumber })
+                return res.json({ Result: lastBook.accNumber })
             }
             else{
                 return res.json({ Error: "Internal Server Error"})
