@@ -15,7 +15,7 @@ const AddNewBook = () => {
 
   useEffect(() => {
       axios.get('http://localhost:5000/books/BkLastID')
-      .then(SetBookLastID(res.data.Result))
+      .then(res => SetBookLastID(res.data.Result))
       .catch(err => console.log(err))
   }, [])
 
