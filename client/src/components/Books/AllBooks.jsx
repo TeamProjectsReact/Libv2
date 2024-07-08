@@ -10,6 +10,17 @@ const AllBooks = () => {
   const EmailUser = secureLocalStorage.getItem("Login1");
   const RoleUser = secureLocalStorage.getItem("Login2");
 
+  // useState for books search
+  const [searchBooks, SetsearchBooks] = useState({
+    Title: '',
+    Author: '',
+    ISBNNumber: '',
+    Keywords: '',
+    Publisher: '',
+    YearofPublication: '',
+    PlaceofPublisher: '',
+  })
+
   // book search
   const headleBookSearch = () => {
     e.preventDefault();
