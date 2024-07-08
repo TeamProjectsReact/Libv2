@@ -24,6 +24,8 @@ const AllBooks = () => {
   // book search
   const headleBookSearch = () => {
     e.preventDefault();
+
+    console.log(searchBooks)
   }
 
   if(RoleUser !== null && EmailUser !== null){
