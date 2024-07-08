@@ -30,7 +30,7 @@ const AllBooks = () => {
 
     try{
       axios.get('http://localhost:5000/books/SearchBook', {params: searchBooks })
-      .then()
+      .then(SetBooksSearchData(res.data.Result))
       .catch(err => console.log(err))
     }
     catch (err) {
