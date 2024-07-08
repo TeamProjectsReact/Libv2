@@ -68,8 +68,8 @@ const BookController = {
             const BookData = await Books.find(query);
 
             if(BookData){
-                // return res.json({ Result: BookData })
-                console.log(BookData)
+                return res.json({ Result: BookData })
+                // console.log(BookData)
             }   
             else{
                 return res.json({ Error: "No Book Found"})
