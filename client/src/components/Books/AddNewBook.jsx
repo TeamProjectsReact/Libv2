@@ -10,6 +10,13 @@ const AddNewBook = () => {
   const EmailUser = secureLocalStorage.getItem("Login1");
   const RoleUser = secureLocalStorage.getItem("Login2");
 
+  // get last book ID
+  const [BookLastID, SetBookLastID] = useState([])
+
+  useEffect(() => {
+
+  }, [])
+
   if(RoleUser === "SuperAdmin" || RoleUser === "Director" || RoleUser === "Secretary"){
     return (
       <div>
@@ -41,7 +48,7 @@ const AddNewBook = () => {
     useEffect(() => {
       localStorage.clear()
       navigate('/')
-    })
+    }, [])
   }
 }
 
