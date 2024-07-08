@@ -38,37 +38,44 @@ const AllBooks = () => {
               <div className="md:grid grid-cols-4 gap-4">
                 <div className="my-2">
                   <label htmlFor="" className='text-gray-500'>Book Title : </label>
-                  <input type="text" name="" id="" className="w-full pl-2 h-12 bg-gray-200 rounded mt-2" placeholder='Books Title'/>
+                  <input type="text" name="" id="" className="w-full pl-2 h-12 bg-gray-200 rounded mt-2" placeholder='Books Title'
+                  onChange={e => SetsearchBooks({...searchBooks, Title:e.target.value})}/>
                 </div>
 
                 <div className="my-2">
                   <label htmlFor="" className='text-gray-500'>Author / Editor : </label>
-                  <input type="text" name="" id="" className="w-full pl-2 h-12 bg-gray-200 rounded mt-2" placeholder='Books Author or Editor'/>
+                  <input type="text" name="" id="" className="w-full pl-2 h-12 bg-gray-200 rounded mt-2" placeholder='Books Author or Editor'
+                  onChange={e => SetsearchBooks({...searchBooks, Author:e.target.value})}/>
                 </div>
 
                 <div className="my-2">
                   <label htmlFor="" className='text-gray-500'>ISBN Number : </label>
-                  <input type="text" name="" id="" className="w-full pl-2 h-12 bg-gray-200 rounded mt-2" placeholder='Books ISBN Number'/>
+                  <input type="text" name="" id="" className="w-full pl-2 h-12 bg-gray-200 rounded mt-2" placeholder='Books ISBN Number'
+                  onChange={e => SetsearchBooks({...searchBooks, ISBNNumber:e.target.value})}/>
                 </div>
 
                 <div className="my-2">
                   <label htmlFor="" className='text-gray-500'>Keywords : </label>
-                  <input type="text" name="" id="" className="w-full pl-2 h-12 bg-gray-200 rounded mt-2" placeholder='Books Keywords'/>
+                  <input type="text" name="" id="" className="w-full pl-2 h-12 bg-gray-200 rounded mt-2" placeholder='Books Keywords'
+                  onChange={e => SetsearchBooks({...searchBooks, Keywords:e.target.value})}/>
                 </div>
 
                 <div className="my-2">
                   <label htmlFor="" className='text-gray-500'>Publisher : </label>
-                  <input type="text" name="" id="" className="w-full pl-2 h-12 bg-gray-200 rounded mt-2" placeholder='Books Publisher'/>
+                  <input type="text" name="" id="" className="w-full pl-2 h-12 bg-gray-200 rounded mt-2" placeholder='Books Publisher'
+                  onChange={e => SetsearchBooks({...searchBooks, Publisher:e.target.value})}/>
                 </div>
 
                 <div className="my-2">
                   <label htmlFor="" className='text-gray-500'>Year of Publication : </label>
-                  <input type="text" name="" id="" className="w-full pl-2 h-12 bg-gray-200 rounded mt-2" placeholder='Books Year of Publication'/>
+                  <input type="text" name="" id="" className="w-full pl-2 h-12 bg-gray-200 rounded mt-2" placeholder='Books Year of Publication'
+                  onChange={e => SetsearchBooks({...searchBooks, YearofPublication:e.target.value})}/>
                 </div>
 
                 <div className="my-2">
                   <label htmlFor="" className='text-gray-500'>Place of Publication : </label>
-                  <input type="text" name="" id="" className="w-full pl-2 h-12 bg-gray-200 rounded mt-2" placeholder='Books Place of Publication'/>
+                  <input type="text" name="" id="" className="w-full pl-2 h-12 bg-gray-200 rounded mt-2" placeholder='Books Place of Publication'
+                  onChange={e => SetsearchBooks({...searchBooks, PlaceofPublisher:e.target.value})}/>
                 </div>
               </div>
 
