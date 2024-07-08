@@ -25,7 +25,7 @@ const AllBooks = () => {
   const [BooksSearchData, SetBooksSearchData] = useState([])
 
   // book search
-  const headleBookSearch = async () => {
+  const headleBookSearch = async (e) => {
     e.preventDefault();
 
     try{
