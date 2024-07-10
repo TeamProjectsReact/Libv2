@@ -98,8 +98,23 @@ const BookController = {
     },
     AddnewBook: async (req, res) => {
         try{
-            console.log(req.body)
-            // const checkbook = await Books.findOne({ ISBNNumber })
+            // console.log(req.body)
+            
+            const {
+                AccNumber,
+                Title,
+                ClassNo,
+                AuthorEditor1,
+                AuthorEditor2,
+                Discription,
+                ISBNNumber,
+                Keywords1,
+                Keywords2,
+                Publisher,
+                Year,
+                Place
+            } = req.body
+
         }
         catch (err) {
             console.log(err)
