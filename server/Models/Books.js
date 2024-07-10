@@ -6,39 +6,42 @@ const BookSchema = new mongoose.Schema({
         required: true,
         unique: true,
     },
-    title: {
+    Title: {
         type: String,
         required: true,
     },
-    classNo: {
+    ClassNo: {
         type: String,
         required: true,
     },
-    authorEditor: {
+    AuthorEditort: {
         type: String,
     },
-    description: {
+    AuthorEditor: {
         type: String,
     },
-    isbnNumber: {
+    Discription: {
         type: String,
     },
-    keywords: {
+    ISBNNumber: {
         type: String,
     },
-    publisher: {
+    Keywords1: {
         type: String,
-        required: true,
     },
-    yearOfPublication: {
+    Keywords2: {
+        type: String,
+    },
+    Publisher: {
+        type: String,
+    },
+    YearofPublication: {
         type: Number,
-        required: true,
     },
-    placeOfPublisher: {
+    PlaceofPublisher: {
         type: String,
-        required: true,
     },
-    status: {
+    Status: {
         type: String,
         required: true,
     }

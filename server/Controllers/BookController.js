@@ -118,6 +118,20 @@ const BookController = {
                 Place
             } = req.body
 
+            const checkBook = await Books.findOne({ isbnNumber: ISBNNumber })
+
+            if(checkBook) {
+                return res.json({ Error: "Book Already in Database According to Given ISBN Number"})
+            }
+            else{
+                const BookNew = new Books({
+                    AccNumber: 
+                    title: 
+                    classNo: 
+                    authorEditor: 
+                })
+            }
+
 
 
         }
