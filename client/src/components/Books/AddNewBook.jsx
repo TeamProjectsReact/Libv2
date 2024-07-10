@@ -88,8 +88,11 @@ const AddNewBook = () => {
                 <div className="my-2">
                   <label htmlFor="" className="text-gray-500">Publish Place </label>
                   <input type="text" name="" id="" className="h-12 pl-2 w-full my-2 bg-gray-200 rounded" placeholder='Publish Place'/>
-                </div>
-  
+                </div>  
+              </div>
+
+              <div className="my-4">
+                <button type="submit" className="bg-purple-500 text-white rounded py-2 px-4 duration-500 hover:bg-purple-600">Add New Book</button>
               </div>
             </div>
           </div>
