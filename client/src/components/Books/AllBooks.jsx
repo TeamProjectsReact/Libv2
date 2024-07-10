@@ -138,49 +138,58 @@ const AllBooks = () => {
                 </thead>
                 <tbody>
                   {
-                    BooksSearchData.map((bookSearch, index) => {
-                      return (
-                        <tr key={index} className='border-b border-gray-400 h-10'>
-                          <td className='text-center border-r border-gray-300 md:max-w-8 hidden md:table-cell'>{bookSearch.AccNumber}</td>
-                          <td className='border-r border-gray-300 pl-3 md:max-w-36 max-w-20'>{bookSearch.Title}</td>
-                          <td className='text-center border-r border-gray-300 hidden md:table-cell md:max-w-36 max-w-20'>{bookSearch.ISBNNumber}</td>
-                          <td className='border-r border-gray-300 pl-3 hidden md:table-cell md:max-w-36 max-w-20'>{bookSearch.Publisher}</td>
-                          <td className='text-center border-r border-gray-300 hidden md:table-cell'>{bookSearch.YearofPublication}</td>
-                          <td className='text-center'>
-                              {
-                                  (() => {
-                                      if(bookSearch.Status === "Available"){
-                                          return (
-                                              <p className="text-green-500 font-semibold">Available</p>
-                                          )
-                                      }
-                                  })()
-                              }
-                          </td>
-                          <td className='text-center'>
-                              {
-                                  (() => {
-                                      if(RoleUser === "SuperAdmin" || RoleUser === "Director" || RoleUser === "Secretary"){
-                                          return (
+                    (() => {
+                      if(SearchForm === false) {
+                        
+                      }
+                      else{
+                        BooksSearchData.map((bookSearch, index) => {
+                          return (
+                            <tr key={index} className='border-b border-gray-400 h-10'>
+                              <td className='text-center border-r border-gray-300 md:max-w-8 hidden md:table-cell'>{bookSearch.AccNumber}</td>
+                              <td className='border-r border-gray-300 pl-3 md:max-w-36 max-w-20'>{bookSearch.Title}</td>
+                              <td className='text-center border-r border-gray-300 hidden md:table-cell md:max-w-36 max-w-20'>{bookSearch.ISBNNumber}</td>
+                              <td className='border-r border-gray-300 pl-3 hidden md:table-cell md:max-w-36 max-w-20'>{bookSearch.Publisher}</td>
+                              <td className='text-center border-r border-gray-300 hidden md:table-cell'>{bookSearch.YearofPublication}</td>
+                              <td className='text-center'>
+                                  {
+                                      (() => {
+                                          if(bookSearch.Status === "Available"){
+                                              return (
+                                                  <p className="text-green-500 font-semibold">Available</p>
+                                              )
+                                          }
+                                      })()
+                                  }
+                              </td>
+                              <td className='text-center'>
+                                  {
+                                      (() => {
+                                          if(RoleUser === "SuperAdmin" || RoleUser === "Director" || RoleUser === "Secretary"){
+                                              return (
+                                                  <div className="md:flex">
+                                                    <div className='cursor-pointer py-2 px-2 my-2 ml-2 rounded bg-blue-500 text-white duration-500 hover:bg-blue-600 flex text-sm'><BsPenFill className=''/> <span className='pl-2'>Update</span></div>
+                                                    <div className='cursor-pointer py-2 px-2 my-2 ml-2 rounded bg-purple-500 text-white duration-500 hover:bg-purple-600 flex text-sm'><BsEyeFill className=''/> <span className='pl-2'>View</span></div>
+                                                  </div>
+                                              )
+                                          }
+                                          else{
+                                            return (
                                               <div className="md:flex">
-                                                <div className='cursor-pointer py-2 px-2 my-2 ml-2 rounded bg-blue-500 text-white duration-500 hover:bg-blue-600 flex text-sm'><BsPenFill className=''/> <span className='pl-2'>Update</span></div>
                                                 <div className='cursor-pointer py-2 px-2 my-2 ml-2 rounded bg-purple-500 text-white duration-500 hover:bg-purple-600 flex text-sm'><BsEyeFill className=''/> <span className='pl-2'>View</span></div>
                                               </div>
-                                          )
-                                      }
-                                      else{
-                                        return (
-                                          <div className="md:flex">
-                                            <div className='cursor-pointer py-2 px-2 my-2 ml-2 rounded bg-purple-500 text-white duration-500 hover:bg-purple-600 flex text-sm'><BsEyeFill className=''/> <span className='pl-2'>View</span></div>
-                                          </div>
-                                        )
-                                      }
-                                  })()
-                              }
-                          </td>
-                      </tr>
-                      )
-                    })
+                                            )
+                                          }
+                                      })()
+                                  }
+                              </td>
+                          </tr>
+                          )
+                        })
+                      }
+                    })()
+
+
                   }
                 </tbody>
             </table>
