@@ -153,6 +153,15 @@ const BookController = {
         catch (err) {
             console.log(err)
         }
+    },
+
+    lastBookTen: async (req, res) => {
+        try{
+            
+        }
+        catch (err) {
+            console.log(err)
+        }
     }
 }
 
