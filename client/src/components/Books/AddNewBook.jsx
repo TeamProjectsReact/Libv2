@@ -74,6 +74,21 @@ const AddNewBook = () => {
                   <label htmlFor="" className="text-gray-500">Keywords 2</label>
                   <input type="text" name="" id="" className="h-12 pl-2 w-full my-2 bg-gray-200 rounded" placeholder='Keywords 2'/>
                 </div>
+
+                <div className="my-2">
+                  <label htmlFor="" className="text-gray-500">Publisher </label>
+                  <input type="text" name="" id="" className="h-12 pl-2 w-full my-2 bg-gray-200 rounded" placeholder='Publisher'/>
+                </div>
+
+                <div className="my-2">
+                  <label htmlFor="" className="text-gray-500">Publish Year </label>
+                  <input type="text" name="" id="" className="h-12 pl-2 w-full my-2 bg-gray-200 rounded" placeholder='Publish Year'/>
+                </div>
+
+                <div className="my-2">
+                  <label htmlFor="" className="text-gray-500">Publish Place </label>
+                  <input type="text" name="" id="" className="h-12 pl-2 w-full my-2 bg-gray-200 rounded" placeholder='Publish Place'/>
+                </div>
   
               </div>
             </div>
