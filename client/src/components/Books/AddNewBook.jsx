@@ -37,9 +37,15 @@ const AddNewBook = () => {
   })
 
   
-  const headleAddBook = (e) => {
+  const headleAddBook = async (e) => {
     e.preventDefault();
 
+    try{
+
+    }
+    catch (err) {
+      console.log(err)
+    }
 
   }
 
