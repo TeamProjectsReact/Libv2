@@ -25,6 +25,9 @@ const AllBooks = () => {
   // search Result
   const [BooksSearchData, SetBooksSearchData] = useState([])
 
+  // check search form is submitted
+  const [SearchForm, SetSearchForm] = useState(false)
+
   // book search
   const headleBookSearch = async (e) => {
     e.preventDefault();
@@ -32,6 +35,7 @@ const AllBooks = () => {
     try{
       const res = await axios.get('http://localhost:5000/books/SearchBook', {params: searchBooks })
       SetBooksSearchData(res.data.Result)
+      SetSearchForm(true)
     }
     catch (err) {
       console.log(err)
@@ -43,6 +47,7 @@ const AllBooks = () => {
   const healeClearSearch = () => {
     window.location.reload()
   }
+
 
   if(RoleUser !== null && EmailUser !== null){
     return (
