@@ -28,7 +28,7 @@ const AddNewBook = () => {
             <hr />
             last Book : {BookLastID}
             <div className="">
-              <div className="md:grid grid-cols-4 gap-4">
+              <div className="md:grid grid-cols-3 gap-4">
 
                 <div className="my-2">
                   <label htmlFor="" className="text-gray-500">Book Acc Number</label>
@@ -43,6 +43,22 @@ const AddNewBook = () => {
                 <div className="my-2">
                   <label htmlFor="" className="text-gray-500">Class No</label>
                   <input type="text" name="" id="" className="h-12 pl-2 w-full my-2 bg-gray-200 rounded" placeholder='Book Class No'/>
+                </div>
+
+                <div className="my-2">
+                  <label htmlFor="" className="text-gray-500">Author / Editor 1</label>
+                  <input type="text" name="" id="" className="h-12 pl-2 w-full my-2 bg-gray-200 rounded" placeholder='Author / Editor 1'/>
+                </div>
+
+                <div className="my-2">
+                  <label htmlFor="" className="text-gray-500">Author / Editor 2</label>
+                  <input type="text" name="" id="" className="h-12 pl-2 w-full my-2 bg-gray-200 rounded" placeholder='Author / Editor 2'/>
+                </div>
+
+                
+                <div className="my-2">
+                  <label htmlFor="" className="text-gray-500">Discription</label>
+                  <input type="text" name="" id="" className="h-12 pl-2 w-full my-2 bg-gray-200 rounded" placeholder='Discription'/>
                 </div>
   
               </div>
