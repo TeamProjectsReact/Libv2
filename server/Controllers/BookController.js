@@ -158,7 +158,7 @@ const BookController = {
     lastBookTen: async (req, res) => {
         try{
             const Tenbooks = await Books.find().sort({ AccNumber: -1 }).limit(10)
-            console.log(Tenbooks)
+            console.log(Tenbooks.AccNumber)
         }   
         catch (err) {
             console.log(err)
