@@ -98,7 +98,11 @@ const BookController = {
     },
     AddnewBook: async (req, res) => {
         try{
-            // console.log(req.body)
+            console.log(req.body)
+
+            const lastBook = await Books.findOne().sort({ AccNumber: -1 }).limit(1);
+            const newBkAccNo = lastBook.AccNumber + 1
+            console.log(newBkAccNo)
             
             const {
                 AccNumber,
@@ -114,6 +118,8 @@ const BookController = {
                 Year,
                 Place
             } = req.body
+
+
 
         }
         catch (err) {
