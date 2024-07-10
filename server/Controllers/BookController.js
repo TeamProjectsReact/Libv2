@@ -96,6 +96,14 @@ const BookController = {
             console.log(err)
        } 
     },
+    AddBook: async(req, res) => {
+        try{
+
+        }
+        catch (err) {
+            console.log(err)
+        }
+    }
 }
 
 module.exports = BookController
