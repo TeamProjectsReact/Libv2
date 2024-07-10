@@ -7,6 +7,6 @@ router.get('/ViewGestBooks', BookController.GestViewBook)
 router.get('/CountBooks', BookController.CountAllBooks)
 router.get('/SearchBook', BookController.SearchBooks)
 router.get('/BkLastID', BookController.LastBookID)
-router.post('/AddBook', BookController.AddBook)
+router.post('/AddBook', BookController.AddnewBook)
 
 module.exports = router
