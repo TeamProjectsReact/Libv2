@@ -132,7 +132,7 @@ const AddNewBook = () => {
 
                   <div className="my-2">
                     <label htmlFor="" className="text-gray-500">Publish Year </label>
-                    <input type="text" name="" id="" className="h-12 pl-2 w-full my-2 bg-gray-200 rounded" placeholder='Publish Year'
+                    <input type="number" name="" id="" className="h-12 pl-2 w-full my-2 bg-gray-200 rounded" placeholder='Publish Year'
                     onChange={e => SetaddBook({...addBook, Year: e.target.value })}/>
                   </div>
 
