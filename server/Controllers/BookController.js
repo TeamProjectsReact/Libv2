@@ -98,11 +98,11 @@ const BookController = {
     },
     AddnewBook: async (req, res) => {
         try{
-            console.log(req.body)
+            // console.log(req.body)
 
             const lastBook = await Books.findOne().sort({ AccNumber: -1 }).limit(1);
             const newBkAccNo = lastBook.AccNumber + 1
-            console.log(newBkAccNo)
+            // console.log(newBkAccNo)
             
             const {
                 Title,
@@ -125,24 +125,30 @@ const BookController = {
             }
             else{
                 const BookNew = new Books({
-                    AccNumber: 
-                    Title: 
-                    ClassNo: 
-                    AuthorEditort: 
-                    AuthorEditor:
-                    Discription:
-                    ISBNNumber:
-                    Keywords1:
-                    Keywords2:
-                    Publisher:
-                    YearofPublication:
-                    PlaceofPublisher:
-                    Status:
+                    AccNumber: newBkAccNo,
+                    Title: Title,
+                    ClassNo: ClassNo, 
+                    AuthorEditort: AuthorEditor1,
+                    AuthorEditor: AuthorEditor2,
+                    Discription: Discription,
+                    ISBNNumber: ISBNNumber,
+                    Keywords1: Keywords1,
+                    Keywords2: Keywords2,
+                    Publisher: Publisher,
+                    YearofPublication: Year,
+                    PlaceofPublisher: Place,
+                    Status: "Available"
                 })
+
+                const ResultBook = BookNew.save();
+
+                if(ResultBook) {
+                    return res.json({ Status: "Success"})
+                }
+                else{
+                    return res.json({ Error: "Internal Server Error"})
+                }
             }
-
-
-
         }
         catch (err) {
             console.log(err)
