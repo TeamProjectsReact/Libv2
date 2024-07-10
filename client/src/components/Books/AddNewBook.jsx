@@ -41,7 +41,16 @@ const AddNewBook = () => {
     e.preventDefault();
 
     try{
-
+      const res = await axios.post('http://localhost:5000/books/AddBook', addBook)
+      .then(res => {
+        if(res.data.Status === "Success"){
+          alert("Book Added Successful")
+          window.location()
+        }
+        else{
+          alert(res.data.Error)
+        }
+      })
     }
     catch (err) {
       console.log(err)
