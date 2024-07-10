@@ -96,9 +96,9 @@ const BookController = {
             console.log(err)
        } 
     },
-    AddBook: async(req, res) => {
+    AddBook: async (req, res) => {
         try{
-            const checkbook = await 
+            const checkbook = await Books.findOne({  })
         }
         catch (err) {
             console.log(err)
