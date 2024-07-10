@@ -73,73 +73,73 @@ const AddNewBook = () => {
                   <div className="my-2">
                     <label htmlFor="" className="text-gray-500">Book Acc Number</label>
                     <input type="text" name="" id="" className="h-12 pl-2 w-full my-2 bg-gray-200 rounded" value={BookLastID + 1} placeholder='Book Title'
-                    onChange={e => SetaddBook({ AccNumber: e.target.value })}/>
+                    onChange={e => SetaddBook({...addBook, AccNumber: e.target.value })}/>
                   </div>
     
                   <div className="my-2">
                     <label htmlFor="" className="text-gray-500">Book Title</label>
                     <input type="text" name="" id="" className="h-12 pl-2 w-full my-2 bg-gray-200 rounded" placeholder='Book Title'
-                    onChange={e => SetaddBook({ Title: e.target.value })}/>
+                    onChange={e => SetaddBook({...addBook, Title: e.target.value })}/>
                   </div>
 
                   <div className="my-2">
                     <label htmlFor="" className="text-gray-500">Class No</label>
                     <input type="text" name="" id="" className="h-12 pl-2 w-full my-2 bg-gray-200 rounded" placeholder='Book Class No'
-                    onChange={e => SetaddBook({ ClassNo: e.target.value })}/>
+                    onChange={e => SetaddBook({...addBook, ClassNo: e.target.value })}/>
                   </div>
 
                   <div className="my-2">
                     <label htmlFor="" className="text-gray-500">Author / Editor 1</label>
                     <input type="text" name="" id="" className="h-12 pl-2 w-full my-2 bg-gray-200 rounded" placeholder='Author / Editor 1'
-                    onChange={e => SetaddBook({ AuthorEditor1: e.target.value })}/>
+                    onChange={e => SetaddBook({...addBook, AuthorEditor1: e.target.value })}/>
                   </div>
 
                   <div className="my-2">
                     <label htmlFor="" className="text-gray-500">Author / Editor 2</label>
                     <input type="text" name="" id="" className="h-12 pl-2 w-full my-2 bg-gray-200 rounded" placeholder='Author / Editor 2'
-                    onChange={e => SetaddBook({ AuthorEditor2: e.target.value })}/>
+                    onChange={e => SetaddBook({...addBook, AuthorEditor2: e.target.value })}/>
                   </div>
                   
                   <div className="my-2">
                     <label htmlFor="" className="text-gray-500">Discription</label>
                     <input type="text" name="" id="" className="h-12 pl-2 w-full my-2 bg-gray-200 rounded" placeholder='Discription'
-                    onChange={e => SetaddBook({ Discription: e.target.value })}/>
+                    onChange={e => SetaddBook({...addBook, Discription: e.target.value })}/>
                   </div>
 
                   <div className="my-2">
                     <label htmlFor="" className="text-gray-500">ISBN Number</label>
                     <input type="text" name="" id="" className="h-12 pl-2 w-full my-2 bg-gray-200 rounded" placeholder='ISBN Number'
-                    onChange={e => SetaddBook({ ISBNNumber: e.target.value })}/>
+                    onChange={e => SetaddBook({...addBook, ISBNNumber: e.target.value })}/>
                   </div>
 
                   <div className="my-2">
                     <label htmlFor="" className="text-gray-500">Keywords 1</label>
                     <input type="text" name="" id="" className="h-12 pl-2 w-full my-2 bg-gray-200 rounded" placeholder='Keywords 1'
-                    onChange={e => SetaddBook({ Keywords1: e.target.value })}/>
+                    onChange={e => SetaddBook({...addBook, Keywords1: e.target.value })}/>
                   </div>
                   
                   <div className="my-2">
                     <label htmlFor="" className="text-gray-500">Keywords 2</label>
                     <input type="text" name="" id="" className="h-12 pl-2 w-full my-2 bg-gray-200 rounded" placeholder='Keywords 2'
-                    onChange={e => SetaddBook({ Keywords2: e.target.value })}/>
+                    onChange={e => SetaddBook({...addBook, Keywords2: e.target.value })}/>
                   </div>
 
                   <div className="my-2">
                     <label htmlFor="" className="text-gray-500">Publisher </label>
                     <input type="text" name="" id="" className="h-12 pl-2 w-full my-2 bg-gray-200 rounded" placeholder='Publisher'
-                    onChange={e => SetaddBook({ Publisher: e.target.value })}/>
+                    onChange={e => SetaddBook({...addBook, Publisher: e.target.value })}/>
                   </div>
 
                   <div className="my-2">
                     <label htmlFor="" className="text-gray-500">Publish Year </label>
                     <input type="text" name="" id="" className="h-12 pl-2 w-full my-2 bg-gray-200 rounded" placeholder='Publish Year'
-                    onChange={e => SetaddBook({ Year: e.target.value })}/>
+                    onChange={e => SetaddBook({...addBook, Year: e.target.value })}/>
                   </div>
 
                   <div className="my-2">
                     <label htmlFor="" className="text-gray-500">Publish Place </label>
                     <input type="text" name="" id="" className="h-12 pl-2 w-full my-2 bg-gray-200 rounded" placeholder='Publish Place'
-                    onChange={e => SetaddBook({ Place: e.target.value })}/>
+                    onChange={e => SetaddBook({...addBook, Place: e.target.value })}/>
                   </div>  
                 </div>
 
