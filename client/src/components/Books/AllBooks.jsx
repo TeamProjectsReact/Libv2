@@ -31,7 +31,7 @@ const AllBooks = () => {
   // book search
   const headleBookSearch = async (e) => {
     e.preventDefault();
-
+    SetSearchForm(true)
     try{
       const res = await axios.get('http://localhost:5000/books/SearchBook', {params: searchBooks })
       SetBooksSearchData(res.data.Result)      
@@ -154,18 +154,18 @@ const AllBooks = () => {
                     (() => {
                       if(SearchForm === false) {
                         return (
-                          LastTenBooks.map((bookSearch, index) => {
+                          LastTenBooks.map((lastbooks, index) => {
                             return (
                               <tr key={index} className='border-b border-gray-400 h-10'>
-                                <td className='text-center border-r border-gray-300 md:max-w-8 hidden md:table-cell'>{bookSearch.AccNumber}</td>
-                                <td className='border-r border-gray-300 pl-3 md:max-w-36 max-w-20'>{bookSearch.Title}</td>
-                                <td className='text-center border-r border-gray-300 hidden md:table-cell md:max-w-36 max-w-20'>{bookSearch.ISBNNumber}</td>
-                                <td className='border-r border-gray-300 pl-3 hidden md:table-cell md:max-w-36 max-w-20'>{bookSearch.Publisher}</td>
-                                <td className='text-center border-r border-gray-300 hidden md:table-cell'>{bookSearch.YearofPublication}</td>
+                                <td className='text-center border-r border-gray-300 md:max-w-8 hidden md:table-cell'>{lastbooks.AccNumber}</td>
+                                <td className='border-r border-gray-300 pl-3 md:max-w-36 max-w-20'>{lastbooks.Title}</td>
+                                <td className='text-center border-r border-gray-300 hidden md:table-cell md:max-w-36 max-w-20'>{lastbooks.ISBNNumber}</td>
+                                <td className='border-r border-gray-300 pl-3 hidden md:table-cell md:max-w-36 max-w-20'>{lastbooks.Publisher}</td>
+                                <td className='text-center border-r border-gray-300 hidden md:table-cell'>{lastbooks.YearofPublication}</td>
                                 <td className='text-center'>
                                     {
                                         (() => {
-                                            if(bookSearch.Status === "Available"){
+                                            if(lastbooks.Status === "Available"){
                                                 return (
                                                     <p className="text-green-500 font-semibold">Available</p>
                                                 )
