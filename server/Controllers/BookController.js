@@ -126,9 +126,18 @@ const BookController = {
             else{
                 const BookNew = new Books({
                     AccNumber: 
-                    title: 
-                    classNo: 
-                    authorEditor: 
+                    Title: 
+                    ClassNo: 
+                    AuthorEditort: 
+                    AuthorEditor:
+                    Discription:
+                    ISBNNumber:
+                    Keywords1:
+                    Keywords2:
+                    Publisher:
+                    YearofPublication:
+                    PlaceofPublisher:
+                    Status:
                 })
             }
 
