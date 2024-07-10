@@ -105,7 +105,6 @@ const BookController = {
             console.log(newBkAccNo)
             
             const {
-                AccNumber,
                 Title,
                 ClassNo,
                 AuthorEditor1,
