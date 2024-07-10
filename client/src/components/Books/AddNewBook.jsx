@@ -21,10 +21,25 @@ const AddNewBook = () => {
 
   // add new book
 
+  const [addBook, SetaddBook] = useState({
+    AccNumber: '',
+    Title: '',
+    ClassNo: '',
+    AuthorEditor1: '',
+    AuthorEditor2: '',
+    Discription: '',
+    ISBNNumber: '',
+    Keywords1: '',
+    Keywords2: '',
+    Publisher: '',
+    Year: '',
+    Place: ''
+  })
+
   const headleAddBook = (e) => {
     e.preventDefault();
 
-    
+
   }
 
   if(RoleUser === "SuperAdmin" || RoleUser === "Director" || RoleUser === "Secretary"){
