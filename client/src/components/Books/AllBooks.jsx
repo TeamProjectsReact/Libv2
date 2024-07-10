@@ -120,7 +120,21 @@ const AllBooks = () => {
 
           <div className="">
             <h1 className="text-xl text-gray-500 font-semibold mt-8">Book Result</h1>
-            <button onClick={healeClearSearch} className="my-4 py-2 px-4 rounded bg-red-500 text-white duration-500 hover:bg-red.600">Clear Search</button>
+            {
+              (() => {
+                if(SearchForm === false){
+                  return (
+                    <p className="">Newest Books</p>
+                  )
+                }
+                else{
+                  return (
+                    <button onClick={healeClearSearch} className="my-4 py-2 px-4 rounded bg-red-500 text-white duration-500 hover:bg-red.600">Clear Search</button>
+                  )
+                }
+              })()
+            }
+            
             <hr />
 
             <table className="w-full">
@@ -138,7 +152,7 @@ const AllBooks = () => {
                 <tbody>
                   {
                     (() => {
-                      if(SearchForm === true) {
+                      if(SearchForm === false) {
                         return (
                           LastTenBooks.map((bookSearch, index) => {
                             return (
