@@ -48,6 +48,15 @@ const AllBooks = () => {
     window.location.reload()
   }
 
+  // get last 10 books
+  const [LastTenBooks, SetLastTenBooks] = useState([])
+
+  useEffect(() => {
+    axios.get('http://localhost:5000/books/TenLastBooks')
+    .then(res => SetLastTenBooks(res.data.Result))
+    .catch(err => console.log(err))
+  }, [])
+
 
   if(RoleUser !== null && EmailUser !== null){
     return (
