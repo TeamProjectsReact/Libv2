@@ -45,7 +45,7 @@ const AddNewBook = () => {
       .then(res => {
         if(res.data.Status === "Success"){
           alert("Book Added Successful")
-          window.location()
+          window.location.reload()
         }
         else{
           alert(res.data.Error)
