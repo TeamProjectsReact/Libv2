@@ -158,7 +158,14 @@ const BookController = {
     lastBookTen: async (req, res) => {
         try{
             const Tenbooks = await Books.find().sort({ AccNumber: -1 }).limit(10)
-            console.log(Tenbooks.AccNumber)
+            // console.log(Tenbooks)
+            
+            if(Tenbooks) {
+                return res.json({Result: Tenbooks})
+            }
+            else{
+                return res.json({ Error: "Internal Server Error"})
+            }
         }   
         catch (err) {
             console.log(err)
