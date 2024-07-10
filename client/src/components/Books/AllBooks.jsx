@@ -44,7 +44,7 @@ const AllBooks = () => {
 
   // clear search
   const healeClearSearch = () => {
-    window.location.reload()
+    SetSearchForm(false)
   }
 
   // get last 10 books
