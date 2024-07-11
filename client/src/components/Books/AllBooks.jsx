@@ -50,8 +50,10 @@ const AllBooks = () => {
 
   // store data in viewbook
   const [AccNoView, SetAccNoView] = useState()
+  const [isViewClick, SetisViewClick] = useState(false)
 
   const ViewAccNo = (id) => {
+    SetisViewClick(true)
     SetAccNoView(id)
   }  
 
@@ -60,10 +62,22 @@ const AllBooks = () => {
       <div>
           <Books />
           <div className="my-8">
-            <div className="" id='ViewBook'>
-              Book View
-              {AccNoView}
-            </div>
+            {
+              (() => {
+                if(isViewClick === false){
+                  return (
+                    <div className=""></div>
+                  )
+                }
+                else{
+                  return (
+                    <div className="">
+                      {AccNoView}
+                    </div>
+                  )
+                }
+              })()
+            }
             <h1 className="text-xl font-semibold text-gray-500">Search Books</h1>
             <hr />
 
