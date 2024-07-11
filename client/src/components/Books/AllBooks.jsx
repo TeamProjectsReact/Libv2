@@ -51,16 +51,19 @@ const AllBooks = () => {
   // store data in viewbook
   const [AccNoView, SetAccNoView] = useState()
 
-  const ViewAccNo = () => {
-    
-  }
+  const ViewAccNo = (id) => {
+    SetAccNoView(id)
+  }  
 
   if(RoleUser !== null && EmailUser !== null){
     return (
       <div>
           <Books />
           <div className="my-8">
-            <div className="" id='ViewBook'>Book View</div>
+            <div className="" id='ViewBook'>
+              Book View
+              {AccNoView}
+            </div>
             <h1 className="text-xl font-semibold text-gray-500">Search Books</h1>
             <hr />
 
@@ -142,7 +145,7 @@ const AllBooks = () => {
                                                 return (
                                                     <div className="md:flex">
                                                       <div className='cursor-pointer py-2 px-2 my-2 ml-2 rounded bg-blue-500 text-white duration-500 hover:bg-blue-600 flex text-sm'><BsPenFill className=''/> <span className='pl-2'>Update</span></div>
-                                                      <a href='#ViewBook'>
+                                                      <a href='#ViewBook' onClick={() => ViewAccNo(lastbooks.AccNumber)}>
                                                         <div className='cursor-pointer py-2 px-2 my-2 ml-2 rounded bg-purple-500 text-white duration-500 hover:bg-purple-600 flex text-sm'>
                                                           <BsEyeFill className=''/>
                                                           <span className='pl-2'>View</span>
