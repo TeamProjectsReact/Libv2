@@ -160,6 +160,15 @@ const BookController = {
         catch (err) {
             console.log(err)
         }
+    },
+
+    ViewSelectedBook: async (req, res) => {
+        try{
+            console.log(req.body.parms)
+        }
+        catch (err) {
+            console.log(err)
+        }
     }
 }
 
