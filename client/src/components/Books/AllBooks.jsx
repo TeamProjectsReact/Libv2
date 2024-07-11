@@ -48,6 +48,12 @@ const AllBooks = () => {
     .catch(err => console.log(err))
   }, [])
 
+  // store data in viewbook
+  const [AccNoView, SetAccNoView] = useState()
+
+  const ViewAccNo = () => {
+    
+  }
 
   if(RoleUser !== null && EmailUser !== null){
     return (
