@@ -93,6 +93,9 @@ const DashHome = () => {
                             <div className="relative max-w-screen h-96 md:block hidden">
                                 <BookLastWeek />
                             </div>
+                            <div className="">
+                                
+                            </div>
                         </div>
                     </div>
                 </div>
