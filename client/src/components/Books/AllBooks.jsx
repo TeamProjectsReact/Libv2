@@ -177,7 +177,11 @@ const AllBooks = () => {
                                     </tr>
                                     <tr className='h-12 border-b border-gray-200'>
                                       <th className='text-left pl-4 border-r border-gray-200'>Status</th>
-                                      <td className='text-left pl-4'>{ViewResult.Status}</td>
+                                      <td className='text-left pl-4'>
+                                        {
+                                          
+                                        }
+                                      </td>
                                     </tr>
       
                                   </table>
