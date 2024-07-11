@@ -12,6 +12,7 @@ import AllBooks from "./components/Books/AllBooks";
 import BorrowReq from "./components/Books/BorrowReq";
 import BorrowedBooks from "./components/Books/BorrowedBooks";
 import AddNewBook from "./components/Books/AddNewBook";
+import ViewBook from "./components/Books/ViewBook";
 
 
 export default function App() {
@@ -29,6 +30,7 @@ export default function App() {
           <Route path="AddNewBook" element={<PrivateRoute ProtectRoute={<AddNewBook /> } /> } />
           <Route path="Thesis" element={<PrivateRoute ProtectRoute={<Thesis /> } /> } />
           <Route path="Users" element={<PrivateRoute ProtectRoute={<Users /> } /> } />
+          <Route path="ViewBook/:id" element={<PrivateRoute ProtectRoute={<ViewBook /> } /> } />
         </Route>
       </Routes> 
     </BrowserRouter>
