@@ -164,7 +164,15 @@ const BookController = {
 
     ViewSelectedBook: async (req, res) => {
         try{
-            console.log(req.body)
+            // console.log(req.params.id)
+            const getBook = await Books.findOne({ AccNumber:req.params.id })
+
+            if(getBook) {
+                return res.json({ Result: getBooks })
+            }
+            else{
+                return res.json({ Error: "Internal Server Error" })
+            }
         }
         catch (err) {
             console.log(err)
