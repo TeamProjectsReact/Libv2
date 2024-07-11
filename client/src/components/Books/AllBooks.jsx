@@ -232,7 +232,7 @@ const AllBooks = () => {
                                 <td className='border-r border-gray-300 pl-3 md:max-w-36 max-w-20'>{bookSearch.Title}</td>
                                 <td className='text-center border-r border-gray-300 hidden md:table-cell md:max-w-36 max-w-20'>{bookSearch.ISBNNumber}</td>
                                 <td className='border-r border-gray-300 pl-3 hidden md:table-cell md:max-w-36 max-w-20'>{bookSearch.Publisher}</td>
-                                <td className='text-center border-r border-gray-300 hidden md:table-cell'>{bookSearch.YearofPublication}</td>
+                                <td className='text-center border-r border-gray-300 hidden md:table-cell'>{bookSearch.ClassNo}</td>
                                 <td className='text-center'>
                                     {
                                         (() => {
