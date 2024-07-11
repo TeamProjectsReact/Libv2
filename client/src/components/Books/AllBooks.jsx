@@ -104,8 +104,8 @@ const AllBooks = () => {
                               '>{ViewResult.Title}</td>
                             </tr>
                             <tr className='h-12 border-b border-gray-200'>
-                              <th className='text-left pl-4 border-r border-gray-200'>Book asdasdasd</th>
-                              <td className='text-left pl-4'>lore</td>
+                              <th className='text-left pl-4 border-r border-gray-200'>Class No</th>
+                              <td className='text-left pl-4'>{ViewResult.ClassNo}</td>
                             </tr>
                             <tr className='h-12 border-b border-gray-200'>
                               <th className='text-left pl-4 border-r border-gray-200'>Book Title</th>
