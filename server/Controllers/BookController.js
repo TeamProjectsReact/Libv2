@@ -182,7 +182,28 @@ const BookController = {
 
     BooksAddedLastWeek: async(req, res) => {
         try{
-
+            const today = new Date();
+            const last7Days = new Date(today.setDate(today.getDate() - 7));
+            const books = await Books.aggregate([
+              {
+                $match: {
+                  dateAdded: {
+                    $gte: last7Days
+                  }
+                }
+              },
+              {
+                $group: {
+                  _id: { $dateToString: { format: "%Y-%m-%d", date: "$AddedData" } },
+                  count: { $sum: 1 }
+                }
+              },
+              {
+                $sort: { _id: 1 }
+              }
+            ]);
+        
+            res.json(books);
         }
         catch (err) {
             console.log(err)
