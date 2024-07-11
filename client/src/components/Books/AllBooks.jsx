@@ -79,6 +79,10 @@ const AllBooks = () => {
     SetUpdateBook(true)
   }
 
+  const headleCloseUpdate = () => {
+    SetUpdateBook(false)
+  }
+
   if(RoleUser !== null && EmailUser !== null){
     return (
       <div>
@@ -121,7 +125,11 @@ const AllBooks = () => {
                           {
                             (() => {
                               if(UpdateBook === true) {
-
+                                return (
+                                  <div className="">
+                                    <span className="bg-red-500 py-1 px-4 text-white rounded cursor-pointer duration-500 hover:bg-red-600 shadow-md" onClick={headleCloseUpdate}>Close Update</span>
+                                  </div>
+                                )
                               }
                               else{
                                 return (
