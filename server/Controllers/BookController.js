@@ -36,31 +36,24 @@ const BookController = {
     SearchBooks: async(req, res) => {
         try{
             console.log(req.query)
-            const { query, year, isbn } = req.query;
-            const searchCriteria = [];
+            const { query } = req.query;
+            let searchCriteria = [
+              { Title: { $regex: query, $options: 'i' } },
+              { ClassNo: { $regex: query, $options: 'i' } },
+              { AuthorEditort: { $regex: query, $options: 'i' } },
+              { AuthorEditor: { $regex: query, $options: 'i' } },
+              { Description: { $regex: query, $options: 'i' } },
+              { ISBNNumber: { $regex: query, $options: 'i' } },
+              { Keywords1: { $regex: query, $options: 'i' } },
+              { Keywords2: { $regex: query, $options: 'i' } },
+              { Publisher: { $regex: query, $options: 'i' } },
+              { PlaceofPublisher: { $regex: query, $options: 'i' } },
+              { Status: { $regex: query, $options: 'i' } },
+            ];
         
-            if (query) {
-              searchCriteria.push(
-                { Title: { $regex: query, $options: 'i' } },
-                { ClassNo: { $regex: query, $options: 'i' } },
-                { AuthorEditort: { $regex: query, $options: 'i' } },
-                { AuthorEditor: { $regex: query, $options: 'i' } },
-                { Description: { $regex: query, $options: 'i' } },
-                { Keywords1: { $regex: query, $options: 'i' } },
-                { Keywords2: { $regex: query, $options: 'i' } },
-                { Publisher: { $regex: query, $options: 'i' } },
-                { PlaceofPublisher: { $regex: query, $options: 'i' } },
-                { Status: { $regex: query, $options: 'i' } }
-              );
-            }
-        
-            if (year) {
-              searchCriteria.push({ YearofPublication: parseInt(year, 10) });
-            }
-        
-            if (isbn) {
-              searchCriteria.push({ ISBNNumber: isbn });
-            }
+            if (!isNaN(query)) {
+              searchCriteria.push({ YearofPublication: parseInt(query) });
+            }          
 
             const items = await Books.find({ $or: searchCriteria });
 
