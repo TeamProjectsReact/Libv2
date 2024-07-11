@@ -4,6 +4,7 @@ import  secureLocalStorage  from  "react-secure-storage"
 import axios from 'axios';
 import { BsBook, BsBookFill, BsJournal, BsJournalCheck, BsJournalX, BsJournals, BsPeopleFill, BsTextParagraph } from 'react-icons/bs';
 import CountUp from 'react-countup'
+import BookLastWeek from '../Books/BookLastWeek';
 
 const DashHome = () => {
     const navigate = useNavigate()
@@ -88,7 +89,7 @@ const DashHome = () => {
                     </div>
 
                     <div className="">
-                        hi all
+                        <BookLastWeek />
                     </div>
                 </div>
             </div>
