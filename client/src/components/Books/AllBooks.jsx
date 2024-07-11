@@ -25,7 +25,9 @@ const AllBooks = () => {
     e.preventDefault();
     SetSearchForm(true)
     try{
-      const res = await axios.get(`http://localhost:5000/books/SearchBook?query=${query}`)
+      const response = await axios.get('http://localhost:5000/books/SearchBook', {
+        params: { query }
+      });
       SetBooksSearchData(res.data.Result)      
     }
     catch (err) {
