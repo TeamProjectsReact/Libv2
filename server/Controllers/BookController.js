@@ -90,9 +90,9 @@ const BookController = {
         try{
             // console.log(req.body)
 
-            // const lastBook = await Books.findOne().sort({ AccNumber: -1 }).limit(1);
-            // const newBkAccNo = lastBook.AccNumber + 1
-            // // console.log(newBkAccNo)
+            const lastBook = await Books.findOne().sort({ AccNumber: -1 }).limit(1);
+            const newBkAccNo = lastBook.AccNumber + 1
+            // console.log(newBkAccNo)
             
             const {
                 Title,
@@ -115,7 +115,7 @@ const BookController = {
             }
             else{
                 const BookNew = new Books({
-                    AccNumber: 1,
+                    AccNumber: newBkAccNo,
                     Title: Title,
                     ClassNo: ClassNo, 
                     AuthorEditort: AuthorEditor1,
@@ -169,7 +169,7 @@ const BookController = {
 
             if(getBook) {
                 // return res.json({ Result: getBook })
-                console.log(getBook.ClassNo)
+                console.log(getBook.Title)
             }
             else{
                 return res.json({ Error: "Internal Server Error" })
