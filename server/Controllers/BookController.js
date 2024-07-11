@@ -52,7 +52,7 @@ const BookController = {
             ];
         
             if (!isNaN(query)) {
-              searchCriteria.push({ YearofPublication: parseInt(query) });
+              searchCriteria.push({ YearofPublication: parseInt(query) });              
             }          
 
             const items = await Books.find({ $or: searchCriteria });
