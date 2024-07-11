@@ -11,7 +11,9 @@ const Users = () => {
 
   if(RoleUser === "SuperAdmin" || RoleUser === "Director" || RoleUser === "Secretary"){
     return (
-      <div>Users</div>
+      <div>
+        <h1 className="text-xl text-gray-500 ">Users</h1>
+      </div>
     )
   }
   else{
