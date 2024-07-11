@@ -168,7 +168,8 @@ const BookController = {
             const getBook = await Books.findOne({ AccNumber:req.params.id })
 
             if(getBook) {
-                return res.json({ Result: getBook })
+                // return res.json({ Result: getBook })
+                console.log(getBook.ClassNo)
             }
             else{
                 return res.json({ Error: "Internal Server Error" })
