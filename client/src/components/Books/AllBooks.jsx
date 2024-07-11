@@ -135,7 +135,7 @@ const AllBooks = () => {
                                                 return (
                                                     <div className="md:flex">
                                                       <div className='cursor-pointer py-2 px-2 my-2 ml-2 rounded bg-blue-500 text-white duration-500 hover:bg-blue-600 flex text-sm'><BsPenFill className=''/> <span className='pl-2'>Update</span></div>
-                                                      <Link to={'ViewBook/:id'}>
+                                                      <Link to={'ViewBook/' + lastbooks.AccNumber}>
                                                         <div className='cursor-pointer py-2 px-2 my-2 ml-2 rounded bg-purple-500 text-white duration-500 hover:bg-purple-600 flex text-sm'><BsEyeFill className=''/> <span className='pl-2'>View</span></div>
                                                       </Link>                                                      
                                                     </div>
