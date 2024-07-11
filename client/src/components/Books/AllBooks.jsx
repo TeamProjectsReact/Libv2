@@ -179,7 +179,13 @@ const AllBooks = () => {
                                       <th className='text-left pl-4 border-r border-gray-200'>Status</th>
                                       <td className='text-left pl-4'>
                                         {
-                                          
+                                          (() => {
+                                            if(ViewResult.Status === "Available"){
+                                              return(
+                                                <div className="text-green-500 font-semibold">Available</div>
+                                              )
+                                            }
+                                          })()
                                         }
                                       </td>
                                     </tr>
