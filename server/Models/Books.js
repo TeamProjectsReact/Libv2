@@ -11,7 +11,7 @@ const BookSchema = new mongoose.Schema({
         required: true,
     },
     ClassNo: {
-        type: Number,
+        type: String,
         required: true,
     },
     AuthorEditort: {
