@@ -89,8 +89,8 @@ const DashHome = () => {
                     </div>
                     <hr className='my-12'/>
                     <div className="my-8">
-                        <div className="">
-                            <div className="relative w-full h-96">
+                        <div className="md:grid grid-cols-2 gap-4">
+                            <div className="relative max-w-screen h-96 md:block hidden">
                                 <BookLastWeek />
                             </div>
                         </div>
