@@ -169,7 +169,7 @@ const BookController = {
 
             if(getBook) {
                 // return res.json({ Result: getBook })
-                console.log(getBook.Title)
+                console.log(getBook)
             }
             else{
                 return res.json({ Error: "Internal Server Error" })
