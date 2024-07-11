@@ -54,13 +54,13 @@ const AllBooks = () => {
 
   const [ViewResult, SetViewResult] = useState([])
 
-  const ViewAccNo = async (id) => {
+  const ViewAccNo = (id) => {
     SetisViewClick(true)
     SetAccNoView(id)
 
     try{
-      const res = await axios.get('http://localhost:5000/books/GetViewBook/' + id)
-      .then(SetViewResult(res.data.Result))
+      axios.get('http://localhost:5000/books/GetViewBook/' + id)
+      .then(res => SetViewResult(res.data.Result))
       .catch(err => console.log(err))
     }
     catch (err) {
@@ -97,7 +97,22 @@ const AllBooks = () => {
                         </div>
 
                         <div className="">
-                          Book title{ViewResult.Title}
+                          <table className='table-auto bg-white  my-4'>
+                            <tr className='h-12 border-b border-gray-200 '>
+                              <th className='text-left pl-4 border-r border-gray-200 md:w-72'>Book Title</th>
+                              <td className='text-left pl-4 w-auto
+                              '>{ViewResult.Title}</td>
+                            </tr>
+                            <tr className='h-12 border-b border-gray-200'>
+                              <th className='text-left pl-4 border-r border-gray-200'>Book asdasdasd</th>
+                              <td className='text-left pl-4'>lore</td>
+                            </tr>
+                            <tr className='h-12 border-b border-gray-200'>
+                              <th className='text-left pl-4 border-r border-gray-200'>Book Title</th>
+                              <td className='text-left pl-4'>{ViewResult.Title}</td>
+                            </tr>
+
+                          </table>
                         </div>
                     </div>
                   )
