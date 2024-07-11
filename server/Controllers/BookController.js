@@ -90,9 +90,9 @@ const BookController = {
         try{
             // console.log(req.body)
 
-            const lastBook = await Books.findOne().sort({ AccNumber: -1 }).limit(1);
-            const newBkAccNo = lastBook.AccNumber + 1
-            // console.log(newBkAccNo)
+            // const lastBook = await Books.findOne().sort({ AccNumber: -1 }).limit(1);
+            // const newBkAccNo = lastBook.AccNumber + 1
+            // // console.log(newBkAccNo)
             
             const {
                 Title,
@@ -115,7 +115,7 @@ const BookController = {
             }
             else{
                 const BookNew = new Books({
-                    AccNumber: newBkAccNo,
+                    AccNumber: 1,
                     Title: Title,
                     ClassNo: ClassNo, 
                     AuthorEditort: AuthorEditor1,
