@@ -107,8 +107,28 @@ const AllBooks = () => {
                               <td className='text-left pl-4'>{ViewResult.ClassNo}</td>
                             </tr>
                             <tr className='h-12 border-b border-gray-200'>
-                              <th className='text-left pl-4 border-r border-gray-200'>Book Title</th>
-                              <td className='text-left pl-4'>{ViewResult.Title}</td>
+                              <th className='text-left pl-4 border-r border-gray-200'>Authores</th>
+                              <td className='text-left pl-4'>{ViewResult.AuthorEditort} {ViewResult.AuthorEditor}</td>
+                            </tr>
+                            <tr className='h-12 border-b border-gray-200'>
+                              <th className='text-left pl-4 border-r border-gray-200'>Description</th>
+                              <td className='text-left pl-4'>{ViewResult.Discription}</td>
+                            </tr>
+                            <tr className='h-12 border-b border-gray-200'>
+                              <th className='text-left pl-4 border-r border-gray-200'>Publisher</th>
+                              <td className='text-left pl-4'>{ViewResult.Publisher}</td>
+                            </tr>
+                            <tr className='h-12 border-b border-gray-200'>
+                              <th className='text-left pl-4 border-r border-gray-200'>Publish Year</th>
+                              <td className='text-left pl-4'>{ViewResult.YearofPublication}</td>
+                            </tr>
+                            <tr className='h-12 border-b border-gray-200'>
+                              <th className='text-left pl-4 border-r border-gray-200'>Publish Place</th>
+                              <td className='text-left pl-4'>{ViewResult.PlaceofPublisher}</td>
+                            </tr>
+                            <tr className='h-12 border-b border-gray-200'>
+                              <th className='text-left pl-4 border-r border-gray-200'>Status</th>
+                              <td className='text-left pl-4'>{ViewResult.Status}</td>
                             </tr>
 
                           </table>
@@ -193,12 +213,9 @@ const AllBooks = () => {
                                     }
                                 </td>
                                 <td className='text-center'>
-                                    {
-                                        (() => {
-                                            if(RoleUser === "SuperAdmin" || RoleUser === "Director" || RoleUser === "Secretary"){
-                                                return (
+
                                                     <div className="md:flex">
-                                                      <div className='cursor-pointer py-2 px-2 my-2 ml-2 rounded bg-blue-500 text-white duration-500 hover:bg-blue-600 flex text-sm'><BsPenFill className=''/> <span className='pl-2'>Update</span></div>
+                                                      
                                                       <a href='#ViewBook' onClick={() => ViewAccNo(lastbooks.AccNumber)}>
                                                         <div className='cursor-pointer py-2 px-2 my-2 ml-2 rounded bg-purple-500 text-white duration-500 hover:bg-purple-600 flex text-sm'>
                                                           <BsEyeFill className=''/>
@@ -206,17 +223,7 @@ const AllBooks = () => {
                                                         </div>
                                                       </a>                                         
                                                     </div>
-                                                )
-                                            }
-                                            else{
-                                              return (
-                                                <div className="md:flex">
-                                                  <div className='cursor-pointer py-2 px-2 my-2 ml-2 rounded bg-purple-500 text-white duration-500 hover:bg-purple-600 flex text-sm'><BsEyeFill className=''/> <span className='pl-2'>View</span></div>
-                                                </div>
-                                              )
-                                            }
-                                        })()
-                                    }
+
                                 </td>
                             </tr>
                             )
@@ -245,12 +252,8 @@ const AllBooks = () => {
                                     }
                                 </td>
                                 <td className='text-center'>
-                                    {
-                                        (() => {
-                                            if(RoleUser === "SuperAdmin" || RoleUser === "Director" || RoleUser === "Secretary"){
-                                                return (
                                                     <div className="md:flex">
-                                                      <div className='cursor-pointer py-2 px-2 my-2 ml-2 rounded bg-blue-500 text-white duration-500 hover:bg-blue-600 flex text-sm'><BsPenFill className=''/> <span className='pl-2'>Update</span></div>
+                                                      
                                                         <a href='#ViewBook' onClick={() => ViewAccNo(bookSearch.AccNumber)}>
                                                           <div className='cursor-pointer py-2 px-2 my-2 ml-2 rounded bg-purple-500 text-white duration-500 hover:bg-purple-600 flex text-sm'>
                                                             <BsEyeFill className=''/>
@@ -258,17 +261,8 @@ const AllBooks = () => {
                                                           </div>
                                                         </a>     
                                                       </div>
-                                                )
-                                            }
-                                            else{
-                                              return (
-                                                <div className="md:flex">
-                                                  <div className='cursor-pointer py-2 px-2 my-2 ml-2 rounded bg-purple-500 text-white duration-500 hover:bg-purple-600 flex text-sm'><BsEyeFill className=''/> <span className='pl-2'>View</span></div>
-                                                </div>
-                                              )
-                                            }
-                                        })()
-                                    }
+
+
                                 </td>
                             </tr>
                             )
