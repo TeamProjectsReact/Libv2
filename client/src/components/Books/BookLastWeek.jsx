@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import  secureLocalStorage  from  "react-secure-storage"
 import axios from 'axios';
 import { Chart, registerables } from 'chart.js';
+import moment from 'moment';
 
 Chart.register(...registerables);
 
@@ -19,8 +20,17 @@ const BookLastWeek = () => {
         axios.get('http://localhost:5000/books/LastWeek')
         .then(res => {
             const data = res.data;
-            const labels = data.map(item => item._id);
-            const counts = data.map(item => item.count);
+            // Generate the last 7 days
+            const last7Days = Array.from({ length: 7 }, (_, i) =>
+            moment().subtract(i, 'days').format('YYYY-MM-DD')
+            ).reverse();
+
+            // Map data to the last 7 days
+            const labels = last7Days;
+            const counts = last7Days.map(day => {
+            const dayData = data.find(item => item._id === day);
+            return dayData ? dayData.count : 0;
+            });
     
             setChartData({
               labels,
