@@ -12,7 +12,6 @@ const BookSchema = new mongoose.Schema({
     },
     ClassNo: {
         type: String,
-        required: true,
     },
     AuthorEditort: {
         type: String,
@@ -47,6 +46,6 @@ const BookSchema = new mongoose.Schema({
     }
 })
 
-const Book = mongoose.model('books', BookSchema)
+const Book = mongoose.model('Book', BookSchema)
 
 module.exports = Book
