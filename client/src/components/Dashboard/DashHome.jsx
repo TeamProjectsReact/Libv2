@@ -87,9 +87,13 @@ const DashHome = () => {
                         })
                     }   
                     </div>
-
-                    <div className="">
-                        <BookLastWeek />
+                    <hr className='my-12'/>
+                    <div className="my-8">
+                        <div className="md:grid grid-cols-2 gap-4">
+                            <div className="">
+                                <BookLastWeek />
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
