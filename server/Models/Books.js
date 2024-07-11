@@ -43,6 +43,10 @@ const BookSchema = new mongoose.Schema({
     Status: {
         type: String,
         required: true,
+    },
+    AddedData: {
+        type: Date,
+        default: Date.now
     }
 })
 
