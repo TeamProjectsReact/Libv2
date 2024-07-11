@@ -187,7 +187,7 @@ const BookController = {
             const books = await Books.aggregate([
               {
                 $match: {
-                  dateAdded: {
+                  AddedData: {
                     $gte: last7Days
                   }
                 }
