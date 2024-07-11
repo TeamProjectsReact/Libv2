@@ -86,6 +86,10 @@ const DashHome = () => {
                         })
                     }   
                     </div>
+
+                    <div className="">
+                        hi all
+                    </div>
                 </div>
             </div>
         )
