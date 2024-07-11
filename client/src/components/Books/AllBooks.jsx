@@ -72,6 +72,13 @@ const AllBooks = () => {
     SetisViewClick(false)
   }
 
+  // update Book
+  const [UpdateBook, SetUpdateBook] = useState(false)
+
+  const headleUpdate = () => {
+    SetUpdateBook(true)
+  }
+
   if(RoleUser !== null && EmailUser !== null){
     return (
       <div>
@@ -93,7 +100,7 @@ const AllBooks = () => {
                             if(RoleUser === "SuperAdmin" || RoleUser === "Director" || RoleUser === "Secretary"){
                               return (
                                 <div className="my-2">
-                                  <button className="bg-blue-500 text-white py-2 px-4 rounded duration-500 hover:bg-blue-500 shadow-md">Update</button>
+                                  <button onClick={headleUpdate} className="bg-blue-500 text-white py-2 px-4 rounded duration-500 hover:bg-blue-500 shadow-md">Update</button>
                                 </div>
                               )
                             }
@@ -111,44 +118,56 @@ const AllBooks = () => {
                               <BsFileXFill className='h-10 w-auto text-red-500'/>
                             </p>
                           </div>
+                          {
+                            (() => {
+                              if(UpdateBook === true) {
 
-                          <div className="">
-                            <table className='table-auto bg-white  my-4'>
-                              <tr className='h-12 border-b border-gray-200 '>
-                                <th className='text-left pl-4 border-r border-gray-200 md:w-72'>Book Title</th>
-                                <td className='text-left pl-4'>{ViewResult.Title}</td>
-                              </tr>
-                              <tr className='h-12 border-b border-gray-200'>
-                                <th className='text-left pl-4 border-r border-gray-200'>Class No</th>
-                                <td className='text-left pl-4'>{ViewResult.ClassNo}</td>
-                              </tr>
-                              <tr className='h-12 border-b border-gray-200'>
-                                <th className='text-left pl-4 border-r border-gray-200'>Authores</th>
-                                <td className='text-left pl-4'>{ViewResult.AuthorEditort} {ViewResult.AuthorEditor}</td>
-                              </tr>
-                              <tr className='h-12 border-b border-gray-200'>
-                                <th className='text-left pl-4 border-r border-gray-200'>Description</th>
-                                <td className='text-left pl-4'>{ViewResult.Discription}</td>
-                              </tr>
-                              <tr className='h-12 border-b border-gray-200'>
-                                <th className='text-left pl-4 border-r border-gray-200'>Publisher</th>
-                                <td className='text-left pl-4'>{ViewResult.Publisher}</td>
-                              </tr>
-                              <tr className='h-12 border-b border-gray-200'>
-                                <th className='text-left pl-4 border-r border-gray-200'>Publish Year</th>
-                                <td className='text-left pl-4'>{ViewResult.YearofPublication}</td>
-                              </tr>
-                              <tr className='h-12 border-b border-gray-200'>
-                                <th className='text-left pl-4 border-r border-gray-200'>Publish Place</th>
-                                <td className='text-left pl-4'>{ViewResult.PlaceofPublisher}</td>
-                              </tr>
-                              <tr className='h-12 border-b border-gray-200'>
-                                <th className='text-left pl-4 border-r border-gray-200'>Status</th>
-                                <td className='text-left pl-4'>{ViewResult.Status}</td>
-                              </tr>
+                              }
+                              else{
+                                return (
+                                  <div className="">
+                                  <table className='table-auto bg-white  my-4'>
+                                    <tr className='h-12 border-b border-gray-200 '>
+                                      <th className='text-left pl-4 border-r border-gray-200 md:w-72'>Book Title</th>
+                                      <td className='text-left pl-4'>{ViewResult.Title}</td>
+                                    </tr>
+                                    <tr className='h-12 border-b border-gray-200'>
+                                      <th className='text-left pl-4 border-r border-gray-200'>Class No</th>
+                                      <td className='text-left pl-4'>{ViewResult.ClassNo}</td>
+                                    </tr>
+                                    <tr className='h-12 border-b border-gray-200'>
+                                      <th className='text-left pl-4 border-r border-gray-200'>Authores</th>
+                                      <td className='text-left pl-4'>{ViewResult.AuthorEditort} {ViewResult.AuthorEditor}</td>
+                                    </tr>
+                                    <tr className='h-12 border-b border-gray-200'>
+                                      <th className='text-left pl-4 border-r border-gray-200'>Description</th>
+                                      <td className='text-left pl-4'>{ViewResult.Discription}</td>
+                                    </tr>
+                                    <tr className='h-12 border-b border-gray-200'>
+                                      <th className='text-left pl-4 border-r border-gray-200'>Publisher</th>
+                                      <td className='text-left pl-4'>{ViewResult.Publisher}</td>
+                                    </tr>
+                                    <tr className='h-12 border-b border-gray-200'>
+                                      <th className='text-left pl-4 border-r border-gray-200'>Publish Year</th>
+                                      <td className='text-left pl-4'>{ViewResult.YearofPublication}</td>
+                                    </tr>
+                                    <tr className='h-12 border-b border-gray-200'>
+                                      <th className='text-left pl-4 border-r border-gray-200'>Publish Place</th>
+                                      <td className='text-left pl-4'>{ViewResult.PlaceofPublisher}</td>
+                                    </tr>
+                                    <tr className='h-12 border-b border-gray-200'>
+                                      <th className='text-left pl-4 border-r border-gray-200'>Status</th>
+                                      <td className='text-left pl-4'>{ViewResult.Status}</td>
+                                    </tr>
+      
+                                  </table>
+                                </div>
+                                )
+                              }
+                            })()
+                          }
 
-                            </table>
-                          </div>
+
                       </div>
                     </div>
                   )
