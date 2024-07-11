@@ -104,7 +104,20 @@ const AllBooks = () => {
                             if(RoleUser === "SuperAdmin" || RoleUser === "Director" || RoleUser === "Secretary"){
                               return (
                                 <div className="my-2">
-                                  <button onClick={headleUpdate} className="bg-blue-500 text-white py-2 px-4 rounded duration-500 hover:bg-blue-500 shadow-md">Update</button>
+                                  {
+                                    (() => {
+                                      if(UpdateBook === false){
+                                        return(
+                                          <button onClick={headleUpdate} className="bg-blue-500 text-white py-2 px-4 rounded duration-500 hover:bg-blue-500 shadow-md">Update</button>
+                                        )
+                                      }
+                                      else{
+                                        return (
+                                          <button onClick={headleCloseUpdate} className="bg-red-500 text-white py-2 px-4 rounded duration-500 hover:bg-red-500 shadow-md">Close</button>
+                                        )
+                                      }
+                                    })()
+                                  }                                  
                                 </div>
                               )
                             }
@@ -127,7 +140,6 @@ const AllBooks = () => {
                               if(UpdateBook === true) {
                                 return (
                                   <div className="">
-                                    <span className="bg-red-500 py-1 px-4 text-white rounded cursor-pointer duration-500 hover:bg-red-600 shadow-md" onClick={headleCloseUpdate}>Close Update</span>
                                   </div>
                                 )
                               }
