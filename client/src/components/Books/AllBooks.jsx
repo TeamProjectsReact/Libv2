@@ -52,7 +52,7 @@ const AllBooks = () => {
   const [AccNoView, SetAccNoView] = useState()
   const [isViewClick, SetisViewClick] = useState(false)
 
-  const [ViewResul, SetViewResul] = useState([])
+  const [ViewResult, SetViewResult] = useState([])
 
   const ViewAccNo = async (id) => {
     SetisViewClick(true)
@@ -60,7 +60,7 @@ const AllBooks = () => {
 
     try{
       const res = await axios.get('http://localhost:5000/books/GetViewBook/' + id)
-      .then(SetViewResul(res.data.Result))
+      .then(SetViewResult(res.data.Result))
       .catch(err => console.log(err))
     }
     catch (err) {
@@ -94,6 +94,10 @@ const AllBooks = () => {
                           <p className="mr-4 cursor-pointer" onClick={headelCloseView}>
                             <BsFileXFill className='h-10 w-auto text-red-500'/>
                           </p>
+                        </div>
+
+                        <div className="">
+                          Book title{ViewResult.Title}
                         </div>
                     </div>
                   )
