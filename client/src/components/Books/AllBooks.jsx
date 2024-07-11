@@ -75,14 +75,13 @@ const AllBooks = () => {
                 }
                 else{
                   return (
-                    <div className="my-4 pt-4" id='ViewBook'>
+                    <div className="my-4 pt-4 bg-gray-200 p-4 rounded shadow-md" id='ViewBook'>
                         <div className="flex justify-between">
                           <h1 className="text-xl font-semibold text-gray-500">Book Acc Number : {AccNoView}</h1>
                           <p className="mr-4 cursor-pointer" onClick={headelCloseView}>
                             <BsFileXFill className='h-10 w-auto text-red-500'/>
                           </p>
                         </div>
-                        <hr className='mt-2'/>
                     </div>
                   )
                 }
