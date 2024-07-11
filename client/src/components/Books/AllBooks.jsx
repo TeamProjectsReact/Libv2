@@ -52,9 +52,22 @@ const AllBooks = () => {
   const [AccNoView, SetAccNoView] = useState()
   const [isViewClick, SetisViewClick] = useState(false)
 
-  const ViewAccNo = (id) => {
+  const [ViewResul, SetViewResul] = useState([])
+
+  const ViewAccNo = async (id) => {
     SetisViewClick(true)
     SetAccNoView(id)
+
+    try{
+      const res = await axios.get('http://localhost:5000/books/GetViewBook/' + id)
+      .then(SetViewResul(res.data.Result))
+      .catch(err => console.log(err))
+    }
+    catch (err) {
+      console.log(err)
+    }
+
+
   }  
 
   const headelCloseView = () => {
