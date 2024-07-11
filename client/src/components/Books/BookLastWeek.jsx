@@ -52,8 +52,8 @@ const BookLastWeek = () => {
 
     if(RoleUser !== null && EmailUser !== null) {
         return (
-            <div>
-                <div>
+            <div className='relative w-full h-96'>
+                <div >
                     <h2>Books Added in Last 7 Days</h2>
                     {chartData.labels ? (
                         <Bar
