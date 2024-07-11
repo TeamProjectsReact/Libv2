@@ -35,40 +35,25 @@ const BookController = {
 
     SearchBooks: async(req, res) => {
         try{
-            const {
-                Title,
-                Author,
-                ISBNNumber,
-                Keywords,
-                Publisher,
-                YearofPublication,
-                PlaceofPublisher
-            } = req.query;
+            const { query } = req.query;
+            const items = await Books.find({
+              $or: [
+                { Title: { $regex: query, $options: 'i' } },
+                { ClassNo: { $regex: query, $options: 'i' } },
+                { AuthorEditort: { $regex: query, $options: 'i' } },
+                { AuthorEditor: { $regex: query, $options: 'i' } },
+                { Description: { $regex: query, $options: 'i' } },
+                { ISBNNumber: { $regex: query, $options: 'i' } },
+                { Keywords1: { $regex: query, $options: 'i' } },
+                { Keywords2: { $regex: query, $options: 'i' } },
+                { Publisher: { $regex: query, $options: 'i' } },
+                { PlaceofPublisher: { $regex: query, $options: 'i' } },
+                { Status: { $regex: query, $options: 'i' } },
+              ],
+            });
 
-
-            const query = {};
-            if (Title) query.Title = new RegExp(Title, 'i');
-            if (Author) {
-            query.$or = [
-                { AuthorEditort: new RegExp(Author, 'i') },
-                { AuthorEditor: new RegExp(Author, 'i') }
-            ];
-            }
-            if (ISBNNumber) query.ISBNNumber = new RegExp(ISBNNumber, 'i');
-            if (Keywords) {
-            query.$or = [
-                { Keywords1: new RegExp(Keywords, 'i') },
-                { Keywords2: new RegExp(Keywords, 'i') }
-            ];
-            }
-            if (Publisher) query.Publisher = new RegExp(Publisher, 'i');
-            if (YearofPublication) query.YearofPublication = YearofPublication;
-            if (PlaceofPublisher) query.PlaceofPublisher = new RegExp(PlaceofPublisher, 'i');
-
-            const BookData = await Books.find(query);
-
-            if(BookData){
-                return res.json({ Result: BookData })
+            if(items){
+                return res.json({ Result: items })
                 // console.log(BookData)
             }   
             else{
