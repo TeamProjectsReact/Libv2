@@ -213,6 +213,7 @@ const AllBooks = () => {
                   onChange={(e) => setQuery(e.target.value)}
                   placeholder="Search items..."
                   className='h-12 pl-2 bg-gray-200 rounded my-4 w-full'
+                  required
                 />
 
               <div className="my-4">
