@@ -83,11 +83,24 @@ const AllUsers = () => {
 
                 <hr className='my-4'/>
 
-                {
-                    (() => {
-
-                    })()
-                }
+                <div className="" id="ViewUser">
+                    {
+                        (() => {
+                            if(IsUserView === false) {
+                                return (
+                                    <div className=""></div>
+                                )
+                            }
+                            else{
+                                return (
+                                    <div className="">
+                                        {SelectUserEmail}
+                                    </div>
+                                )
+                            }
+                        })()
+                    }
+                </div>
 
                 <div className="my-4">
                     <h1 className="text-xl text-gray-500">Search Result</h1>
