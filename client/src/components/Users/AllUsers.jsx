@@ -60,7 +60,8 @@ const AllUsers = () => {
                     <div className="">
                         <form method="post" onSubmit={headleSubmit}>
                             <div className="">
-                                <input type="text" name="" id="" className="w-full bg-gray-200 pl-2 h-12 my-2" placeholder='Search User' required/>
+                                <input type="text" name="" id="" className="w-full bg-gray-200 pl-2 h-12 my-2" placeholder='Search User' required
+                                onChange={(e) => setQuery(e.target.value)}/>
                             </div>
 
                             <div className="">
