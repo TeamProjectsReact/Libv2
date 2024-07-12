@@ -11,5 +11,6 @@ router.post('/AddBook', BookController.AddnewBook)
 router.get('/TenLastBooks', BookController.lastBookTen)
 router.get('/GetViewBook/:id', BookController.ViewSelectedBook)
 router.get('/LastWeek', BookController.BooksAddedLastWeek)
+router.get('/FourLastBooks', BookController.lastBookFour)
 
 module.exports = router
