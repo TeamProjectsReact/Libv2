@@ -43,15 +43,11 @@ const UserController = {
               { Role: { $regex: query, $options: 'i' } },
             ];
         
-            if (!isNaN(query)) {
-              searchCriteria.push({ YearofPublication: parseInt(query) });              
-            }          
-
             const items = await User.find({ $or: searchCriteria });
 
             if(items){
                 return res.json({ Result: items })
-                // console.log(BookData)
+                // console.log(items)
             }   
             else{
                 return res.json({ Error: "No Book Found"})
