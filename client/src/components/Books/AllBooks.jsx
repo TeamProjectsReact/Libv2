@@ -149,7 +149,7 @@ const AllBooks = () => {
                               else{
                                 return (
                                   <div className="">
-                                  <table className='table-auto bg-white my-4 '>
+                                  <table className='table-auto bg-white my-4 min-w-full'>
                                     <tr className='h-12 border-b border-gray-200 '>
                                       <th className='text-left pl-4 border-r border-gray-200 md:w-72'>Book Title</th>
                                       <td className='text-left pl-4'>{ViewResult.Title}</td>
