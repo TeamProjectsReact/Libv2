@@ -99,10 +99,10 @@ const AllUsers = () => {
                             }
                             else{
                                 return (
-                                    <div className="">
+                                    <div className="bg-gray-200 py-4 px-6 rounded shadow-md">
                                         <div className="flex justify-between">
                                             <h1 className="font-semibold text-gray-500">The User {SelectUserEmail} Information</h1>
-                                            <div className="mr-4" onClick={headleCloseUserView}>
+                                            <div className="mr-4 cursor-pointer" onClick={headleCloseUserView}>
                                                 <BsXCircleFill className='h-6 w-auto text-red-500'/>
                                             </div>
                                         </div>
