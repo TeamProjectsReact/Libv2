@@ -81,14 +81,27 @@ const AllUsers = () => {
                                                         <th scope="col" className="max-w-72 px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
                                                             Email Address
                                                         </th>
-                                                        <th scope="col" className="max-w-72 px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
+                                                        <th scope="col" className="md:table-cell hidden max-w-72 px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
                                                             Username
                                                         </th>
-                                                        <th scope="col" className="max-w-72 px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
+                                                        <th scope="col" className="md:table-cell hidden max-w-72 px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
                                                             Role
                                                         </th>
-                                                        
+                                                        <th scope="col" className="max-w-72 px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
+                                                            Action
+                                                        </th>
                                                     </tr>
+                                                </thead>
+                                                <thead>
+                                                    {
+                                                        LastUsers.map((users,index) => {
+                                                            return (
+                                                                <tr key={index}>
+                                                                    
+                                                                </tr>
+                                                            )
+                                                        })
+                                                    }
                                                 </thead>
                                             </table>
                                         </div>
