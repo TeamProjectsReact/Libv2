@@ -54,9 +54,17 @@ const AllBooks = () => {
 
   const [ViewResult, SetViewResult] = useState([])
 
+  // update Book
+  const [UpdateBook, SetUpdateBook] = useState(false)
+
+  const headleUpdate = () => {
+    SetUpdateBook(true)
+  }
+
   const ViewAccNo = (id) => {
     SetisViewClick(true)
     SetAccNoView(id)
+    SetUpdateBook(false)
 
     try{
       axios.get('http://localhost:5000/books/GetViewBook/' + id)
@@ -72,12 +80,7 @@ const AllBooks = () => {
     SetisViewClick(false)
   }
 
-  // update Book
-  const [UpdateBook, SetUpdateBook] = useState(false)
 
-  const headleUpdate = () => {
-    SetUpdateBook(true)
-  }
 
   const headleCloseUpdate = () => {
     SetUpdateBook(false)
@@ -146,7 +149,7 @@ const AllBooks = () => {
                               else{
                                 return (
                                   <div className="">
-                                  <table className='table-auto bg-white  my-4'>
+                                  <table className='table-auto bg-white my-4 '>
                                     <tr className='h-12 border-b border-gray-200 '>
                                       <th className='text-left pl-4 border-r border-gray-200 md:w-72'>Book Title</th>
                                       <td className='text-left pl-4'>{ViewResult.Title}</td>
