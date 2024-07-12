@@ -181,7 +181,7 @@ const AllUsers = () => {
                                                                                 <td className="md:table-cell hidden max-w-[72px] px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                                                                                     {searchUser.username}
                                                                                 </td>
-                                                                                <td className="max-w-[72px] px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                                                                <td className="md:table-cell hidden max-w-[72px] px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                                                                                     {
                                                                                         (() => {
                                                                                             if(searchUser.Role === "SuperAdmin"){
@@ -218,7 +218,7 @@ const AllUsers = () => {
                                                                                 <td className="md:table-cell hidden max-w-[72px] px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                                                                                     {users.username}
                                                                                 </td>
-                                                                                <td className="max-w-[72px] px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                                                                <td className="md:table-cell hidden max-w-[72px] px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                                                                                     {
                                                                                         (() => {
                                                                                             if(users.Role === "SuperAdmin"){
