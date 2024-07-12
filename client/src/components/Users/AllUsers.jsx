@@ -93,33 +93,71 @@ const AllUsers = () => {
                                                 </thead>
                                                 <thead>
                                                     {
-                                                        LastUsers.map((users,index) => {
-                                                            return (
-                                                                <tr key={index}>
-                                                                    <th className="text-left max-w-[72px] px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                                                                        {users.email}
-                                                                    </th>
-                                                                    <td className="md:table-cell hidden max-w-[72px] px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                                                                        {users.username}
-                                                                    </td>
-                                                                    <td className="max-w-[72px] px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                                                                        {
-                                                                            (() => {
-                                                                                if(users.Role === "SuperAdmin"){
-                                                                                    return(
-                                                                                        <div className="text-red-500">{users.Role}</div>
-                                                                                    )
-                                                                                }
-                                                                                else{
-                                                                                    return (
-                                                                                        <div className="text-blue-500">{users.Role}</div>
-                                                                                    )
-                                                                                }
-                                                                            })()
-                                                                        }
-                                                                    </td>
-                                                                </tr>
-                                                            )
+                                                        (() => {
+                                                            if(IsSearchSubimited === true){
+                                                                return (
+                                                                    UserSearch.map((searchUser, index) => {
+                                                                        return (
+                                                                            <tr key={index}>
+                                                                                <th className="text-left max-w-[72px] px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                                                                    {searchUser.email}
+                                                                                </th>
+                                                                                <td className="md:table-cell hidden max-w-[72px] px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                                                                    {searchUser.username}
+                                                                                </td>
+                                                                                <td className="max-w-[72px] px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                                                                    {
+                                                                                        (() => {
+                                                                                            if(searchUser.Role === "SuperAdmin"){
+                                                                                                return(
+                                                                                                    <div className="text-red-500">{searchUser.Role}</div>
+                                                                                                )
+                                                                                            }
+                                                                                            else{
+                                                                                                return (
+                                                                                                    <div className="text-blue-500">{searchUser.Role}</div>
+                                                                                                )
+                                                                                            }
+                                                                                        })()
+                                                                                    }
+                                                                                </td>
+                                                                            </tr>
+                                                                        )
+                                                                    })
+                                                                )
+                                                            }
+                                                            else{
+                                                                return (
+                                                                    LastUsers.map((users,index) => {
+                                                                        return (
+                                                                            <tr key={index}>
+                                                                                <th className="text-left max-w-[72px] px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                                                                    {users.email}
+                                                                                </th>
+                                                                                <td className="md:table-cell hidden max-w-[72px] px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                                                                    {users.username}
+                                                                                </td>
+                                                                                <td className="max-w-[72px] px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                                                                    {
+                                                                                        (() => {
+                                                                                            if(users.Role === "SuperAdmin"){
+                                                                                                return(
+                                                                                                    <div className="text-red-500">{users.Role}</div>
+                                                                                                )
+                                                                                            }
+                                                                                            else{
+                                                                                                return (
+                                                                                                    <div className="text-blue-500">{users.Role}</div>
+                                                                                                )
+                                                                                            }
+                                                                                        })()
+                                                                                    }
+                                                                                </td>
+                                                                            </tr>
+                                                                        )
+                                                                    })
+                                                                )
+                                                            }
                                                         })
                                                     }
                                                 </thead>
