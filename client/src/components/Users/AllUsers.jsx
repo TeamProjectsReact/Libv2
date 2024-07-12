@@ -74,6 +74,12 @@ const AllUsers = () => {
 
                 <hr className='my-4'/>
 
+                {
+                    (() => {
+
+                    })()
+                }
+
                 <div className="my-4">
                     <h1 className="text-xl text-gray-500">Search Result</h1>
                         <div className="">
@@ -178,7 +184,7 @@ const AllUsers = () => {
                                                                                     }
                                                                                 </td>
                                                                                 <td className="max-w-[72px] px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                                                                                    <a href="#ViewUser">
+                                                                                    <a href="#ViewUser" onClick={() => ViewUser(users.email)}>
                                                                                         <button className="bg-purple-500 text-white py-1 px-4 rounded shadow-md duration-500 hover:bg-purple-600">View</button>
                                                                                     </a>
                                                                                 </td>
