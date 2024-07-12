@@ -167,7 +167,7 @@ const BookController = {
             const Fourbooks = await Books.find().sort({ AccNumber: -1 }).limit(4)
             // console.log(Tenbooks)
             
-            if(Tenbooks) {
+            if(Fourbooks) {
                 return res.json({Result: Fourbooks})
             }
             else{
