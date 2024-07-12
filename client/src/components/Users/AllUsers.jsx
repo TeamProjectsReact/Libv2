@@ -112,10 +112,15 @@ const AllUsers = () => {
                                 return (
                                     <div className="bg-gray-200 py-4 px-6 rounded shadow-md">
                                         <div className="flex justify-between">
-                                            <h1 className="font-semibold text-gray-500">The User {SelectUserEmail} Information</h1>
+                                            <h1 className="font-semibold text-gray-500">{SelectUserEmail}</h1>
                                             <div className="mr-4 cursor-pointer" onClick={headleCloseUserView}>
                                                 <BsXCircleFill className='h-6 w-auto text-red-500'/>
                                             </div>
+                                        </div>
+                                        <hr />
+
+                                        <div className="">
+                                            {ViewUserData.username}
                                         </div>
                                     </div>
                                 )
