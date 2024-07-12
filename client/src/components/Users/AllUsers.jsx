@@ -29,6 +29,13 @@ const AllUsers = () => {
         .catch(err => console.log(err))
     }, [])
 
+    // close Search
+    const CloseSearch = () => {
+        SetIsSearchSubimited(false)
+        window.location.reload()
+    }
+
+
     if(RoleUser === "SuperAdmin" || RoleUser === "Director" || RoleUser === "Secretary"){
         return (
             <div>
@@ -49,6 +56,29 @@ const AllUsers = () => {
                             </div>
                         </form>
                     </div>
+                </div>  
+
+                <hr className='my-4'/>
+
+                <div className="my-4">
+                    <h1 className="text-xl text-gray-500">Search Result</h1>
+
+                    {
+                        (() => {
+                            if(IsSearchSubimited === true){
+                                return (
+                                    <div className="">
+                                        <button onClick={CloseSearch} className="bg-red-500 py-1 px-4 rounded shadow-md text-white my-3 duration-500 hover:bg-red-600">Close Search</button>
+                                    </div>
+                                )
+                            }
+                            else{
+                                return (
+                                    <div className="">Not Submitted</div>
+                                )
+                            }
+                        })()
+                    }
                 </div>
             </div>
         )
