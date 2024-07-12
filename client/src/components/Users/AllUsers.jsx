@@ -62,18 +62,7 @@ const AllUsers = () => {
                 <div className="my-4">
                     <h1 className="text-xl text-gray-500">Search Result</h1>
 
-                    {
-                        (() => {
-                            if(IsSearchSubimited === true){
-                                return (
-                                    <div className="">
-                                        <button onClick={CloseSearch} className="bg-red-500 py-1 px-4 rounded shadow-md text-white my-3 duration-500 hover:bg-red-600">Close Search</button>
-                                    </div>
-                                )
-                            }
-                            else{
-                                return (
-                                    <div className="">
+                                   <div className="">
                                         <div className="my-3 overflow-hidden rounded-t-lg border border-gray-200">
                                             <table className="min-w-full divide-y divide-gray-200">
                                                 <thead className="bg-gray-800 h-12 text-white">
@@ -127,10 +116,7 @@ const AllUsers = () => {
                                             </table>
                                         </div>
                                     </div>
-                                )
-                            }
-                        })()
-                    }
+
                 </div>
             </div>
         )
