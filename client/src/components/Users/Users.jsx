@@ -24,8 +24,8 @@ const Users = () => {
 
   const UserData = [
     {id: 1, link: 'AllUsers', name: "Users", icon: <BsPeopleFill />, value: <CountUp end={CountUser} />, bgColor: "bg-blue-500/30", borderColor: "border-blue-500", style: "text-blue-500"},
-    {id: 2, link: 'UserAccounts', name: "User Accounts", icon: <BsPersonFill />, value: <CountUp end={20} />, bgColor: "bg-green-500/30", borderColor: "border-green-500", style: "text-green-500"},
-    {id: 3, link: 'Admins', name: "Admins", icon: <BsPersonFillLock />, value: <CountUp end={20} />, bgColor: "bg-red-500/30", borderColor: "border-red-500", style: "text-red-500"},
+    {id: 2, link: '', name: "User Accounts", icon: <BsPersonFill />, value: <CountUp end={20} />, bgColor: "bg-green-500/30", borderColor: "border-green-500", style: "text-green-500"},
+    {id: 3, link: '', name: "Admins", icon: <BsPersonFillLock />, value: <CountUp end={20} />, bgColor: "bg-red-500/30", borderColor: "border-red-500", style: "text-red-500"},
     {id: 4, link: 'AddNewAdmin', name: "Add New Admin", icon: <BsPersonFillAdd />, value: "#", bgColor: "bg-green-500", borderColor: "", style: "text-white"},    
   ]
 
