@@ -48,10 +48,14 @@ const AllUsers = () => {
         SetIsSearchSubimited(false)
     }
 
-
     // view user data
+    const [IsUserView, SetIsUserView] = useState(false)
+
+    const [SelectUserEmail, SetSelectUserEmail] = useState('')
+
     const ViewUser = (id) => {
-        
+        SetIsUserView(true)
+        SetSelectUserEmail(id)
     }
 
     if(RoleUser === "SuperAdmin" || RoleUser === "Director" || RoleUser === "Secretary"){
