@@ -97,7 +97,28 @@ const AllUsers = () => {
                                                         LastUsers.map((users,index) => {
                                                             return (
                                                                 <tr key={index}>
-                                                                    
+                                                                    <th className="text-left max-w-[72px] px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                                                        {users.email}
+                                                                    </th>
+                                                                    <td className="max-w-[72px] px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                                                        {users.username}
+                                                                    </td>
+                                                                    <td className="max-w-[72px] px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                                                        {
+                                                                            (() => {
+                                                                                if(users.Role === "SuperAdmin"){
+                                                                                    return(
+                                                                                        <div className="text-red-500">{users.Role}</div>
+                                                                                    )
+                                                                                }
+                                                                                else{
+                                                                                    return (
+                                                                                        <div className="text-blue-500">{users.Role}</div>
+                                                                                    )
+                                                                                }
+                                                                            })()
+                                                                        }
+                                                                    </td>
                                                                 </tr>
                                                             )
                                                         })
