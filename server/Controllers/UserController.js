@@ -46,8 +46,8 @@ const UserController = {
             const items = await User.find({ $or: searchCriteria });
 
             if(items){
-                // return res.json({ Result: items })
-                console.log(items)
+                return res.json({ Result: items })
+                // console.log(items)
             }   
             else{
                 return res.json({ Error: "No Book Found"})
