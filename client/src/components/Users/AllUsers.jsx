@@ -54,9 +54,20 @@ const AllUsers = () => {
 
     const [SelectUserEmail, SetSelectUserEmail] = useState('')
 
+    const [ViewUserData, SetViewUserData] = useState([])
+
     const ViewUser = (id) => {
         SetIsUserView(true)
         SetSelectUserEmail(id)
+
+        try{
+            axios.get('http://localhost:5000/user/ViewUser/' + id)
+            .then(res => SetViewUserData(res.data.Result))
+            .catch(err => console.log(err))
+        }
+        catch (err) {
+            console.log(err)
+        }
     }
 
     // close user view
