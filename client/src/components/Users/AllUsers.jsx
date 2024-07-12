@@ -20,6 +20,15 @@ const AllUsers = () => {
         SetIsSearchSubimited(true)
     }
 
+    // Get last 10 uses
+    const [LastUsers, SetLastUsers] = useState([])
+
+    useEffect(() => {
+        axios.get('http://localhost:5000/user/LastUsers')
+        .then(res => SetLastUsers(res.data.Result))
+        .catch(err => console.log(err))
+    }, [])
+
     if(RoleUser === "SuperAdmin" || RoleUser === "Director" || RoleUser === "Secretary"){
         return (
             <div>
