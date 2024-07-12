@@ -14,6 +14,19 @@ const AllUsers = () => {
         return (
             <div>
                 <Users />
+
+                <div className="">
+                    <h1 className="text-xl text-gray-500">Search User</h1>
+                    <hr />
+
+                    <div className="">
+                        <form method="post">
+                            <div className="">
+                                <input type="text" name="" id="" className="w-full bg-gray-200 pl-2 h-12 my-2" placeholder='Search User' required/>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
         )
     }
