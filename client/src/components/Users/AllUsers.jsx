@@ -14,10 +14,23 @@ const AllUsers = () => {
     // check the search form us submitted
     const [IsSearchSubimited, SetIsSearchSubimited] = useState(false)
 
+    const [query, setQuery] = useState('');
+
+    const [UserSearch, SetUserSearch] = useState([])
+
     // submit the search form
-    const headleSubmit = (e) => {
+    const headleSubmit = async (e) => {
         e.preventDefault();
         SetIsSearchSubimited(true)
+
+        try {
+            const res = await axios.get(`http://localhost:5000/user/SearchUser?query=${query}`)
+            .then(res => SetUserSearch(res.data.Result))
+        }
+        catch (err) {
+            console.log(err)
+        }
+        
     }
 
     // Get last 10 uses
