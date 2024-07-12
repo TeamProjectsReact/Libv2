@@ -21,11 +21,12 @@ const AllUsers = () => {
     // submit the search form
     const headleSubmit = async (e) => {
         e.preventDefault();
-        SetIsSearchSubimited(true)
+        SetIsSearchSubimited(true)        
 
         try {
             const res = await axios.get(`http://localhost:5000/user/SearchUser?query=${query}`)
             .then(res => SetUserSearch(res.data.Result))
+            console.log(UserSearch)
         }
         catch (err) {
             console.log(err)
