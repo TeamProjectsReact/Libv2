@@ -26,7 +26,7 @@ const AllUsers = () => {
         try {
             const res = await axios.get(`http://localhost:5000/user/SearchUser?query=${query}`)
             .then(res => SetUserSearch(res.data.Result))
-            console.log(UserSearch)
+            // console.log(UserSearch)
         }
         catch (err) {
             console.log(err)
@@ -160,7 +160,7 @@ const AllUsers = () => {
                                                                     })
                                                                 )
                                                             }
-                                                        })
+                                                        })()
                                                     }
                                                 </thead>
                                             </table>
