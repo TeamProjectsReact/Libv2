@@ -42,6 +42,15 @@ const DashHome = () => {
         {id: 8, name: "My Borrowed Books", bgstyle: 'bg-yellow-400/20', borderStyle: 'border-yellow-500', icon: <BsJournalCheck />, value: <CountUp end={20} />, style: "text-yellow-500"},
     ]
 
+    // get last 4 books
+    const [LastFourBooks, SetLastFourBooks] = useState([])
+
+    useEffect(() => {
+        axios.get('http://localhost:5000/books/FourLastBooks')
+        .then(res => SetLastFourBooks(res.data.Result))
+        .catch(err => console.log(err))
+    }, [])
+
     if(RoleUser !== null && EmailUser !== null){
         return (
             <div>
@@ -108,6 +117,20 @@ const DashHome = () => {
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            {
+                                                LastFourBooks.map((lastBooks,index) => {
+                                                    return (
+                                                        <tr key={index}>
+                                                            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                                                Data 1
+                                                            </td>
+                                                            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                                                Data 1
+                                                            </td>
+                                                        </tr>
+                                                    )
+                                                })
+                                            }
                                             <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                                                 Data 1
                                             </td>
