@@ -100,13 +100,21 @@ const DashHome = () => {
                                         <thead className="bg-gray-800 h-12 text-white">
                                             <tr>
                                                 <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
-                                                    Column 1
+                                                    Book Title
                                                 </th>
                                                 <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
-                                                    Column 1
+                                                    Class No
                                                 </th>
                                             </tr>
                                         </thead>
+                                        <tbody>
+                                            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                                Data 1
+                                            </td>
+                                            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                                Data 1
+                                            </td>
+                                        </tbody>
                                     </table>
                                 </div>
                             </div>
