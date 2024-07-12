@@ -76,6 +76,20 @@ const AllUsers = () => {
 
                 <div className="my-4">
                     <h1 className="text-xl text-gray-500">Search Result</h1>
+                        <div className="">
+                            {
+                                (() => {
+                                    if(IsSearchSubimited === true) {
+                                        return (
+                                            <button onClick={CloseSearch} className="bg-red-500 text-white py-1 px-4 rounded shadow-md my-2 duration-500 hover:bg-red-600">Close Search</button>
+                                        )
+                                    }
+                                    else{
+
+                                    }
+                                })()
+                            }
+                        </div>
 
                                    <div className="">
                                         <div className="my-3 overflow-hidden rounded-t-lg border border-gray-200">
