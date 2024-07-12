@@ -5,5 +5,6 @@ const router = express.Router()
 
 router.get('/CountUsers', UserController.CountUsers)
 router.get('/LastUsers', UserController.LastTenUser)
+router.get('/SearchUser')
 
 module.exports = router
