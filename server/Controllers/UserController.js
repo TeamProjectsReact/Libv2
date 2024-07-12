@@ -38,8 +38,9 @@ const UserController = {
             console.log(req.query)
             const { query } = req.query;
             let searchCriteria = [
-              { Title: { $regex: query, $options: 'i' } },
-
+              { username: { $regex: query, $options: 'i' } },
+              { email: { $regex: query, $options: 'i' } },
+              { Role: { $regex: query, $options: 'i' } },
             ];
         
             if (!isNaN(query)) {
