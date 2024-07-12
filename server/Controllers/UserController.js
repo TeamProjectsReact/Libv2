@@ -31,6 +31,34 @@ const UserController = {
         catch (err) {
             console.log(err)
         }
+    },
+
+    SearchUser: async(req, res) => {
+        try{
+            console.log(req.query)
+            const { query } = req.query;
+            let searchCriteria = [
+              { Title: { $regex: query, $options: 'i' } },
+
+            ];
+        
+            if (!isNaN(query)) {
+              searchCriteria.push({ YearofPublication: parseInt(query) });              
+            }          
+
+            const items = await User.find({ $or: searchCriteria });
+
+            if(items){
+                return res.json({ Result: items })
+                // console.log(BookData)
+            }   
+            else{
+                return res.json({ Error: "No Book Found"})
+            }
+        }
+        catch(err){
+            console.log(err)
+        }
     }
 }
 
