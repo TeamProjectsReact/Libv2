@@ -131,12 +131,6 @@ const DashHome = () => {
                                                     )
                                                 })
                                             }
-                                            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                                                Data 1
-                                            </td>
-                                            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                                                Data 1
-                                            </td>
                                         </tbody>
                                     </table>
                                 </div>
