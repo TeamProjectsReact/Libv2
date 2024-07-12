@@ -56,6 +56,22 @@ const UserController = {
         catch(err){
             console.log(err)
         }
+    },
+
+    ViewUserData: async (req, res) => {
+        try{
+            const UserDataView = await User.findOne({ email: req.params.id})
+
+            if(UserDataView){
+                return res.json({ Result:UserDataView })
+            }
+            else{
+                return res.json({ Error: "Internal Server Error"})
+            }
+        }
+        catch (err) {
+            console.log(err)
+        }
     }
 }
 
