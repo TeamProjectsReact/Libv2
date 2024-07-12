@@ -79,11 +79,15 @@ const AllUsers = () => {
                                                 <thead className="bg-gray-800 h-12 text-white">
                                                     <tr>
                                                         <th scope="col" className="max-w-72 px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
-                                                            Book Title
+                                                            Email Address
                                                         </th>
                                                         <th scope="col" className="max-w-72 px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
-                                                            Class No
+                                                            Username
                                                         </th>
+                                                        <th scope="col" className="max-w-72 px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
+                                                            Role
+                                                        </th>
+                                                        
                                                     </tr>
                                                 </thead>
                                             </table>
