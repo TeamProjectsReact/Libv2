@@ -162,6 +162,23 @@ const BookController = {
         }
     },
 
+    lastBookFour: async (req, res) => {
+        try{
+            const Fourbooks = await Books.find().sort({ AccNumber: -1 }).limit(4)
+            // console.log(Tenbooks)
+            
+            if(Tenbooks) {
+                return res.json({Result: Fourbooks})
+            }
+            else{
+                return res.json({ Error: "Internal Server Error"})
+            }
+        }   
+        catch (err) {
+            console.log(err)
+        }
+    },
+
     ViewSelectedBook: async (req, res) => {
         try{
             // console.log(req.params.id)
