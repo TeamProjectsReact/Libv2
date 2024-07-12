@@ -94,7 +94,21 @@ const DashHome = () => {
                                 <BookLastWeek />
                             </div>
                             <div className="">
-                                
+                                <h1 className='text-xl text-gray-500 pb-2'>Latest Books</h1>
+                                <div className="overflow-hidden rounded-t-lg border border-gray-200">
+                                    <table className="min-w-full divide-y divide-gray-200">
+                                        <thead className="bg-gray-800 h-12 text-white">
+                                            <tr>
+                                                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
+                                                    Column 1
+                                                </th>
+                                                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
+                                                    Column 1
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
