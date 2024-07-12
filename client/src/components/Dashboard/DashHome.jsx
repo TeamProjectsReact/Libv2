@@ -108,10 +108,10 @@ const DashHome = () => {
                                     <table className="min-w-full divide-y divide-gray-200">
                                         <thead className="bg-gray-800 h-12 text-white">
                                             <tr>
-                                                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
+                                                <th scope="col" className="max-w-72 px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
                                                     Book Title
                                                 </th>
-                                                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
+                                                <th scope="col" className="max-w-72 px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
                                                     Class No
                                                 </th>
                                             </tr>
@@ -121,11 +121,11 @@ const DashHome = () => {
                                                 LastFourBooks.map((lastBooks,index) => {
                                                     return (
                                                         <tr key={index}>
-                                                            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                                                                Data 1
+                                                            <td className="px-6 py-4 max-w-40 truncate whitespace-nowrap text-sm font-medium text-gray-900">
+                                                                {lastBooks.Title}
                                                             </td>
-                                                            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                                                                Data 1
+                                                            <td className="max-w-[72px] px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                                                {lastBooks.ClassNo}
                                                             </td>
                                                         </tr>
                                                     )
