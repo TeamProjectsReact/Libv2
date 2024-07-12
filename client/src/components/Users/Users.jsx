@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import  secureLocalStorage  from  "react-secure-storage"
 import axios from 'axios';
-import { BsPeopleFill, BsPersonFillLock } from 'react-icons/bs';
+import { BsPeopleFill, BsPersonFill, BsPersonFillAdd, BsPersonFillLock } from 'react-icons/bs';
 import CountUp from 'react-countup'
 
 const Users = () => {
@@ -13,9 +13,9 @@ const Users = () => {
 
   const UserData = [
     {id: 1, link: 'Users', name: "Users", icon: <BsPeopleFill />, value: <CountUp end={20} />, bgColor: "bg-blue-500/30", borderColor: "border-blue-500", style: "text-blue-500"},
-    {id: 2, link: 'UserAccounts', name: "User Accounts", icon: <BsPeopleFill />, value: <CountUp end={20} />, bgColor: "bg-green-500/30", borderColor: "border-green-500", style: "text-green-500"},
+    {id: 2, link: 'UserAccounts', name: "User Accounts", icon: <BsPersonFill />, value: <CountUp end={20} />, bgColor: "bg-green-500/30", borderColor: "border-green-500", style: "text-green-500"},
     {id: 3, link: 'Admins', name: "Admins", icon: <BsPersonFillLock />, value: <CountUp end={20} />, bgColor: "bg-red-500/30", borderColor: "border-red-500", style: "text-red-500"},
-    {id: 4, link: 'AddNewBook', name: "Add New Book", icon: <BsPeopleFill />, value: "#", bgColor: "bg-green-500", borderColor: "", style: "text-white"},    
+    {id: 4, link: 'AddNewBook', name: "Add New Book", icon: <BsPersonFillAdd />, value: "#", bgColor: "bg-green-500", borderColor: "", style: "text-white"},    
   ]
 
 
