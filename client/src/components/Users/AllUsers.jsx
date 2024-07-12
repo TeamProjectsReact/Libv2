@@ -24,6 +24,10 @@ const AllUsers = () => {
                             <div className="">
                                 <input type="text" name="" id="" className="w-full bg-gray-200 pl-2 h-12 my-2" placeholder='Search User' required/>
                             </div>
+
+                            <div className="">
+                                <button type="submit" className="bg-purple-500 text-white py-2 px-4 rounded duration-500 hover:bg-purple-600 shadow-md">Search User</button>
+                            </div>
                         </form>
                     </div>
                 </div>
