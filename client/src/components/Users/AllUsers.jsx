@@ -12,7 +12,7 @@ const AllUsers = () => {
     if(RoleUser === "SuperAdmin" || RoleUser === "Director" || RoleUser === "Secretary"){
         return (
             <div>AllUsers</div>
-          )
+        )
     }
 
     else{
