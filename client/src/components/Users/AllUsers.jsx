@@ -96,7 +96,7 @@ const AllUsers = () => {
                                                 <thead>
                                                     {
                                                         (() => {
-                                                            if(IsSearchSubimited === false){
+                                                            if(IsSearchSubimited === true){
                                                                 return (
                                                                     UserSearch.map((searchUser, index) => {
                                                                         return (
