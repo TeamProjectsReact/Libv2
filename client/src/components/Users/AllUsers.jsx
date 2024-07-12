@@ -104,8 +104,11 @@ const AllUsers = () => {
                                                         <th scope="col" className="md:table-cell hidden max-w-72 px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
                                                             Username
                                                         </th>
-                                                        <th scope="col" className="max-w-72 px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
+                                                        <th scope="col" className="md:table-cell hidden max-w-72 px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
                                                             Role
+                                                        </th>
+                                                        <th scope="col" className="max-w-72 px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
+                                                            Action
                                                         </th>
                                                     </tr>
                                                 </thead>
@@ -139,6 +142,9 @@ const AllUsers = () => {
                                                                                         })()
                                                                                     }
                                                                                 </td>
+                                                                                <td className="max-w-[72px] px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                                                                    <button className="bg-purple-500 text-white py-1 px-4 rounded shadow-md duration-500 hover:bg-purple-600">View</button>
+                                                                                </td>
                                                                             </tr>
                                                                         )
                                                                     })
@@ -170,6 +176,9 @@ const AllUsers = () => {
                                                                                             }
                                                                                         })()
                                                                                     }
+                                                                                </td>
+                                                                                <td className="max-w-[72px] px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                                                                    <button className="bg-purple-500 text-white py-1 px-4 rounded shadow-md duration-500 hover:bg-purple-600">View</button>
                                                                                 </td>
                                                                             </tr>
                                                                         )
