@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import  secureLocalStorage  from  "react-secure-storage"
 import axios from 'axios';
+import Users from './Users';
 
 const AllUsers = () => {
     const navigate = useNavigate()
@@ -11,7 +12,9 @@ const AllUsers = () => {
 
     if(RoleUser === "SuperAdmin" || RoleUser === "Director" || RoleUser === "Secretary"){
         return (
-            <div>AllUsers</div>
+            <div>
+                <Users />
+            </div>
         )
     }
 
