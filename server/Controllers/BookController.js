@@ -164,7 +164,7 @@ const BookController = {
 
     lastBookFour: async (req, res) => {
         try{
-            const Fourbooks = await Books.find().sort({ AccNumber: -1 }).limit(4)
+            const Fourbooks = await Books.find().sort({ AccNumber: -1 }).limit(6)
             // console.log(Tenbooks)
             
             if(Fourbooks) {
