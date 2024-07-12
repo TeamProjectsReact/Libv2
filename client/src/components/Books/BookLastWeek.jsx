@@ -56,16 +56,28 @@ const BookLastWeek = () => {
                 <div >
                     <h2>Books Added in Last 7 Days</h2>
                     {chartData.labels ? (
-                        <Bar
+                    <div className="relative w-full h-96">
+                    <Bar
                         data={chartData}
                         options={{
-                            scales: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
                             y: {
-                                beginAtZero: true
+                            beginAtZero: true,
+                            ticks: {
+                                stepSize: 1,
+                                callback: function(value) {
+                                if (Number.isInteger(value)) {
+                                    return value;
+                                }
+                                }
                             }
                             }
+                        }
                         }}
-                        />
+                    />
+                    </div>
                     ) : (
                         <p>Loading...</p>
                     )}
