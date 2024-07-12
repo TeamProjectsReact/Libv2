@@ -49,6 +49,11 @@ const AllUsers = () => {
     }
 
 
+    // view user data
+    const ViewUser = (id) => {
+        
+    }
+
     if(RoleUser === "SuperAdmin" || RoleUser === "Director" || RoleUser === "Secretary"){
         return (
             <div>
