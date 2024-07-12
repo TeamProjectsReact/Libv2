@@ -120,7 +120,7 @@ const DashHome = () => {
                                             {
                                                 LastFourBooks.map((lastBooks,index) => {
                                                     return (
-                                                        <tr key={index}>
+                                                        <tr key={index} className='border-b border-gray-200'>
                                                             <td className="px-6 py-4 max-w-40 truncate whitespace-nowrap text-sm font-medium text-gray-900">
                                                                 {lastBooks.Title}
                                                             </td>
