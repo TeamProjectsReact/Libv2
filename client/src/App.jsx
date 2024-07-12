@@ -5,14 +5,13 @@ import Dashboard from "./components/Dashboard/Dashboard";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import DashHome from "./components/Dashboard/DashHome";
 import BrowseBooks from "./components/BrowseBooks/BrowseBooks";
-import Books from "./components/Books/Books";
 import Thesis from "./components/Thesis/Thesis";
-import Users from "./components/Users/Users";
 import AllBooks from "./components/Books/AllBooks";
 import BorrowReq from "./components/Books/BorrowReq";
 import BorrowedBooks from "./components/Books/BorrowedBooks";
 import AddNewBook from "./components/Books/AddNewBook";
 import ViewBook from "./components/Books/ViewBook";
+import AllUsers from "./components/Users/AllUsers";
 
 
 export default function App() {
@@ -29,7 +28,7 @@ export default function App() {
           <Route path="BorrowedBooks" element={<PrivateRoute ProtectRoute={<BorrowedBooks />} /> } />
           <Route path="AddNewBook" element={<PrivateRoute ProtectRoute={<AddNewBook /> } /> } />
           <Route path="Thesis" element={<PrivateRoute ProtectRoute={<Thesis /> } /> } />
-          <Route path="Users" element={<PrivateRoute ProtectRoute={<Users /> } /> } />
+          <Route path="AllUsers" element={<PrivateRoute ProtectRoute={<AllUsers /> } /> } />
           <Route path="ViewBook/:id" element={<PrivateRoute ProtectRoute={<ViewBook /> } /> } />
         </Route>
       </Routes> 
