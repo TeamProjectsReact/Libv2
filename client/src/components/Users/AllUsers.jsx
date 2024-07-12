@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import  secureLocalStorage  from  "react-secure-storage"
 import axios from 'axios';
 import Users from './Users';
+import { BsXCircleFill } from 'react-icons/bs';
 
 const AllUsers = () => {
     const navigate = useNavigate()
@@ -58,6 +59,11 @@ const AllUsers = () => {
         SetSelectUserEmail(id)
     }
 
+    // close user view
+    const headleCloseUserView = () => {
+        SetIsUserView(false)
+    }
+
     if(RoleUser === "SuperAdmin" || RoleUser === "Director" || RoleUser === "Secretary"){
         return (
             <div>
@@ -94,7 +100,12 @@ const AllUsers = () => {
                             else{
                                 return (
                                     <div className="">
-                                        {SelectUserEmail}
+                                        <div className="flex justify-between">
+                                            <h1 className="font-semibold text-gray-500">The User {SelectUserEmail} Information</h1>
+                                            <div className="mr-4" onClick={headleCloseUserView}>
+                                                <BsXCircleFill className='h-6 w-auto text-red-500'/>
+                                            </div>
+                                        </div>
                                     </div>
                                 )
                             }
