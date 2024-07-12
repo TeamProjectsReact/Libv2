@@ -32,7 +32,6 @@ const AllUsers = () => {
     // close Search
     const CloseSearch = () => {
         SetIsSearchSubimited(false)
-        window.location.reload()
     }
 
 
@@ -74,7 +73,22 @@ const AllUsers = () => {
                             }
                             else{
                                 return (
-                                    <div className="">Not Submitted</div>
+                                    <div className="">
+                                        <div className="my-3 overflow-hidden rounded-t-lg border border-gray-200">
+                                            <table className="min-w-full divide-y divide-gray-200">
+                                                <thead className="bg-gray-800 h-12 text-white">
+                                                    <tr>
+                                                        <th scope="col" className="max-w-72 px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
+                                                            Book Title
+                                                        </th>
+                                                        <th scope="col" className="max-w-72 px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
+                                                            Class No
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+                                            </table>
+                                        </div>
+                                    </div>
                                 )
                             }
                         })()
