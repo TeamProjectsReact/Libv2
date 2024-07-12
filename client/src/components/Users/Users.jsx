@@ -26,7 +26,6 @@ const Users = () => {
     {id: 1, link: 'AllUsers', name: "Users", icon: <BsPeopleFill />, value: <CountUp end={CountUser} />, bgColor: "bg-blue-500/30", borderColor: "border-blue-500", style: "text-blue-500"},
     {id: 2, link: 'AllUsers', name: "User Accounts", icon: <BsPersonFill />, value: <CountUp end={20} />, bgColor: "bg-green-500/30", borderColor: "border-green-500", style: "text-green-500"},
     {id: 3, link: 'AllUsers', name: "Admins", icon: <BsPersonFillLock />, value: <CountUp end={20} />, bgColor: "bg-red-500/30", borderColor: "border-red-500", style: "text-red-500"},
-    {id: 4, link: 'AddNewAdmin', name: "Add New Admin", icon: <BsPersonFillAdd />, value: "#", bgColor: "bg-green-500", borderColor: "", style: "text-white"},    
   ]
 
 
@@ -34,7 +33,7 @@ const Users = () => {
     return (
       <div>
         <h1 className="text-xl text-gray-500 ">Users</h1>
-        <div className="md:grid grid-cols-4 gap-4 my-4">
+        <div className="md:grid grid-cols-3 gap-4 my-4">
           {
             UserData.map((user) => {
               if(RoleUser === "SuperAdmin" || RoleUser === "Director" || RoleUser === "Secretary"){
