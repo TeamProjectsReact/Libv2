@@ -10,6 +10,16 @@ const AllUsers = () => {
     const EmailUser = secureLocalStorage.getItem("Login1");
     const RoleUser = secureLocalStorage.getItem("Login2");
 
+
+    // check the search form us submitted
+    const [IsSearchSubimited, SetIsSearchSubimited] = useState(false)
+
+    // submit the search form
+    const headleSubmit = (e) => {
+        e.preventDefault();
+        SetIsSearchSubimited(true)
+    }
+
     if(RoleUser === "SuperAdmin" || RoleUser === "Director" || RoleUser === "Secretary"){
         return (
             <div>
@@ -20,7 +30,7 @@ const AllUsers = () => {
                     <hr />
 
                     <div className="">
-                        <form method="post">
+                        <form method="post" onSubmit={headleSubmit}>
                             <div className="">
                                 <input type="text" name="" id="" className="w-full bg-gray-200 pl-2 h-12 my-2" placeholder='Search User' required/>
                             </div>
