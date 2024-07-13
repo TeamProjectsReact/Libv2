@@ -37,7 +37,6 @@ const DashHome = () => {
         {id: 3, name: "Thesis", bgstyle: 'bg-yellow-400/20', borderStyle: 'border-yellow-500', icon: <BsTextParagraph />, value: <CountUp end={20} />, style: "text-yellow-500"},
         {id: 4, name: "Borrowed Books", bgstyle: 'bg-purple-400/20', borderStyle: 'border-purple-500', icon: <BsJournalCheck />, value: <CountUp end={20} />, style: "text-purple-500"},
         {id: 6, name: "My Books", bgstyle: 'bg-green-400/20', borderStyle: 'border-green-500', icon: <BsJournals />, value: <CountUp end={20} />, style: "text-green-500"},
-        {id: 7, name: "My Selected Books", bgstyle: 'bg-purple-400/20', borderStyle: 'border-purple-500', icon: <BsJournalX />, value: <CountUp end={20} />, style: "text-purple-500"},
         {id: 8, name: "My Borrowed Books", bgstyle: 'bg-yellow-400/20', borderStyle: 'border-yellow-500', icon: <BsJournalCheck />, value: <CountUp end={20} />, style: "text-yellow-500"},
     ]
 
