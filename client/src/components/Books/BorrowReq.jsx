@@ -11,6 +11,15 @@ const BorrowReq = () => {
   const EmailUser = secureLocalStorage.getItem("Login1");
   const RoleUser = secureLocalStorage.getItem("Login2");
 
+  // book request data
+  const [BookRequestData, SetBookRequestData] = useState([])
+
+  useEffect(() => {
+    axios.get('http://localhost:5000/books/BookRequestData/')
+    .then(res => SetBookRequestData(res.data.Result))
+    .catch(err => console.log(err))
+  }, [])
+
   if(RoleUser === "SuperAdmin" || RoleUser === "Director" || RoleUser === "Secretary"){
     return (
       <div>
