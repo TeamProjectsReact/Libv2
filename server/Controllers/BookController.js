@@ -1,6 +1,7 @@
 const Books = require('../Models/Books')
 const BookBorrow = require('../Models/BookBorrow')
 const BookRequest = require('../Models/BookRequest')
+const nodemailer = require('nodemailer');
 
 const BookController = {
     GestViewBook: async (req, res) => {
@@ -343,7 +344,35 @@ const BookController = {
 
             const requestData = await BookRequest.findOne({ AccNumber: BookID })
 
-            console.log(requestData.email)
+            // console.log(requestData.email)
+            const today = new Date();
+            const atherMonth = new Date(today.setDate(today.getDate() + 30));
+
+
+            const addtoBorrowed = new BookBorrow({
+                AccNumber: BookID,
+                email: requestData.email,
+                borrowedAt: new Date(),
+                shouldReturnAt: atherMonth
+            })
+
+            const BorrowSave = await addtoBorrowed.save()
+
+            if(BorrowSave){
+                const deleteBkrequest = await BookRequest.findOneAndDelete(
+                    {
+                        $and: {
+                            AccNumber: BookID,
+                            email: requestData.email,
+                            isReject: 0
+                        }
+                    }
+                )
+                
+                if(deleteBkrequest){
+                    
+                }
+            }
         }
         catch(err) {
             console.log(err)
