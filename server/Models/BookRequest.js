@@ -14,7 +14,7 @@ const BookRequestSchema = new mongoose.Schema({
         required: true,
     },
     isReject: {
-        type: int
+        type: Number
     }
 })
 

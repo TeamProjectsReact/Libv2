@@ -129,7 +129,7 @@ const AllBooks = () => {
       const res = await axios.post(`http://localhost:5000/books/BookRequest/${AccNoView}/${EmailUser}`)
       .then(res => {
         if(res.data.Status === "Success"){
-          alert("You borrowed Book Successfully")
+          alert("You Requested Book Successfully")
           window.location.reload()
         }
         else{

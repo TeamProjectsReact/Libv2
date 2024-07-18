@@ -1,5 +1,6 @@
 const Books = require('../Models/Books')
 const BookBorrow = require('../Models/BookBorrow')
+const BookRequest = require('../Models/BookRequest')
 
 const BookController = {
     GestViewBook: async (req, res) => {
@@ -268,18 +269,18 @@ const BookController = {
             const today = new Date();
             const atherMonth = new Date(today.setDate(today.getDate() + 30));
 
-            const BorrowedBook = new BookBorrow({
+            const RequestBook = new BookRequest({
                 AccNumber: BookId,
                 email: Borrower,
-                borrowedAt: new Date(),
-                shouldReturnAt: atherMonth
+                RequestAt: new Date(),
+                isReject: 0
             })
 
             // console.log(BorrowedBook)
 
-            const ResultBorrowBk = await BorrowedBook.save()
+            const ResultRequestBk = await RequestBook.save()
 
-            if(ResultBorrowBk){
+            if(ResultRequestBk){
                 const BookFind = await Books.findOneAndUpdate(
                     {AccNumber: BookId},
                     {
