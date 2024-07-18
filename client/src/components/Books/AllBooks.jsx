@@ -86,9 +86,44 @@ const AllBooks = () => {
     SetUpdateBook(false)
   }
 
-  const headleBookUpdate = (e) => {
+  const [UpdateBookData, SetUpdateBookData] = useState({
+    Title: '',
+    ClassNo: '',
+    AuthorEditor1: '',
+    AuthorEditor2: '',
+    Discription: '',
+    ISBNNumber: '',
+    Keywords1: '',
+    Keywords2: '',
+    Publisher: '',
+    Year: '',
+    Place: ''
+  })
 
-  }
+  const headleBookUpdate = async (e) => {
+    e.preventDefault();
+    // alert(AccNoView)
+    // console.log(UpdateBookData)
+
+    try{
+      const res = await axios.post(`http://localhost:5000/books/DataUpdateBook/${AccNoView}`)
+      .then(res => {
+        if(res.data.Status === "Success"){
+          alert("Book Updated Successfully")
+          window.location.reload()
+        }
+        else{
+          alert(res.data.Error)
+        }
+      })
+    }
+    catch(err){
+      console.log(err)
+    }
+
+
+
+  } 
 
   if(RoleUser !== null && EmailUser !== null){
     return (
@@ -152,37 +187,48 @@ const AllBooks = () => {
                                       <form onSubmit={headleBookUpdate} method="post">
                                         <div className="md:grid grid-cols-3 gap-4 my-4">
                                           <div className="">
-                                            <input type="text" name="" id="" className="w-full h-12 pl-2 rounded bg-gray-200" placeholder='Book Name'/>
+                                            <input type="text" name="" id="" className="md:my-0 my-2 w-full h-12 pl-2 rounded bg-gray-200" placeholder='Book Name' 
+                                            onChange={e => SetUpdateBookData({...UpdateBookData, Title:e.target.value})}/>
                                           </div>
                                           <div className="">
-                                            <input type="text" name="" id="" className="w-full h-12 pl-2 rounded bg-gray-200" placeholder='Book Class No'/>
+                                            <input type="text" name="" id="" className="md:my-0 my-2 w-full h-12 pl-2 rounded bg-gray-200" placeholder='Book Class No'
+                                            onChange={e => SetUpdateBookData({...UpdateBookData, ClassNo:e.target.value})}/>
                                           </div>
                                           <div className="">
-                                            <input type="text" name="" id="" className="w-full h-12 pl-2 rounded bg-gray-200" placeholder='Book Author 1'/>
+                                            <input type="text" name="" id="" className="md:my-0 my-2 w-full h-12 pl-2 rounded bg-gray-200" placeholder='Book Author 1'
+                                            onChange={e => SetUpdateBookData({...UpdateBookData, AuthorEditor1:e.target.value})}/>
                                           </div>
                                           <div className="">
-                                            <input type="text" name="" id="" className="w-full h-12 pl-2 rounded bg-gray-200" placeholder='Book Author 2'/>
+                                            <input type="text" name="" id="" className="md:my-0 my-2 w-full h-12 pl-2 rounded bg-gray-200" placeholder='Book Author 2'
+                                            onChange={e => SetUpdateBookData({...UpdateBookData, AuthorEditor2:e.target.value})}/>
                                           </div>
                                           <div className="">
-                                            <input type="text" name="" id="" className="w-full h-12 pl-2 rounded bg-gray-200" placeholder='Description'/>
+                                            <input type="text" name="" id="" className="md:my-0 my-2 w-full h-12 pl-2 rounded bg-gray-200" placeholder='Description'
+                                            onChange={e => SetUpdateBookData({...UpdateBookData, Discription:e.target.value})}/>
                                           </div>
                                           <div className="">
-                                            <input type="text" name="" id="" className="w-full h-12 pl-2 rounded bg-gray-200" placeholder='ISBN Number'/>
+                                            <input type="text" name="" id="" className="md:my-0 my-2 w-full h-12 pl-2 rounded bg-gray-200" placeholder='ISBN Number'
+                                            onChange={e => SetUpdateBookData({...UpdateBookData, ISBNNumber:e.target.value})}/>
                                           </div>
                                           <div className="">
-                                            <input type="text" name="" id="" className="w-full h-12 pl-2 rounded bg-gray-200" placeholder='Key Word 1'/>
+                                            <input type="text" name="" id="" className="md:my-0 my-2 w-full h-12 pl-2 rounded bg-gray-200" placeholder='Key Word 1'
+                                            onChange={e => SetUpdateBookData({...UpdateBookData, Keywords1:e.target.value})}/>
                                           </div>
                                           <div className="">
-                                            <input type="text" name="" id="" className="w-full h-12 pl-2 rounded bg-gray-200" placeholder='Key Word 2'/>
+                                            <input type="text" name="" id="" className="md:my-0 my-2 w-full h-12 pl-2 rounded bg-gray-200" placeholder='Key Word 2'
+                                            onChange={e => SetUpdateBookData({...UpdateBookData, Keywords2:e.target.value})}/>
                                           </div>
                                           <div className="">
-                                            <input type="text" name="" id="" className="w-full h-12 pl-2 rounded bg-gray-200" placeholder='Publisher'/>
+                                            <input type="text" name="" id="" className="md:my-0 my-2 w-full h-12 pl-2 rounded bg-gray-200" placeholder='Publisher'
+                                            onChange={e => SetUpdateBookData({...UpdateBookData, Publisher:e.target.value})}/>
                                           </div>
                                           <div className="">
-                                            <input type="text" name="" id="" className="w-full h-12 pl-2 rounded bg-gray-200" placeholder='Publish Year'/>
+                                            <input type="text" name="" id="" className="md:my-0 my-2 w-full h-12 pl-2 rounded bg-gray-200" placeholder='Publish Year'
+                                            onChange={e => SetUpdateBookData({...UpdateBookData, Year:e.target.value})}/>
                                           </div>
                                           <div className="">
-                                            <input type="text" name="" id="" className="w-full h-12 pl-2 rounded bg-gray-200" placeholder='Publish Place'/>
+                                            <input type="text" name="" id="" className="md:my-0 my-2 w-full h-12 pl-2 rounded bg-gray-200" placeholder='Publish Place'
+                                            onChange={e => SetUpdateBookData({...UpdateBookData, Place:e.target.value})}/>
                                           </div>
                                         </div>
                                         <div className="my-2">
@@ -200,7 +246,7 @@ const AllBooks = () => {
                               }
                             })()
                           }
-                                                            <div className="">
+                                <div className="">
                                   <table className='table-auto bg-white my-4 min-w-full'>
                                     <tr className='h-12 border-b border-gray-200 '>
                                       <th className='text-left pl-4 border-r border-gray-200 md:w-72'>Book Title</th>
