@@ -339,7 +339,11 @@ const BookController = {
     BookRequestAccept: async(req, res) => {
         try{
             const BookID = req.params.id
-            console.log(BookID)
+            // console.log(BookID)
+
+            const requestData = await BookRequest.findOne({ AccNumber: BookID })
+
+            console.log(requestData.email)
         }
         catch(err) {
             console.log(err)
