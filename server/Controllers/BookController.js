@@ -3,6 +3,14 @@ const BookBorrow = require('../Models/BookBorrow')
 const BookRequest = require('../Models/BookRequest')
 const nodemailer = require('nodemailer');
 
+const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASSWORD,
+    },
+});
+
 const BookController = {
     GestViewBook: async (req, res) => {
         try{
@@ -359,18 +367,35 @@ const BookController = {
             const BorrowSave = await addtoBorrowed.save()
 
             if(BorrowSave){
-                const deleteBkrequest = await BookRequest.findOneAndDelete(
-                    {
-                        $and: {
-                            AccNumber: BookID,
-                            email: requestData.email,
-                            isReject: 0
+                const mailOptions = {
+                    from: process.env.EMAIL_USER,
+                    to: requestData.email,
+                    subject: "Notifications from E-Library",
+                    text: "Your Book Request for Book Number : " + BookID + ", has bee Accepted"
+                };
+                try {
+                    await transporter.sendMail(mailOptions);
+
+                    const deleteBkrequest = await BookRequest.findOneAndDelete(
+                        {
+                            $and: {
+                                AccNumber: BookID,
+                                email: requestData.email,
+                                isReject: 0
+                            }
                         }
-                    }
-                )
-                
-                if(deleteBkrequest){
+                    )
                     
+                    if(deleteBkrequest){
+                        return res.json({ Status: "Success" })    
+                    }
+                    else{
+                        return res.json({ Error: "Internal Server Error"})
+                    }                
+
+                } catch (error) {
+                    console.log(error)
+                    return res.json({ Error: "Error While Sending Emails"})
                 }
             }
         }
