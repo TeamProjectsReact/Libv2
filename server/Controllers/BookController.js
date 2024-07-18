@@ -265,7 +265,38 @@ const BookController = {
             const Borrower = req.params.email
 
             // console.log(BookId, Borrower)
+            const today = new Date();
+            const atherMonth = new Date(today.setDate(today.getDate() + 30));
 
+            const BorrowedBook = new BookBorrow({
+                AccNumber: BookId,
+                email: Borrower,
+                borrowedAt: new Date(),
+                shouldReturnAt: atherMonth
+            })
+
+            // console.log(BorrowedBook)
+
+            const ResultBorrowBk = await BorrowedBook.save()
+
+            if(ResultBorrowBk){
+                const BookFind = await Books.findOneAndUpdate(
+                    {AccNumber: BookId},
+                    {
+                        $set: {
+                            Status: "Borrowed"
+                        }
+                    },
+                    { new: true }
+                )
+
+                if(BookFind) {
+                    return res.json({ Status: "Success"})
+                } 
+                else{
+                    return res.json({ Error: "Internal Server Error"})
+                }
+            }
             
         }
         catch (err){
