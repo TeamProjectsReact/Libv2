@@ -18,6 +18,32 @@ const BorrowReq = () => {
           <div className="my-4">
             <h1 className="text-gray-500 font-semibold text-xl">Book Borrowed Requests</h1>
             <hr />
+
+            <div className="overflow-hidden rounded-t-lg border border-gray-200">
+                <table className="min-w-full divide-y divide-gray-200">
+                    <thead className="bg-gray-800 h-12 text-white">
+                        <tr>
+                            <th scope="col" className="md:table-cell hidden max-w-72 px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
+                                Book Acc No
+                            </th>
+                            <th scope="col" className="md:table-cell hidden max-w-72 px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
+                                Requested By
+                            </th>
+                            <th scope="col" className="md:table-cell hidden max-w-72 px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
+                                Requested At
+                            </th>
+                            <th scope="col" className="md:hidden table-cell  max-w-72 px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
+                                Request Info
+                            </th>
+                            <th scope="col" className="max-w-72 px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
+                                Action
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
           </div>
       </div>
     )
