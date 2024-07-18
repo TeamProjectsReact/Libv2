@@ -28,7 +28,7 @@ const BorrowReq = () => {
             <h1 className="text-gray-500 font-semibold text-xl">Book Borrowed Requests</h1>
             <hr />
 
-            <div className="overflow-hidden rounded-t-lg border border-gray-200">
+            <div className="overflow-hidden rounded-t-lg border border-gray-200 my-4">
                 <table className="min-w-full divide-y divide-gray-200">
                     <thead className="bg-gray-800 h-12 text-white">
                         <tr>
@@ -50,6 +50,17 @@ const BorrowReq = () => {
                         </tr>
                     </thead>
                     <tbody>
+                      {
+                        BookRequestData.map((requestBk, index) => {
+                          return (
+                            <tr className="border-b border-gray-200" key={index}>
+                              <td className="px-6 py-4 max-w-40 truncate whitespace-nowrap text-sm font-medium text-gray-900">
+                                  {requestBk.Acc}
+                              </td>
+                            </tr>
+                          )
+                        })
+                      }
                     </tbody>
                 </table>
             </div>
