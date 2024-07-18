@@ -260,7 +260,10 @@ const BookController = {
 
     BookBorrowed: async (req, res) => {
         try{
-            
+            const BookId = req.params.id
+            const Borrower = req.params.email
+
+            console.log(BookId, Borrower)
         }
         catch (err){
             console.log(err)
