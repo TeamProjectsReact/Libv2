@@ -20,6 +20,23 @@ const BorrowReq = () => {
     .catch(err => console.log(err))
   }, [])
 
+  const headleAccept = (id) => {
+    axios.post(`http://localhost:5000/books/BookRequestData/${id}`)
+    .then(res => {
+      if(res.data.Status === "Success"){
+        alert("Book Request has bee Successfully Accepted")
+        window.location.reload()
+      }
+      else{
+        alert(res.data.Error)
+      }
+    })
+  }
+
+  const headleReject = (id) => {
+
+  }
+
   if(RoleUser === "SuperAdmin" || RoleUser === "Director" || RoleUser === "Secretary"){
     return (
       <div>
@@ -70,8 +87,8 @@ const BorrowReq = () => {
                               </td>
                               <td className="px-6 py-4 max-w-40 truncate whitespace-nowrap text-sm font-medium text-gray-900">
                                   <div className="flex">
-                                      <button className='bg-green-500 text-white py-1 px-3 rounded shadow-md'>Accept</button>
-                                      <button className='ml-2 bg-red-500 text-white py-1 px-3 rounded shadow-md'>Reject</button>
+                                      <button onClick={() => headleAccept(requestBk.AccNumber)} className='bg-green-500 text-white py-1 px-3 rounded shadow-md'>Accept</button>
+                                      <button onClick={() => headleReject(requestBk.AccNumber)} className='ml-2 bg-red-500 text-white py-1 px-3 rounded shadow-md'>Reject</button>
                                   </div>
                               </td>
                             </tr>
