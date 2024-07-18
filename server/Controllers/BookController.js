@@ -259,7 +259,7 @@ const BookController = {
         }
     },
 
-    BookBorrowed: async (req, res) => {
+    BookRequest: async (req, res) => {
         try{
             const BookId = req.params.id
             const Borrower = req.params.email
@@ -284,7 +284,7 @@ const BookController = {
                     {AccNumber: BookId},
                     {
                         $set: {
-                            Status: "Borrowed"
+                            Status: "Requested"
                         }
                     },
                     { new: true }

@@ -83,6 +83,16 @@ const BrowseBooks = () => {
                                                         <p className="text-green-500 font-semibold">Available</p>
                                                     )
                                                 }
+                                                else if(bookgest.Status === "Requested"){
+                                                    return (
+                                                        <p className="text-yellow-500 font-semibold">Requested</p>
+                                                    )
+                                                }
+                                                else{
+                                                    return (
+                                                        <p className="text-red-500 font-semibold">Available</p>
+                                                    )
+                                                }
                                             })()
                                         }
                                     </td>

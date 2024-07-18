@@ -123,10 +123,10 @@ const AllBooks = () => {
   } 
 
   // borrow book
-  const headleBorrowed = async (id) => {
+  const headleRequest = async (id) => {
     // alert(id)
     try{
-      const res = await axios.post(`http://localhost:5000/books/BorrowBook/${AccNoView}/${EmailUser}`)
+      const res = await axios.post(`http://localhost:5000/books/BookRequest/${AccNoView}/${EmailUser}`)
       .then(res => {
         if(res.data.Status === "Success"){
           alert("You borrowed Book Successfully")
@@ -183,7 +183,7 @@ const AllBooks = () => {
                             else{
                               if(ViewResult.Status === "Available"){
                                 return (
-                                  <button onClick={() => headleBorrowed(AccNoView)} className='my-2 bg-blue-500 text-white py-2 px-4 rounded shadow-md'>Borrow</button>
+                                  <button onClick={() => headleRequest(AccNoView)} className='my-2 bg-blue-500 text-white py-2 px-4 rounded shadow-md'>Borrow</button>
                                 )
                               }
                               else{
@@ -310,6 +310,16 @@ const AllBooks = () => {
                                                 <div className="text-green-500 font-semibold">Available</div>
                                               )
                                             }
+                                            else if(ViewResult.Status === "Requested"){
+                                              return (
+                                                  <p className="text-yellow-500 font-semibold">Requested</p>
+                                              )
+                                            }
+                                            else{
+                                              return(
+                                                <div className="text-red-500 font-semibold">Borrowed</div>
+                                              )
+                                            }
                                           })()
                                         }
                                       </td>
@@ -397,6 +407,16 @@ const AllBooks = () => {
                                                     <p className="text-green-500 font-semibold">Available</p>
                                                 )
                                             }
+                                            else if(lastbooks.Status === "Requested"){
+                                              return (
+                                                  <p className="text-yellow-500 font-semibold">Requested</p>
+                                              )
+                                          }
+                                          else{
+                                                return (
+                                                    <p className="text-red-500 font-semibold">Borrowed</p>
+                                                )                                              
+                                            }
                                         })()
                                     }
                                 </td>
@@ -434,6 +454,16 @@ const AllBooks = () => {
                                             if(bookSearch.Status === "Available"){
                                                 return (
                                                     <p className="text-green-500 font-semibold">Available</p>
+                                                )
+                                            }
+                                            else if(bookSearch.Status === "Requested"){
+                                              return (
+                                                  <p className="text-yellow-500 font-semibold">Requested</p>
+                                              )
+                                          }
+                                            else{
+                                                return (
+                                                    <p className="text-red-500 font-semibold">Borrowed</p>
                                                 )
                                             }
                                         })()
