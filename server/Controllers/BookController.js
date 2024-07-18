@@ -319,6 +319,15 @@ const BookController = {
         catch(err){
             console.log(err)
         }
+    },
+
+    GetBookRequestData: async(req, res) => {
+        try{
+
+        }
+        catch(err){
+            console.log(err)
+        }
     }
 }
 

@@ -15,5 +15,6 @@ router.get('/FourLastBooks', BookController.lastBookFour)
 router.post('/DataUpdateBook/:id', BookController.UpdateBookData)
 router.post('/BookRequest/:id/:email', BookController.BookRequest)
 router.get('/CountBookBorrowReqeusts', BookController.CountBookBorrowReq)
+router.get('/BookRequestData', BookController.GetBookRequestData)
 
 module.exports = router
