@@ -89,15 +89,15 @@ const AllBooks = () => {
   const [UpdateBookData, SetUpdateBookData] = useState({
     Title: '',
     ClassNo: '',
-    AuthorEditor1: '',
-    AuthorEditor2: '',
+    AuthorEditort: '',
+    AuthorEditor: '',
     Discription: '',
     ISBNNumber: '',
     Keywords1: '',
     Keywords2: '',
     Publisher: '',
-    Year: '',
-    Place: ''
+    YearofPublication: '',
+    PlaceofPublisher: ''
   })
 
   const headleBookUpdate = async (e) => {
@@ -196,11 +196,11 @@ const AllBooks = () => {
                                           </div>
                                           <div className="">
                                             <input type="text" name="" id="" className="md:my-0 my-2 w-full h-12 pl-2 rounded bg-gray-200" placeholder='Book Author 1'
-                                            onChange={e => SetUpdateBookData({...UpdateBookData, AuthorEditor1:e.target.value})}/>
+                                            onChange={e => SetUpdateBookData({...UpdateBookData, AuthorEditort:e.target.value})}/>
                                           </div>
                                           <div className="">
                                             <input type="text" name="" id="" className="md:my-0 my-2 w-full h-12 pl-2 rounded bg-gray-200" placeholder='Book Author 2'
-                                            onChange={e => SetUpdateBookData({...UpdateBookData, AuthorEditor2:e.target.value})}/>
+                                            onChange={e => SetUpdateBookData({...UpdateBookData, AuthorEditor:e.target.value})}/>
                                           </div>
                                           <div className="">
                                             <input type="text" name="" id="" className="md:my-0 my-2 w-full h-12 pl-2 rounded bg-gray-200" placeholder='Description'
@@ -223,12 +223,12 @@ const AllBooks = () => {
                                             onChange={e => SetUpdateBookData({...UpdateBookData, Publisher:e.target.value})}/>
                                           </div>
                                           <div className="">
-                                            <input type="text" name="" id="" className="md:my-0 my-2 w-full h-12 pl-2 rounded bg-gray-200" placeholder='Publish Year'
-                                            onChange={e => SetUpdateBookData({...UpdateBookData, Year:e.target.value})}/>
+                                            <input type="number" name="" id="" className="md:my-0 my-2 w-full h-12 pl-2 rounded bg-gray-200" placeholder='Publish Year'
+                                            onChange={e => SetUpdateBookData({...UpdateBookData, YearofPublication:e.target.value})}/>
                                           </div>
                                           <div className="">
                                             <input type="text" name="" id="" className="md:my-0 my-2 w-full h-12 pl-2 rounded bg-gray-200" placeholder='Publish Place'
-                                            onChange={e => SetUpdateBookData({...UpdateBookData, Place:e.target.value})}/>
+                                            onChange={e => SetUpdateBookData({...UpdateBookData, PlaceofPublisher:e.target.value})}/>
                                           </div>
                                         </div>
                                         <div className="my-2">
