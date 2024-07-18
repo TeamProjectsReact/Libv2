@@ -15,7 +15,6 @@ const BookBorrowSchema = new mongoose.Schema({
     },
     returnAt: {
         type: String,
-        required: true,
     },
     shouldReturnAt: {
         type: String,
