@@ -86,6 +86,10 @@ const AllBooks = () => {
     SetUpdateBook(false)
   }
 
+  const headleBookUpdate = (e) => {
+
+  }
+
   if(RoleUser !== null && EmailUser !== null){
     return (
       <div>
@@ -143,12 +147,60 @@ const AllBooks = () => {
                               if(UpdateBook === true) {
                                 return (
                                   <div className="">
+                                    <div className="bg-white py-2 px-4 rounded shadow-md my-4">
+                                      <h1 className="text-xl font-semibold text-gray-500">Update Book</h1>
+                                      <form onSubmit={headleBookUpdate} method="post">
+                                        <div className="md:grid grid-cols-3 gap-4 my-4">
+                                          <div className="">
+                                            <input type="text" name="" id="" className="w-full h-12 pl-2 rounded bg-gray-200" placeholder='Book Name'/>
+                                          </div>
+                                          <div className="">
+                                            <input type="text" name="" id="" className="w-full h-12 pl-2 rounded bg-gray-200" placeholder='Book Class No'/>
+                                          </div>
+                                          <div className="">
+                                            <input type="text" name="" id="" className="w-full h-12 pl-2 rounded bg-gray-200" placeholder='Book Author 1'/>
+                                          </div>
+                                          <div className="">
+                                            <input type="text" name="" id="" className="w-full h-12 pl-2 rounded bg-gray-200" placeholder='Book Author 2'/>
+                                          </div>
+                                          <div className="">
+                                            <input type="text" name="" id="" className="w-full h-12 pl-2 rounded bg-gray-200" placeholder='Description'/>
+                                          </div>
+                                          <div className="">
+                                            <input type="text" name="" id="" className="w-full h-12 pl-2 rounded bg-gray-200" placeholder='ISBN Number'/>
+                                          </div>
+                                          <div className="">
+                                            <input type="text" name="" id="" className="w-full h-12 pl-2 rounded bg-gray-200" placeholder='Key Word 1'/>
+                                          </div>
+                                          <div className="">
+                                            <input type="text" name="" id="" className="w-full h-12 pl-2 rounded bg-gray-200" placeholder='Key Word 2'/>
+                                          </div>
+                                          <div className="">
+                                            <input type="text" name="" id="" className="w-full h-12 pl-2 rounded bg-gray-200" placeholder='Publisher'/>
+                                          </div>
+                                          <div className="">
+                                            <input type="text" name="" id="" className="w-full h-12 pl-2 rounded bg-gray-200" placeholder='Publish Year'/>
+                                          </div>
+                                          <div className="">
+                                            <input type="text" name="" id="" className="w-full h-12 pl-2 rounded bg-gray-200" placeholder='Publish Place'/>
+                                          </div>
+                                        </div>
+                                        <div className="my-2">
+                                          <button type="submit" className="bg-blue-500 text-white rounded py-2 px-4 shadow-md">Update Book</button>
+                                        </div>
+                                      </form>
+                                    </div>
                                   </div>
                                 )
                               }
                               else{
                                 return (
-                                  <div className="">
+                                  <div className=""></div>
+                                )
+                              }
+                            })()
+                          }
+                                                            <div className="">
                                   <table className='table-auto bg-white my-4 min-w-full'>
                                     <tr className='h-12 border-b border-gray-200 '>
                                       <th className='text-left pl-4 border-r border-gray-200 md:w-72'>Book Title</th>
@@ -195,10 +247,6 @@ const AllBooks = () => {
       
                                   </table>
                                 </div>
-                                )
-                              }
-                            })()
-                          }
 
 
                       </div>
