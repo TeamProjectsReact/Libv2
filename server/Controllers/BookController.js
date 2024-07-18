@@ -323,7 +323,14 @@ const BookController = {
 
     GetBookRequestData: async(req, res) => {
         try{
+            const GetAllRequests = await BookRequest.find({ isReject: 0 })
 
+            if(GetAllRequests){
+                return res.json({ Result: GetAllRequests })
+            }
+            else{
+                return res.json({ Error: 'Internal Server Error'})
+            }
         }
         catch(err){
             console.log(err)
