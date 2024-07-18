@@ -256,6 +256,15 @@ const BookController = {
         catch(err){
             console.log(err)
         }
+    },
+
+    BookBorrowed: async (req, res) => {
+        try{
+            
+        }
+        catch (err){
+            console.log(err)
+        }
     }
 }
 

@@ -120,10 +120,27 @@ const AllBooks = () => {
     catch(err){
       console.log(err)
     }
-
-
-
   } 
+
+  // borrow book
+  const headleBorrowed = async (id) => {
+    // alert(id)
+    try{
+      const res = await axios.post(`http://localhost:5000/books/BorrowBook/${AccNoView}/${EmailUser}`)
+      .then(res => {
+        if(res.data.Status === "Success"){
+          alert("You borrowed Book Successfully")
+          window.location.reload()
+        }
+        else{
+          alert(res.data.Error)
+        }
+      })
+    }
+    catch (err){
+      console.log(err)
+    }
+  }
 
   if(RoleUser !== null && EmailUser !== null){
     return (
@@ -164,9 +181,16 @@ const AllBooks = () => {
                               )
                             }
                             else{
-                              return (
-                                <div className=""></div>
-                              )
+                              if(ViewResult.Status === "Available"){
+                                return (
+                                  <button onClick={() => headleBorrowed(AccNoView)} className='my-2 bg-blue-500 text-white py-2 px-4 rounded shadow-md'>Borrow</button>
+                                )
+                              }
+                              else{
+                                return (
+                                  <button className='text-red-500 text-xl my-5'>This Book Already Borrowed...</button>
+                                )
+                              }
                             }
                           })()
                         }
