@@ -1,4 +1,5 @@
 const Books = require('../Models/Books')
+const BookBorrow = require('../Models/BookBorrow')
 
 const BookController = {
     GestViewBook: async (req, res) => {
