@@ -387,6 +387,15 @@ const BookController = {
                     )
                     
                     if(deleteBkrequest){
+                        const updateBook = await Books.findOneAndUpdate(
+                            {AccNumber: BookID},
+                            {
+                                $set: {
+                                    Status: "Borrowed"
+                                }
+                            },
+                            { new: true }
+                        )
                         return res.json({ Status: "Success" })    
                     }
                     else{
