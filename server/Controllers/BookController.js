@@ -338,7 +338,8 @@ const BookController = {
     },
     BookRequestAccept: async(req, res) => {
         try{
-            
+            const BookID = req.params.id
+            console.log(BookID)
         }
         catch(err) {
             console.log(err)
