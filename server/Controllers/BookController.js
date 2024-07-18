@@ -225,6 +225,16 @@ const BookController = {
         catch (err) {
             console.log(err)
         }
+    },
+
+    UpdateBookData: async(req, res) => {
+        try{
+            const BookAccNumber = req.params.id
+            console.log(BookAccNumber, req.body)
+        }   
+        catch(err){
+            console.log(err)
+        }
     }
 }
 
