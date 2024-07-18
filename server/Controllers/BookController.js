@@ -230,7 +230,28 @@ const BookController = {
     UpdateBookData: async(req, res) => {
         try{
             const BookAccNumber = req.params.id
-            console.log(BookAccNumber, req.body)
+            // console.log(BookAccNumber, req.body)
+
+            const updateFields = {};
+            for (const [key, value] of Object.entries(req.body)) {
+              if (value !== undefined && value !== '') {
+                updateFields[key] = value;
+              }
+            }
+
+            const BkDataUpdate = await Books.findOneAndUpdate(
+                {AccNumber: BookAccNumber},
+                updateFields,
+                { new: true }
+            )
+            
+            if(BkDataUpdate){
+                return res.json({ Status: "Success"})
+            }
+            else{
+                return res.json({ Error: "Internal Server Error"})
+            }
+
         }   
         catch(err){
             console.log(err)

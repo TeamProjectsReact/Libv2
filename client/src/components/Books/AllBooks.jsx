@@ -106,7 +106,7 @@ const AllBooks = () => {
     // console.log(UpdateBookData)
 
     try{
-      const res = await axios.post(`http://localhost:5000/books/DataUpdateBook/${AccNoView}`)
+      const res = await axios.post(`http://localhost:5000/books/DataUpdateBook/${AccNoView}`, UpdateBookData)
       .then(res => {
         if(res.data.Status === "Success"){
           alert("Book Updated Successfully")
