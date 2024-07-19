@@ -411,7 +411,8 @@ const BookController = {
         catch(err) {
             console.log(err)
         }
-    }
+    },
+    
 }
 
 module.exports = BookController
