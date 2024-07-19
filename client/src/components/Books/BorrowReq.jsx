@@ -34,7 +34,16 @@ const BorrowReq = () => {
   }
 
   const headleReject = (id) => {
-
+    axios.post(`http://localhost:5000/books/BookRequestReject/${id}`)
+    .then(res => {
+      if(res.data.Status === "Success"){
+        alert("Book Request has bee Successfully Reject")
+        window.location.reload()
+      }
+      else{
+        alert(res.data.Error)
+      }
+    })
   }
 
   if(RoleUser === "SuperAdmin" || RoleUser === "Director" || RoleUser === "Secretary"){
