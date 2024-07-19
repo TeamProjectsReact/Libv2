@@ -332,7 +332,7 @@ const BookController = {
 
     GetBookRequestData: async(req, res) => {
         try{
-            const GetAllRequests = await BookRequest.find({ isReject: 0 })
+            const GetAllRequests = await BookRequest.find()
 
             if(GetAllRequests){
                 return res.json({ Result: GetAllRequests })
@@ -416,6 +416,8 @@ const BookController = {
         try {
             const BookNo = req.params.id
             console.log(BookNo)
+
+
         }
         catch (err) {
             console.log(err);
