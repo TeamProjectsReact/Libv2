@@ -46,6 +46,10 @@ const BorrowReq = () => {
     })
   }
 
+  const headleDelete = (id) => {
+    
+  }
+
   if(RoleUser === "SuperAdmin" || RoleUser === "Director" || RoleUser === "Secretary"){
     return (
       <div>
@@ -96,8 +100,26 @@ const BorrowReq = () => {
                               </td>
                               <td className="px-6 py-4 max-w-40 truncate whitespace-nowrap text-sm font-medium text-gray-900">
                                   <div className="flex">
-                                      <button onClick={() => headleAccept(requestBk.AccNumber)} className='bg-green-500 text-white py-1 px-3 rounded shadow-md'>Accept</button>
-                                      <button onClick={() => headleReject(requestBk.AccNumber)} className='ml-2 bg-red-500 text-white py-1 px-3 rounded shadow-md'>Reject</button>
+                                    {
+                                        (() => {
+                                            if(requestBk.isReject === 0){
+                                              return (
+                                                <div className="">
+                                                  <button onClick={() => headleAccept(requestBk.AccNumber)} className='bg-green-500 text-white py-1 px-3 rounded shadow-md'>Accept</button>
+                                                  <button onClick={() => headleReject(requestBk.AccNumber)} className='ml-2 bg-red-500 text-white py-1 px-3 rounded shadow-md'>Reject</button>
+                                                </div>
+                                              )
+                                            }
+                                            else{
+                                              return (
+                                                <div className="">
+                                                  <button onClick={() => headleDelete(requestBk.AccNumber)} className='ml-2 bg-red-500 text-white py-1 px-3 rounded shadow-md'>Delete</button>
+                                                </div>
+                                              )
+                                            }
+
+                                        })()
+                                    }
                                   </div>
                               </td>
                             </tr>
