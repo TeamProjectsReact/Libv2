@@ -17,6 +17,6 @@ router.post('/BookRequest/:id/:email', BookController.BookRequest)
 router.get('/CountBookBorrowReqeusts', BookController.CountBookBorrowReq)
 router.get('/BookRequestData', BookController.GetBookRequestData)
 router.post('/BookRequestData/:id', BookController.BookRequestAccept)
-
+router.post('/BookRequestReject/:id', BookController.BookRequsetReject)
 
 module.exports = router
