@@ -415,9 +415,31 @@ const BookController = {
     BookRequsetReject: async (req, res) => {
         try {
             const BookNo = req.params.id
+            const EmailID = req.params.email
             console.log(BookNo)
 
-
+            const updateBookReq = await BookRequest.findOneAndUpdate(
+                {
+                    $and: {
+                        email: EmailID,
+                        AccNumber: BookNo,
+                        isReject: 0
+                    }
+                },
+                {
+                    $set: {
+                        isReject: 1
+                    }
+                },
+                {new: true}
+            )
+            
+            if(updateBookReq){
+                return res.json({ Status: "Success"})    
+            }
+            else{
+                return res.json({ Error: "Internal Server Error" })
+            }
         }
         catch (err) {
             console.log(err);
