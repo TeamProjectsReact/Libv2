@@ -469,6 +469,22 @@ const BookController = {
         catch(err){
             console.log(err)
         }
+    },
+
+    CountBookBorrowed: async(req, res) => {
+        try{
+            const BookBorroedTrue = await BookBorrow.countDocuments()
+
+            if(BookBorroedTrue){
+                return res.json({ Result: BookBorroedTrue })
+            }
+            else{
+                return res.json({ Error: "Internal Server Error"})
+            }
+        }
+        catch (err) {
+            console.log(err)
+        }
     }
     
 }

@@ -19,5 +19,6 @@ router.get('/BookRequestData', BookController.GetBookRequestData)
 router.post('/BookRequestData/:id', BookController.BookRequestAccept)
 router.post('/BookRequestReject/:id', BookController.BookRequsetReject)
 router.get('/BookBorrowedData', BookController.GetBookBorrowedData)
+router.get('/CountBookBorrow', BookController.CountBookBorrowed)
 
 module.exports = router
