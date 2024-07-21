@@ -415,13 +415,10 @@ const BookController = {
     BookRequsetReject: async (req, res) => {
         try {
             const BookNo = req.params.id
-            const EmailID = req.params.email
-            console.log(BookNo, EmailID)
 
             const updateBookReq = await BookRequest.findOneAndUpdate(
                 {
                     $and: {
-                        email: EmailID,
                         AccNumber: BookNo,
                         isReject: 0
                     }
