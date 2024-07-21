@@ -416,7 +416,7 @@ const BookController = {
         try {
             const BookNo = req.params.id
             const EmailID = req.params.email
-            console.log(BookNo)
+            console.log(BookNo, EmailID)
 
             const updateBookReq = await BookRequest.findOneAndUpdate(
                 {
