@@ -282,6 +282,7 @@ const BookController = {
                 AccNumber: BookId,
                 email: Borrower,
                 RequestAt: new Date(),
+                isAccept: 0,
                 isReject: 0
             })
 
