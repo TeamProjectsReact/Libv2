@@ -82,48 +82,49 @@ const BorrowReq = () => {
                     <tbody>
                       {
                         BookRequestData.map((requestBk, index) => {
-                          return (
-                            <tr className="border-b border-gray-200" key={index}>
-                              <td className="md:hidden table-cell px-6 py-4 max-w-40 truncate whitespace-nowrap text-sm font-medium text-gray-900">
-                                  <p className="">{requestBk.AccNumber}</p>
-                                  <p className="">{requestBk.email}</p>
-                                  <p className="">{requestBk.RequestAt}</p>
-                              </td>
-                              <td className="md:table-cell hidden px-6 py-4 max-w-40 truncate whitespace-nowrap text-sm font-medium text-gray-900">
-                                  {requestBk.AccNumber}
-                              </td>
-                              <td className="md:table-cell hidden px-6 py-4 max-w-40 truncate whitespace-nowrap text-sm font-medium text-gray-900">
-                                  {requestBk.email}
-                              </td>
-                              <td className="md:table-cell hidden px-6 py-4 max-w-40 truncate whitespace-nowrap text-sm font-medium text-gray-900">
-                                  {requestBk.RequestAt}
-                              </td>
-                              <td className="px-6 py-4 max-w-40 truncate whitespace-nowrap text-sm font-medium text-gray-900">
-                                  <div className="flex">
-                                    {
-                                        (() => {
-                                            if(requestBk.isReject === 0){
-                                              return (
-                                                <div className="">
-                                                  <button onClick={() => headleAccept(requestBk.AccNumber)} className='bg-green-500 text-white py-1 px-3 rounded shadow-md'>Accept</button>
-                                                  <button onClick={() => headleReject(requestBk.AccNumber)} className='ml-2 bg-red-500 text-white py-1 px-3 rounded shadow-md'>Reject</button>
-                                                </div>
-                                              )
-                                            }
-                                            else{
-                                              return (
-                                                <div className="">
-                                                  <button onClick={() => headleDelete(requestBk.AccNumber)} className='ml-2 bg-red-500 text-white py-1 px-3 rounded shadow-md'>Delete</button>
-                                                </div>
-                                              )
-                                            }
-
-                                        })()
-                                    }
-                                  </div>
-                              </td>
-                            </tr>
-                          )
+                          if(requestBk.isAccept === 0){
+                            return (
+                              <tr className="border-b border-gray-200" key={index}>
+                                <td className="md:hidden table-cell px-6 py-4 max-w-40 truncate whitespace-nowrap text-sm font-medium text-gray-900">
+                                    <p className="">{requestBk.AccNumber}</p>
+                                    <p className="">{requestBk.email}</p>
+                                    <p className="">{requestBk.RequestAt}</p>
+                                </td>
+                                <td className="md:table-cell hidden px-6 py-4 max-w-40 truncate whitespace-nowrap text-sm font-medium text-gray-900">
+                                    {requestBk.AccNumber}
+                                </td>
+                                <td className="md:table-cell hidden px-6 py-4 max-w-40 truncate whitespace-nowrap text-sm font-medium text-gray-900">
+                                    {requestBk.email}
+                                </td>
+                                <td className="md:table-cell hidden px-6 py-4 max-w-40 truncate whitespace-nowrap text-sm font-medium text-gray-900">
+                                    {requestBk.RequestAt}
+                                </td>
+                                <td className="px-6 py-4 max-w-40 truncate whitespace-nowrap text-sm font-medium text-gray-900">
+                                    <div className="flex">
+                                      {
+                                          (() => {
+                                              if(requestBk.isAccept === 0){
+                                                return (
+                                                  <div className="">
+                                                    <button onClick={() => headleAccept(requestBk.AccNumber)} className='bg-green-500 text-white py-1 px-3 rounded shadow-md'>Accept</button>
+                                                    <button onClick={() => headleReject(requestBk.AccNumber)} className='ml-2 bg-red-500 text-white py-1 px-3 rounded shadow-md'>Reject</button>
+                                                  </div>
+                                                )
+                                              }
+                                              else{
+                                                return (
+                                                  <div className="">
+                                                    <button onClick={() => headleDelete(requestBk.AccNumber)} className='ml-2 bg-red-500 text-white py-1 px-3 rounded shadow-md'>Delete</button>
+                                                  </div>
+                                                )
+                                              }  
+                                          })()
+                                      }
+                                    </div>
+                                </td>
+                              </tr>
+                            )
+                          }
                         })
                       }
                     </tbody>
