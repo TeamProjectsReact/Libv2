@@ -13,6 +13,9 @@ const BookRequestSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    isAccept: {
+        type: Number
+    },
     isReject: {
         type: Number
     }
