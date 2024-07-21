@@ -457,7 +457,14 @@ const BookController = {
 
     GetBookBorrowedData: async (req, res) => {
         try{
+            const BKData = await BookBorrow.find()
 
+            if(BKData){
+                return res.json({ Result: BKData })
+            }
+            else{
+                return res.json({ Error: "Internal Server Error"})
+            }
         }
         catch(err){
             console.log(err)
