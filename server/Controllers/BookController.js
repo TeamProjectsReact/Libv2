@@ -432,13 +432,6 @@ const BookController = {
             )
             
             if(updateBookReq){
-                const mailOptions = {
-                    from: process.env.EMAIL_USER,
-                    to: requestData.email,
-                    subject: "Notifications from E-Library",
-                    text: "Your Book Request for Book Number : " + BookID + ", has bee Accepted"
-                };
-                await transporter.sendMail(mailOptions);
                 return res.json({ Status: "Success"})    
             }
             else{
