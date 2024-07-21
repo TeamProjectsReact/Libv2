@@ -103,7 +103,7 @@ const BorrowReq = () => {
                                     <div className="flex">
                                       {
                                           (() => {
-                                              if(requestBk.isAccept === 0){
+                                              if(requestBk.isReject === 0){
                                                 return (
                                                   <div className="">
                                                     <button onClick={() => headleAccept(requestBk.AccNumber)} className='bg-green-500 text-white py-1 px-3 rounded shadow-md'>Accept</button>
