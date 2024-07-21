@@ -432,6 +432,18 @@ const BookController = {
             )
             
             if(updateBookReq){
+                const UpdateBook = await Books.findOneAndUpdate(
+                    {
+                        AccNumber: BookNo,
+                    },
+                    {
+                        $set: {
+                            Status: "Available" 
+                        }
+                    },
+                    {new: true}
+
+                )
                 return res.json({ Status: "Success"})    
             }
             else{
