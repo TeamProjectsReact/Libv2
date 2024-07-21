@@ -39,7 +39,7 @@ const BorrowedBooks = () => {
                                 Return At
                             </th>
                             <th scope="col" className="md:hidden table-cell  max-w-72 px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
-                              Borrowed Info
+                                Borrowed Info
                             </th>
                             <th scope="col" className="max-w-72 px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
                                 Action
@@ -47,6 +47,31 @@ const BorrowedBooks = () => {
                         </tr>
                     </thead>
                     <tbody>
+                      {
+                        BKBorrowedData.map((Book, index) => {
+                          return (
+                            <tr key={index}>
+                                <td className="md:hidden table-cell px-6 py-4 max-w-40 truncate whitespace-nowrap text-sm font-medium text-gray-900">
+                                    <p className="">{Book.AccNumber}</p>
+                                    <p className="">{Book.email}</p>
+                                    <p className="">{Book.shouldReturnAt}</p>
+                                </td>
+                                <td className="md:table-cell hidden px-6 py-4 max-w-40 truncate whitespace-nowrap text-sm font-medium text-gray-900">
+                                    {Book.AccNumber}
+                                </td>
+                                <td className="md:table-cell hidden px-6 py-4 max-w-40 truncate whitespace-nowrap text-sm font-medium text-gray-900">
+                                    {Book.email}
+                                </td>
+                                <td className="md:table-cell hidden px-6 py-4 max-w-40 truncate whitespace-nowrap text-sm font-medium text-gray-900">
+                                    {Book.shouldReturnAt}
+                                </td>
+                                <td className="md:table-cell hidden px-6 py-4 max-w-40 truncate whitespace-nowrap text-sm font-medium text-gray-900">
+                                    <button className="bg-blue-500 text-white py-1 px-4 rounded">Return</button>
+                                </td>
+                            </tr>
+                          )
+                        })
+                      }
                     </tbody>
                 </table>
             </div>
