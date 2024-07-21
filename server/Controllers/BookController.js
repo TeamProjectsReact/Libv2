@@ -377,17 +377,33 @@ const BookController = {
                 try {
                     await transporter.sendMail(mailOptions);
 
-                    const deleteBkrequest = await BookRequest.findOneAndDelete(
+                    // const deleteBkrequest = await BookRequest.findOneAndDelete(
+                    //     {
+                    //         $and: {
+                    //             AccNumber: BookID,
+                    //             email: requestData.email,
+                    //             isReject: 0
+                    //         }
+                    //     }
+                    // )
+                    
+                    const updateAccept = await BookRequest.findOneAndUpdate(
                         {
                             $and: {
                                 AccNumber: BookID,
                                 email: requestData.email,
-                                isReject: 0
+                                isAccept: 0
                             }
-                        }
+                        },
+                        {
+                            $set: {
+                                isAccept: 1
+                            }
+                        },
+                        {new: true}
                     )
-                    
-                    if(deleteBkrequest){
+
+                    if(updateAccept){
                         const updateBook = await Books.findOneAndUpdate(
                             {AccNumber: BookID},
                             {
