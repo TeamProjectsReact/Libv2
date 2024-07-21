@@ -31,6 +31,15 @@ const Books = () => {
       .catch(err => console.log(err))
     }, [])
 
+    // count book borrowed
+    const [BookBorrowedCount, SetBookBorrowedCount] = useState(0)
+    
+    useEffect(() => {
+      axios.get('http://localhost:5000/books/CountBookBorrow')
+      .then(res => SetBookBorrowedCount(res.data.Result))
+      .catch(err => console.log(err))
+    }, [])
+
     const bookData = [
       {id: 1, link: 'AllBooks', name: "Books", icon: <BsBook />, value: <CountUp end={CountBooks} />, bgColor: "bg-blue-500/30", borderColor: "border-blue-500", style: "text-blue-500"},
       {id: 2, link: 'BorrowReq', name: "Book Requests", icon: <BsJournalCheck />, value: <CountUp end={CountBKRequests} />, bgColor: "bg-green-500/30", borderColor: "border-green-500", style: "text-green-500"},
