@@ -454,6 +454,15 @@ const BookController = {
             console.log(err);
         }
     },
+
+    GetBookBorrowedData: async (req, res) => {
+        try{
+
+        }
+        catch(err){
+            console.log(err)
+        }
+    }
     
 }
 
